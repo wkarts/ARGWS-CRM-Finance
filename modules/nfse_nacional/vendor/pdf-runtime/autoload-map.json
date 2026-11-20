@@ -1,0 +1,16 @@
+{
+  "NfseNacional\\PdfVendor\\Com\\Tecnick\\Unicode\\Data\\": "packages/tc-lib-unicode-data/src/",
+  "NfseNacional\\PdfVendor\\Com\\Tecnick\\Pdf\\Encrypt\\": "packages/tc-lib-pdf-encrypt/src/",
+  "NfseNacional\\PdfVendor\\Com\\Tecnick\\Pdf\\Filter\\": "packages/tc-lib-pdf-filter/src/",
+  "NfseNacional\\PdfVendor\\Com\\Tecnick\\Pdf\\Parser\\": "packages/tc-lib-pdf-parser/src/",
+  "NfseNacional\\PdfVendor\\Com\\Tecnick\\Pdf\\Graph\\": "packages/tc-lib-pdf-graph/src/",
+  "NfseNacional\\PdfVendor\\Com\\Tecnick\\Pdf\\Image\\": "packages/tc-lib-pdf-image/src/",
+  "NfseNacional\\PdfVendor\\Com\\Tecnick\\Pdf\\Font\\": "packages/tc-lib-pdf-font/src/",
+  "NfseNacional\\PdfVendor\\Com\\Tecnick\\Pdf\\Page\\": "packages/tc-lib-pdf-page/src/",
+  "NfseNacional\\PdfVendor\\Com\\Tecnick\\Pdf\\Sign\\": "packages/tc-lib-pdf-sign/src/",
+  "NfseNacional\\PdfVendor\\Com\\Tecnick\\Barcode\\": "packages/tc-lib-barcode/src/",
+  "NfseNacional\\PdfVendor\\Com\\Tecnick\\Unicode\\": "packages/tc-lib-unicode/src/",
+  "NfseNacional\\PdfVendor\\Com\\Tecnick\\Color\\": "packages/tc-lib-color/src/",
+  "NfseNacional\\PdfVendor\\Com\\Tecnick\\File\\": "packages/tc-lib-file/src/",
+  "NfseNacional\\PdfVendor\\Com\\Tecnick\\Pdf\\": "packages/tc-lib-pdf/src/"
+}

@@ -1,0 +1,61 @@
+{
+  "name": "Catálogo nacional de códigos de tributação cTribNac",
+  "version": "20260122-nt007-20261029",
+  "verified_on": "2026-11-10",
+  "data_file": "servicos.json",
+  "data_sha256": "f18c22d63023e74099924581390bcd0619885deeb396f74fa06059e89be28c07",
+  "code_format": "6 dígitos: item + subitem + desdobro nacional, com zeros à esquerda",
+  "counts": {"union": 345, "production": 338, "restricted_production": 345, "restricted_only": 7},
+  "production": {
+    "environment": "1",
+    "title": "ANEXO_B-NBS2-LISTA_SERVICO_NACIONAL-SNNFSe-v1.01-20260122",
+    "worksheet": "LISTA.SERV.NAC.",
+    "official_index_url": "https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/documentacao-atual",
+    "official_url": "https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/documentacao-atual/anexo_b-nbs2-lista_servico_nacional-snnfse-v1-01-20260122.xlsx",
+    "download_url": "https://meumunicipio.zendesk.com/hc/pt-br/article_attachments/52438675294996",
+    "republication_page": "https://meumunicipio.zendesk.com/hc/pt-br/articles/52437737766292-GERAL-anexo-b-nbs2-lista-servico-nacional-snnfse-v1-01-20260122",
+    "xlsx_sha256": "4c6dcf51a072ee0ba06f89fc506cd34d04fcb72f4f499b018bcd40b858ff6adc",
+    "xlsx_bytes": 87747,
+    "direct_official_download": "HTTP 403 na elaboração. A cópia republicada não foi comparada byte a byte com o XLSX servido pelo gov.br.",
+    "extraction": "Apenas linhas com a coluna A preenchida; código confirmado pela concatenação B/C/D em dois dígitos cada. Descrição completa da coluna E, removendo somente espaços externos. Cabeçalhos de item e subitem e a aba NBS não são incluídos.",
+    "official_cross_checks": [
+      {
+        "url": "https://www.gov.br/nfse/pt-br/mei-e-demais-empresas/codigos-de-tributacao-nacional-nbs",
+        "result": "Todos os 335 códigos e suas descrições publicados nesta página coincidem com a planilha. A página atualizada em 2024 não contém os três códigos adicionais abaixo."
+      },
+      {
+        "url": "https://camaraiuna.es.gov.br/legislacao/consolidado/2871/lei-complementar-51-2025.html",
+        "codes": ["110501"],
+        "result": "Código e descrição de monitoramento e rastreamento corroborados na publicação primária da legislação municipal. A descrição utilizada é a da planilha nacional."
+      },
+      {
+        "url": "https://repositorio.londrina.pr.gov.br/index.php/menu-fazenda/ggf/nfse-nacional/71715-nt-2025-001-implantacao-da-nfse-padrao-nacional/file",
+        "pages": [27],
+        "printed_page": 26,
+        "codes": ["141403", "141404"],
+        "result": "Existência e finalidade dos códigos de guincho/guindaste em obra corroboradas na NT municipal. A redação ali é 'vinculado à obra'; a redação mais recente do Anexo B foi preservada: 'em construção civil'."
+      }
+    ]
+  },
+  "restricted_extension": {
+    "environment": "2",
+    "codes": ["990201", "990301", "990302", "990303", "990304", "990305", "990401"],
+    "official_index_url": "https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/producao-restrita",
+    "official_xlsx_url": "https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/producao-restrita/anexo_b-nbs2-lista_servico_nacional-snnfse-prodrest-v1-01-20260122.xlsx",
+    "xlsx_comparison": "Não obtido o binário oficial de produção restrita; a extensão foi extraída da publicação primária NT007 e sua disponibilidade foi confirmada pelo comunicado oficial de 29/10/2026.",
+    "description_source_url": "https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/rtc/nt-007-se-cgnfse-v1-0.pdf",
+    "description_source_pages": [7],
+    "extraction": "Tabela 'Código Descrição' da NT007, entre 99.02.01 e a observação sobre 99.01.01; extração automática da camada textual, unindo quebras de linha sem alterar as descrições.",
+    "source_text_sha256": "a681d246a1349620209543384aaa579bd733dfeb23688904ab9f17697dcdfa80",
+    "deployment_source_url": "https://www.gov.br/nfse/pt-br/noticias/nfs-e-nacional-confira-oas-rientacoes-sobre-leiaute-em-producao-regras-de-preenchimento-de-ibs-cbs-e-status-da-nota-tecnica-009",
+    "deployment_published_on": "2026-10-29",
+    "deployment": "Em 10/11/2026, códigos 99.02 a 99.04 disponíveis exclusivamente para API em produção restrita. O catálogo não ativa esses códigos em produção pela passagem do tempo."
+  },
+  "limitations": [
+    "A presença no catálogo não confirma habilitação do prestador, parametrização municipal, incidência, alíquota ou requisitos fiscais da operação.",
+    "cTribNac, cTribMun e cNBS são classificações diferentes. Não há conversão automática entre elas.",
+    "O catálogo reúne códigos e descrições; recursos de emissão específicos de determinados serviços dependem do suporte do gerador de DPS.",
+    "A classificação e os dados de documentos já preparados ou autorizados não são reescritos por atualizações do catálogo."
+  ],
+  "update_method": "Extrair uma nova versão com tools/import_service_catalog.py, revisar diferenças e ambientes, atualizar proveniência, total e hash na ServiceCatalog e executar testes. Não buscar ou alterar automaticamente o catálogo em produção."
+}

@@ -1,0 +1,17 @@
+/* Sidebar layout only; the button inherits the native user's card and theme. */
+.pme-company-selector{list-style:none;margin:0 0 6px;position:relative}
+.pme-company-selector .pme-company-toggle{display:flex;align-items:center;gap:10px;width:100%;text-align:left;white-space:normal}
+.pme-company-selector .pme-company-icon{display:flex;align-items:center;justify-content:center;width:32px;height:32px;flex-shrink:0;background:rgba(127,127,127,.08);border-radius:50%}
+.pme-company-selector .pme-company-title{flex:1;min-width:0}
+.pme-company-selector .pme-company-title strong,.pme-company-selector .pme-company-title small{display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.pme-company-selector .pme-company-title strong{font-weight:500}
+.pme-company-selector .pme-company-title small{font-weight:400;font-size:12px}
+.pme-company-selector .dropdown-menu{width:100%;max-height:320px;overflow-y:auto}
+.pme-company-selector .dropdown-header{white-space:normal;overflow-wrap:anywhere}
+.pme-company-selector form{margin:0}
+.pme-company-selector .pme-company-option{display:flex;align-items:center;gap:9px;background:transparent;border:0;color:inherit;width:100%;text-align:left;padding:8px 14px;font:inherit}
+.pme-company-selector .pme-company-option span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pme-company-selector .pme-company-option:hover,.pme-company-selector .pme-company-option:focus{background:rgba(127,127,127,.1)}
+.pme-company-selector .pme-company-option:disabled{opacity:.65;cursor:default}
+
+.pme-company-selector .pme-company-symbol{display:block;width:18px;height:18px;flex-shrink:0;color:inherit}

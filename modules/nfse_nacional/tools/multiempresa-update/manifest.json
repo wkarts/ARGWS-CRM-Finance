@@ -1,0 +1,37 @@
+{
+  "base_version": "1.2.4",
+  "patch": "multiempresa-1.2.4-atualizar-modulo.patch",
+  "patch_sha256": "072398ae58839a2e20e0006790ea95c19569748060eaa2de5ecccae926f34f93",
+  "files": {
+    "assets/companies.js": {
+      "before": "2c1818adfbc555897595e5da4b7adf88f128943759c49dce5e2159c42817d976",
+      "after": "3811cc3ec39dc841d00d50da414b448c47e377eb270d37277c2fd19e43083486"
+    },
+    "controllers/Multiempresa.php": {
+      "before": "d98687751b45bdcb8390e22bab0aa6be27b2da6e1d39cf4cd06ddfa99cf1d28a",
+      "after": "bcc7e2da2c182ccdf48698b59c6b7f68178339e34c13cb578fdd2cea681b5661"
+    },
+    "libraries/Application/Modules.php": {
+      "before": "9a93957f96eed8263d3965826137b31475bf76bdbf56ed82cff3d5ca40e22086",
+      "after": "b58250d71e8f039ed181abb8e55c72f53b063e0f8ffaa2cbf368bb9a0e2e6ef3"
+    },
+    "views/companies.php": {
+      "before": "3bf282bc08a809cc29bba8e7ff01da8efb09461f255560408ad5af36406a6b39",
+      "after": "3f1a07d59b2bbdcd81a8865ee537738b7f4dbf397e028082b1c14031dab8d83f"
+    },
+    "views/manage.php": {
+      "before": "5d7d11601c496c692b44925b6f49585502e6ec341b554641d219ecd3d573ad08",
+      "after": "93a78b1d9cb36b41deedbb55211f17148e9a740b2cc5ff363a7cd9dd6a7b6c16"
+    }
+  },
+  "guards": {
+    "multiempresa.php": "1e8f0e69ddb805dc362d49e3388dabbb82606120f3b028598f87ed4c239470e6",
+    "autoload.php": "121fbcaf1229fab00777b196f387ea9204e61d968ef64d402bfdb0e1f05dd66c",
+    "helpers/multiempresa_helper.php": "daab5767b63c92cd2a0bddd16a201e010c24b55ac1545874c325dd819c5f8529",
+    "libraries/Application/CompanyManager.php": "8a4ffdc46e8d6c06ccf90a96dd7f814fb907de26bf96715072517f5f09462fec",
+    "libraries/Application/CoreMaintenance.php": "03162f5366f25276fa49744dca955d0ef8478066a2f20ac90d619e448fd10baf",
+    "libraries/Infrastructure/AdvisoryLock.php": "0d1da53de9ecb65843af42631ce6a0999eb89f1c6ee1b014714e6bb477bd7205",
+    "libraries/Perfex/Runtime.php": "fea13f2d9186f2ae07b7df751623c234bf754f5f7e050f0c500d605759bedb0b",
+    "scripts/tenant-worker.php": "13b23d92d8f4622ded529a34701979bb54cbecd90cad89c1907ff1e123f9bb07"
+  }
+}

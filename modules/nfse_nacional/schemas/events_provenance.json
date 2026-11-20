@@ -1,0 +1,23 @@
+{
+  "official_documentation": "https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/documentacao-atual",
+  "official_archive": "https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/documentacao-atual/nfse-esquemas_xsd-v1-01-20260209.zip",
+  "official_event_layout": "https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/documentacao-atual/anexo_ii-sefin_adn-pedregevt_evt-snnfse-v1-01-20260122.xlsx",
+  "acquisition_note": "Direct downloads of the official ZIP/XLSX returned HTTP 403 in this environment. The two event schema files were retrieved from a public mirror of the national 1.01 schema. Their structure agrees with the official API manual and the event simple types already bundled; the bytes were not compared against a freshly downloaded government archive.",
+  "installed_in": [
+    "20260209",
+    "20261020"
+  ],
+  "dependency_note": "Uses each environment existing tiposComplexos_v1.01.xsd, tiposSimples_v1.01.xsd and xmldsig-core-schema.xsd without modifications.",
+  "files": [
+    {
+      "file": "pedRegEvento_v1.01.xsd",
+      "sha256": "e90b6816d29cca0bd5ed8f86ad98d3b7b0d8bbfc11a7583e6ff8f98170fd4009",
+      "retrieved_from": "https://raw.githubusercontent.com/Fm-s/open-nfse/main/schemas/1.01/pedRegEvento_v1.01.xsd"
+    },
+    {
+      "file": "tiposEventos_v1.01.xsd",
+      "sha256": "1b32bea21089dc232d78b62d805e9c07382f440d4e0ea2cb3fb6b82ebde68c11",
+      "retrieved_from": "https://raw.githubusercontent.com/Fm-s/open-nfse/main/schemas/1.01/tiposEventos_v1.01.xsd"
+    }
+  ]
+}

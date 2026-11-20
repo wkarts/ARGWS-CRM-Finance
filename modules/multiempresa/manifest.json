@@ -1,0 +1,14 @@
+{
+    "name": "multiempresa",
+    "version": "1.2.8",
+    "type": "perfex-module",
+    "php": ">=8.1",
+    "migration_type": "sequential",
+    "migration_start": 100,
+    "perfex_minimum": "3.2.0",
+    "schema_strategy": "installed_core_structure",
+    "author": {
+        "name": "WWSoft -> Wallace Kleiton",
+        "url": "https://t.me/wkartspro"
+    }
+}

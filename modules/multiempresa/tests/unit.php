@@ -1,0 +1,80 @@
+<?php
+declare(strict_types=1);
+if (PHP_SAPI !== 'cli') { http_response_code(404); exit; }
+require dirname(__DIR__).'/autoload.php';
+use Multiempresa\Application\App;
+use Multiempresa\Infrastructure\{Schema,SqlScript,Files,EncryptedFile};
+use Multiempresa\Domain\{Id,Failure,Context};
+use Multiempresa\Integration\HmacAuthenticator;
+$n=0;
+function test(bool $ok,string $label): void { global $n; if (!$ok) { throw new RuntimeException($label); } $n++; echo "PASS $label\n"; }
+function fails(callable $fn,string $reason): void { try {$fn();} catch (Failure $e) {test($e->reason===$reason,$reason);return;} throw new RuntimeException('Expected '.$reason); }
+$state=sys_get_temp_dir().'/multiempresa-unit-'.Id::new(); Files::mkdir($state);
+$app=new App(['central'=>['dsn'=>'sqlite::memory:','table_prefix'=>'core_multiempresa_'],'native_prefix'=>'core_','master_key'=>base64_encode(random_bytes(32)),'state_dir'=>$state,'base_url'=>'https://crm.example.test/modules/multiempresa/tenant.php','native_url'=>'https://crm.example.test/']);
+Schema::install($app->db,100);
+test(count($app->db->all("SELECT name FROM sqlite_master WHERE type='table'"))===5,'migration 100');
+Schema::install($app->db,101);
+test(count($app->db->all("SELECT name FROM sqlite_master WHERE type='table'"))===14,'migration 101');
+Schema::install($app->db,102);Schema::install($app->db,102);
+test(count($app->db->all("SELECT name FROM sqlite_master WHERE type='table'"))===21,'migration 102 and idempotent installation');
+Schema::install($app->db,104);Schema::install($app->db,104);
+test(count($app->db->all("SELECT name FROM sqlite_master WHERE type='table'"))===22,'migration 104 adds durable onboarding once');
+foreach([105,106,107,108,109,110] as $stage){Schema::install($app->db,$stage);}
+Schema::install($app->db,110);test(count($app->db->all("SELECT name FROM sqlite_master WHERE type='table'"))===31,'migrations 105 through 110 are sequential and idempotent');
+Schema::install($app->db,112);Schema::install($app->db,112);test(count($app->db->all("SELECT name FROM sqlite_master WHERE type='table'"))===32,'migration 112 creates lookup cache idempotently');
+Schema::install($app->db,120);Schema::install($app->db,120);test(count($app->db->all("SELECT name FROM sqlite_master WHERE type='table'"))===34,'migration 120 adds routes and staff preferences idempotently');
+$app->db->exec("INSERT INTO pme_settings(name,value) VALUES('example','pme_users')");
+test($app->db->one("SELECT value FROM pme_settings WHERE name='example'")['value']==='pme_users','SQL namespace preserves literal values');
+$app->db->pdo->exec('CREATE TABLE core_staff(staffid INT,email TEXT,firstname TEXT,lastname TEXT,password TEXT,active INT,admin INT,two_factor_auth_enabled INT)');
+$app->db->pdo->exec("INSERT INTO core_staff VALUES(1,'admin@example.test','Native','Admin','first-hash',1,1,0)");
+$actor=$app->auth->syncNative(1);test((int)$actor['native_staff_id']===1,'native staff identity');
+$session=$app->auth->createSession($actor,null,false);test($app->auth->session($session['token'])['id']===$actor['id'],'native identity session');
+$app->db->pdo->exec("UPDATE core_staff SET password='second-hash'");test($app->auth->session($session['token'])===null,'password change invalidates session');
+$app->db->pdo->exec('UPDATE core_staff SET active=0');fails(fn()=>$app->auth->syncNative(1),'native_staff_disabled');
+fails(fn()=>Id::identifier('tbl;DROP TABLE'),'invalid_identifier');fails(fn()=>Id::slug('../tenant'),'invalid_slug');
+$sealed=$app->vault->seal(['secret'=>'abc']);test($app->vault->open($sealed)['secret']==='abc','secret encryption');
+$bytes=base64_decode($sealed);$bytes[30]=chr(ord($bytes[30])^1);fails(fn()=>$app->vault->open(base64_encode($bytes)),'vault_integrity');
+$sql="INSERT INTO `tblclients` VALUES ('tbl literal; text','quoted \\' text'); CREATE TABLE `tbltest` (`id` INT);";
+test(count(SqlScript::statements($sql))===2,'SQL statements with quoted delimiters');
+test(str_contains(SqlScript::rewrite($sql,'tbl','c1_'),'`c1_clients`'),'SQL prefix rewrite');
+test(str_contains(SqlScript::rewrite($sql,'tbl','c1_'),"'tbl literal; text'"),'SQL rewrite does not change business strings');
+$body='{"id":"evt-1","data":{"value":1}}';$stamp=(string)time();$h=['x-pme-timestamp'=>$stamp,'x-pme-signature'=>hash_hmac('sha256',$stamp.'.'.$body,'key')];
+test((new HmacAuthenticator())->authenticate($h,$body,'key',time())==='evt-1','generic webhook signature');
+fails(fn()=>(new HmacAuthenticator())->authenticate($h,$body.' ','key',time()),'webhook_auth');
+fails(fn()=>(new HmacAuthenticator())->authenticate($h,$body,'key',time()+600),'webhook_auth');
+Files::write($state.'/input','abc'.random_bytes(200000));$cipher=new EncryptedFile($app->vault);$cipher->encrypt($state.'/input',$state.'/backup');$cipher->decrypt($state.'/backup',$state.'/output');
+test(hash_file('sha256',$state.'/input')===hash_file('sha256',$state.'/output'),'stream backup roundtrip');
+$data=file_get_contents($state.'/backup');$data[60]=chr(ord($data[60])^1);Files::write($state.'/broken',$data);fails(fn()=>$cipher->decrypt($state.'/broken',$state.'/badoutput'),'backup_integrity');
+fails(fn()=>Files::inside($state,'../escape'),'path');
+$id=Id::new();$ctx=new Context($id,Id::new(),'prefix','a_','https://example.test/','',[],'12345678901234567890123456789012');
+test($ctx->namespace('cache')==='pme:'.$id.':cache','tenant namespace');
+try { $ctx->prefix='b_'; throw new RuntimeException('Context mutable'); } catch (Error $e) { test(true,'immutable context'); }
+$org=$app->catalog->createOrganization($actor,'Organização de teste','teste');$company=Id::new();
+$secret=$app->vault->seal(['connection'=>['host'=>'127.0.0.1','port'=>3306,'database'=>'test','username'=>'scope','password'=>'private'],'encryption_key'=>str_repeat('a',32)]);
+$app->db->exec("INSERT INTO pme_companies(id,organization_id,slug,name,mode,table_prefix,storage_identity,secrets,status,created_at) VALUES(?,?,?,?,?,?,?,?,?,?)",[$company,$org,'rascunho','Rascunho','prefix','test_',hash('sha256','unit-scope'),$secret,'failed',time()]);
+$app->db->exec("INSERT INTO pme_onboardings(id,request_key,actor_id,organization_id,company_id,digest,payload,steps,status,step_index,created_at,updated_at) VALUES(?,?,?,?,?,?,?,'[]','failed',0,?,?)",[Id::new(),Id::new(),$actor['id'],$org,$company,str_repeat('a',64),$app->vault->seal(['settings'=>['language'=>'english','timezone'=>'UTC']]),time(),time()]);
+$detail=(new \Multiempresa\Application\CompanyManager($app))->detail($actor,$company);
+test($detail['language']==='english'&&$detail['timezone']==='UTC','editing a failed registration preserves the selected language and timezone');
+$url=\Multiempresa\Http\Entry::url($app,$app->config['base_url'].'/o/test/e/one/');
+test(str_contains($url,'?__pme_route=/o/test/e/one/'),'query entry generation');
+test(\Multiempresa\Http\Entry::path($url)==='/modules/multiempresa/tenant.php/o/test/e/one/','native virtual URI context');
+$_GET=['__pme_route'=>'/o/test/e/one/admin/clients?filter=active','page'=>'2'];$_POST=[];
+\Multiempresa\Http\Entry::normalize($app);
+test($_GET===['filter'=>'active','page'=>'2']&&!isset($_REQUEST['__pme_route']),'transport parameter is removed and native query preserved');
+foreach([[], '//foreign.test/path', "/o/test/\0bad"] as $route){$_GET=['__pme_route'=>$route];fails(fn()=>\Multiempresa\Http\Entry::normalize($app),'uri');}
+test(!\Multiempresa\Application\GlobalSettings::customDns(\Multiempresa\Application\GlobalSettings::defaults()['dns']),'custom DNS is optional by default');
+test(\Multiempresa\Application\DatabaseProvisioning::generatedDatabaseName('empresa_dados')==='empresa_dados','short automatic database name stays unchanged');
+$long=str_repeat('org_',12).'empresa_a';$bounded=\Multiempresa\Application\DatabaseProvisioning::generatedDatabaseName($long);
+test(strlen(str_replace('_','\\_',$bounded))<=64&&$bounded===\Multiempresa\Application\DatabaseProvisioning::generatedDatabaseName($long),'long automatic name has a stable persisted privilege scope');
+test($bounded!==\Multiempresa\Application\DatabaseProvisioning::generatedDatabaseName(substr($long,0,-1).'b'),'truncated names keep distinct company destinations');
+test(Id::prefix('', 'database')==='', 'exclusive database accepts an empty table prefix');
+fails(fn()=>Id::prefix('', 'prefix'), 'invalid_identifier');
+fails(fn()=>Id::identifier(''), 'invalid_identifier');
+fails(fn()=>Id::prefix('x` DROP TABLE clients'), 'invalid_identifier');
+$bare="CREATE TABLE `clients` (`id` INT, `name` VARCHAR(100)); INSERT INTO `clients` (`id`,`name`) VALUES(1,'clients tblclients');";
+test(SqlScript::rewrite($bare,'','')===$bare, 'unprefixed snapshot keeps table and column names unchanged');
+$mapped=SqlScript::rewrite($bare,'','r_', ['clients']);
+test(str_contains($mapped,'`r_clients` (`id`')&&str_contains($mapped,"'clients tblclients'")&&!str_contains($mapped,'`r_id`'), 'restoring unprefixed SQL maps only table names');
+test(str_contains(SqlScript::rewrite('ALTER TABLE `orders` ADD FOREIGN KEY (`client`) REFERENCES `clients` (`id`)','','r_', ['orders','clients']), 'REFERENCES `r_clients` (`id`)'), 'unprefixed foreign keys map referenced tables, not columns');
+fails(fn()=>SqlScript::rewrite($bare,'','r_'), 'sql_table_map');
+echo "RESULT $n assertions passed\n";

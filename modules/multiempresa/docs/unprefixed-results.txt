@@ -1,0 +1,20 @@
+PASS unprefixed direct provisioning ignores a prefix for a new exclusive database
+PASS unprefixed physical core tables have bare names
+PASS unprefixed initial administrator uses unprefixed staff table
+PASS unprefixed shared storage cannot enumerate a whole database with an empty prefix
+PASS unprefixed module deactivation preserves unprefixed data
+PASS unprefixed module reactivation works without reprovisioning
+PASS unprefixed encrypted backup includes all unprefixed company tables
+PASS unprefixed restore keeps declared destination prefix (empty)
+PASS unprefixed restore preserves column names and literal values
+PASS unprefixed restore verifies foreign keys within destination
+PASS unprefixed restore keeps declared destination prefix rest_
+PASS unprefixed restore preserves column names and literal values
+PASS unprefixed restore verifies foreign keys within destination
+PASS unprefixed legacy prefixed backup restores into a new unprefixed database
+PASS unprefixed restore never renames or overwrites source tables
+PASS unprefixed empty prefix never permits deletion of the primary database
+PASS unprefixed deletion plan inventories bare table names
+PASS unprefixed confirmed deletion removes unprefixed owned tables and registration
+PASS unprefixed deletion preserves the original restore source database
+RESULT 19 unprefixed assertions passed

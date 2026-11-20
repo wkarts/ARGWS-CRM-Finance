@@ -1,0 +1,59 @@
+{
+  "status": "mirror_not_compared_with_official_zip",
+  "note": "Esquemas de autoria do Sistema Nacional NFS-e obtidos de espelho público; gov.br respondeu HTTP 403 na sessão. SHA256 abaixo identifica o pacote embarcado, não prova igualdade ao arquivo oficial. Confirmar antes de produção.",
+  "source_commit": "e48919df29cbc8dc5f635d212ca10fc54b59cf85",
+  "official_urls": {
+    "20260209": "https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/documentacao-atual/nfse-esquemas_xsd-v1-01-20260209.zip",
+    "20261020": "https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/producao-restrita/esquemas_prod_restrita_20261020.zip"
+  },
+  "files": [
+    {
+      "path": "20260209/DPS_v1.01.xsd",
+      "source": "https://raw.githubusercontent.com/Gomes343/PyNFSeNacional/e48919df29cbc8dc5f635d212ca10fc54b59cf85/tests/xsd/20260209/DPS_v1.01.xsd",
+      "sha256": "fe45e5250a48e519aba89fc6a472863b8e602ed957778fb64692804933a00d0c",
+      "size": 691
+    },
+    {
+      "path": "20260209/tiposComplexos_v1.01.xsd",
+      "source": "https://raw.githubusercontent.com/Gomes343/PyNFSeNacional/e48919df29cbc8dc5f635d212ca10fc54b59cf85/tests/xsd/20260209/tiposComplexos_v1.01.xsd",
+      "sha256": "e8e09d525574cc224ca6d1f8d8eb0366043ab2a3aa8d0d234058e6244d60e371",
+      "size": 116856
+    },
+    {
+      "path": "20260209/tiposSimples_v1.01.xsd",
+      "source": "https://raw.githubusercontent.com/Gomes343/PyNFSeNacional/e48919df29cbc8dc5f635d212ca10fc54b59cf85/tests/xsd/20260209/tiposSimples_v1.01.xsd",
+      "sha256": "0d07f9c607af4df1449d21ccedd8eb1ef30df04f21f9f50f4e2f18a805a762fa",
+      "size": 70709
+    },
+    {
+      "path": "20260209/xmldsig-core-schema.xsd",
+      "source": "https://raw.githubusercontent.com/Gomes343/PyNFSeNacional/e48919df29cbc8dc5f635d212ca10fc54b59cf85/tests/xsd/20260209/xmldsig-core-schema.xsd",
+      "sha256": "49848f732663aecb618d72ad6130c5c3240f0a10f3a1a8544b7d48a6c726046f",
+      "size": 10610
+    },
+    {
+      "path": "20261020/DPS_v1.01.xsd",
+      "source": "https://raw.githubusercontent.com/Gomes343/PyNFSeNacional/e48919df29cbc8dc5f635d212ca10fc54b59cf85/tests/xsd/20261020/DPS_v1.01.xsd",
+      "sha256": "fe45e5250a48e519aba89fc6a472863b8e602ed957778fb64692804933a00d0c",
+      "size": 691
+    },
+    {
+      "path": "20261020/tiposComplexos_v1.01.xsd",
+      "source": "https://raw.githubusercontent.com/Gomes343/PyNFSeNacional/e48919df29cbc8dc5f635d212ca10fc54b59cf85/tests/xsd/20261020/tiposComplexos_v1.01.xsd",
+      "sha256": "4f66f7c15bd3b05b3a16cbe5fa671b90c10e4c9c74276038730be1c8c794b721",
+      "size": 109741
+    },
+    {
+      "path": "20261020/tiposSimples_v1.01.xsd",
+      "source": "https://raw.githubusercontent.com/Gomes343/PyNFSeNacional/e48919df29cbc8dc5f635d212ca10fc54b59cf85/tests/xsd/20261020/tiposSimples_v1.01.xsd",
+      "sha256": "562e326724f85cd7c41176d35e67c542376784d4c950ec1719704d480a8af226",
+      "size": 71632
+    },
+    {
+      "path": "20261020/xmldsig-core-schema.xsd",
+      "source": "https://raw.githubusercontent.com/Gomes343/PyNFSeNacional/e48919df29cbc8dc5f635d212ca10fc54b59cf85/tests/xsd/20261020/xmldsig-core-schema.xsd",
+      "sha256": "8c9792a056aedcadfc95bf16f2d7448a35da40df71533e20aea37d0329980c48",
+      "size": 10312
+    }
+  ]
+}

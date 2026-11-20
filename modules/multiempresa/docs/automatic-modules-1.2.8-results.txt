@@ -1,0 +1,60 @@
+PASS native Perfex schema fixture
+PASS native Perfex login
+PASS module activation through native Modules screen
+PASS native module panel
+PASS organization creation with native CSRF
+PASS database and prefix company provisioning
+PASS auto modules exclusive onboarding completes
+PASS auto modules shared onboarding completes
+PASS auto modules native migrations reach target auto_one (1.0.2)
+PASS auto modules each pending migration executes once auto_one
+PASS auto modules upgrade never reruns activation hook auto_one
+PASS auto modules native migrations reach target auto_two (1.0.2)
+PASS auto modules each pending migration executes once auto_two
+PASS auto modules upgrade never reruns activation hook auto_two
+PASS auto modules never activated package remains uninstalled 
+PASS auto modules native migrations reach target upd_auto_one (1.0.2)
+PASS auto modules each pending migration executes once upd_auto_one
+PASS auto modules upgrade never reruns activation hook upd_auto_one
+PASS auto modules native migrations reach target upd_auto_two (1.0.2)
+PASS auto modules each pending migration executes once upd_auto_two
+PASS auto modules upgrade never reruns activation hook upd_auto_two
+PASS auto modules never activated package remains uninstalled upd_
+PASS auto modules inactive installed module remains inactive after migrations
+PASS auto modules suspended company remains suspended
+PASS auto modules no onboarding row is created, reopened or rewritten by updates
+PASS auto modules unassigned package is never provisioned to a company
+PASS auto modules another company receives no implicit module assignment
+PASS auto modules unchanged packages create no new backup or migration
+PASS auto modules failed migration restores original company availability
+PASS auto modules failed migration restores the previous installed version
+PASS auto modules automatic rollback preserves original business data
+PASS auto modules automatic rollback removes partial DDL
+PASS auto modules completed updates of other modules are preserved
+PASS auto modules failed update records an automatic retry instead of a new onboarding
+PASS auto modules automatic retry completes the pending migration
+PASS auto modules retry never repeats previously completed migrations
+PASS auto modules successful retry clears its pending state
+PASS auto modules interrupted publication finalizes an already applied worker result
+PASS auto modules finalization never repeats migrations or creates a replacement backup
+PASS auto modules interrupted worker restores the prior data before core maintenance
+PASS auto modules interrupted worker recovery removes partial DDL
+PASS auto modules recovered worker retries without reinstalling the module
+PASS auto modules code-only update advances native version and preserves disabled state
+PASS auto modules same-version file replacements update the private copy
+PASS auto modules code-only changes never invoke activation hooks
+PASS auto modules first activation source error is reproduced
+PASS auto modules corrected package resumes the same failed execution automatically: []
+PASS auto modules automatic onboarding resumption preserves completed steps
+PASS auto modules migration gap keeps the previous version and company available
+PASS auto modules corrected migration sequence is applied automatically
+PASS auto modules automatic update never runs a downgrade
+PASS auto modules native scheduler updates an idle suspended company
+PASS auto modules background update preserves company and module states
+PASS auto modules physical company deletion removes its pending module-update state
+PASS auto modules physical deletion removes the deleted company from the scan cursor
+RESULT 49 automatic module update assertions passed
+PASS HTTP first access completes core and module maintenance
+PASS HTTP native core migration precedes module migration without reinstalling
+PASS concurrent workers execute the pending migration once
+RESULT automatic module native integration passed

@@ -1,0 +1,5 @@
+PASS identity orphan with a foreign grant is deleted instead of reassigned
+PASS identity stale grant and authenticated session are removed
+PASS identity pre-existing principal and foreign company are preserved
+PASS identity repeated cleanup does not recreate an identity
+RESULT 4 identity cleanup assertions passed

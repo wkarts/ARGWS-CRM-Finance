@@ -1,0 +1,844 @@
+PASS native Perfex schema fixture
+PASS native Perfex login
+PASS module activation through native Modules screen
+PASS native module panel
+PASS organization creation with native CSRF
+PASS database and prefix company provisioning
+PASS native SSO and dashboard alfa
+PASS native clients invoices settings portal alfa
+PASS native SSO and dashboard beta
+PASS native clients invoices settings portal beta
+PASS branding primary administration also loads scoped header styling
+PASS branding native general settings opens
+PASS branding three branding uploads accepted via native settings
+MEASURE branding settings POST 0.092s
+PASS branding settings and scoped sticky header remain available after saving
+PASS branding stored company_logo
+PASS branding branding served company_logo 200
+PASS branding correct SVG content company_logo
+PASS branding principal uploads untouched company_logo
+PASS branding other company branding unchanged company_logo
+PASS branding stored company_logo_dark
+PASS branding branding served company_logo_dark 200
+PASS branding correct SVG content company_logo_dark
+PASS branding principal uploads untouched company_logo_dark
+PASS branding other company branding unchanged company_logo_dark
+PASS branding stored favicon
+PASS branding branding served favicon 200
+PASS branding principal uploads untouched favicon
+PASS branding other company branding unchanged favicon
+PASS branding native HTML contains both logos and favicon
+PASS branding static server reproduces missing image before native PHP entry
+PASS branding actual Settings image URL survives static server: /df3d28eaf74527321b37/__pme/branding
+PASS branding native URL avoids static image extension
+PASS branding exact stored image bytes from generated URL
+PASS branding actual Settings image URL survives static server: /df3d28eaf74527321b37/__pme/branding
+PASS branding native URL avoids static image extension
+PASS branding exact stored image bytes from generated URL
+PASS branding actual Settings image URL survives static server: /df3d28eaf74527321b37/__pme/branding
+PASS branding native URL avoids static image extension
+PASS branding exact stored image bytes from generated URL
+PASS branding favicon loads without an administrator session
+PASS branding branding is revalidated instead of retaining stale browser cache
+PASS branding HEAD returns image metadata without a response body
+PASS branding same image name cannot expose another company upload
+PASS branding malformed filename rejected file=../favicon.png
+PASS branding malformed filename rejected file=%2Fetc%2Fpasswd
+PASS branding malformed filename rejected file[]=favicon.png
+PASS branding malformed filename rejected file=..%5Cfavicon.png
+PASS branding malformed filename rejected file=%00favicon.png
+PASS branding missing image does not return a login page or native HTML
+PASS branding branding endpoint cannot mutate uploads
+PASS branding native favicon replacement completes with static-image interception
+PASS branding Settings refresh reloads the updated favicon URL
+PASS branding replacing the same favicon filename changes the generated cache version
+PASS branding new favicon content is served immediately
+PASS branding customer login renders company branding without an administrator route
+PASS branding customer login branding also survives static interception
+PASS branding customer login branding also survives static interception
+PASS branding header and navigation admin
+PASS branding header and navigation admin/staff
+PASS branding header and navigation admin/clients
+PASS branding header and navigation admin/settings?group=general
+RESULT 51 native branding assertions passed
+PASS domains pending host answers installation proof without entering native principal
+PASS domains unverified domain cannot enter company or principal
+PASS domains unknown wildcard hostname rejected before principal bootstrap
+PASS domains verified domain reaches native tenant without server rewrite changes
+PASS domains custom domain cannot select another company
+PASS domains public logo remains available during module maintenance with SVG sandbox
+PASS domains extensionless branding endpoint works on a verified custom domain during maintenance
+RESULT 7 native domain assertions passed
+PASS native customer POST and physical company isolation
+PASS integrations use clear optional permission labels without raw technical scopes
+PASS all native administration tabs
+PASS private files and unauthorized native cron blocked
+PASS 3.2.0 schema version accepted without patch whitelist
+PASS 3.2.0 installed structure retained
+PASS native version preserved during provisioning 320
+PASS business records not cloned 320
+PASS module activation not inherited 320
+PASS configuration secrets not cloned 320
+PASS later option names not added 320
+PASS external module tables excluded 320
+PASS clean seeds tolerate optional column absence 320
+PASS 3.2.1 schema version accepted without patch whitelist
+PASS 3.2.1 installed structure retained
+PASS 3.2.2 schema version accepted without patch whitelist
+PASS 3.2.2 installed structure retained
+PASS 3.2.3 schema version accepted without patch whitelist
+PASS 3.2.3 installed structure retained
+PASS 3.2.4 schema version accepted without patch whitelist
+PASS 3.2.4 installed structure retained
+PASS 3.2.5 schema version accepted without patch whitelist
+PASS 3.2.5 installed structure retained
+PASS 3.2.6 schema version accepted without patch whitelist
+PASS 3.2.6 installed structure retained
+PASS 3.2.7 schema version accepted without patch whitelist
+PASS 3.2.7 installed structure retained
+PASS 3.2.8 schema version accepted without patch whitelist
+PASS 3.2.8 installed structure retained
+PASS 3.2.9 schema version accepted without patch whitelist
+PASS 3.2.9 installed structure retained
+PASS native version preserved during provisioning 329
+PASS business records not cloned 329
+PASS module activation not inherited 329
+PASS configuration secrets not cloned 329
+PASS later option names not added 329
+PASS external module tables excluded 329
+PASS clean seeds tolerate optional column absence 329
+PASS custom module foreign key is deferred instead of blocking initial provisioning
+PASS new tenant has no foreign reference to central module data
+PASS foreign key adaptation copies no business records
+PASS actual database/code mismatch still rejected
+PASS native module minimum is 3.2.0
+PASS native author follows provided model
+PASS native developer link follows provided model
+RESULT 41 compatibility assertions passed (schema fixtures; not full 3.2.x distributions)
+PASS central prefixed metadata
+PASS two companies in one database stay isolated
+PASS storage_owned
+PASS SSO ticket binds company
+PASS sso_ticket
+PASS SSO cookie cannot select another company
+PASS membership_required
+PASS api_token
+PASS webhook persisted before acknowledgement
+PASS webhook retry is idempotent
+PASS event_conflict
+PASS event worker processes queued item
+PASS generic inbox delivery completed
+PASS inbox belongs to resolved company
+PASS other company inbox unchanged
+PASS backup job completed
+PASS encrypted backup exists
+PASS restore requires inspection before reopening
+PASS native customer restored
+PASS attachment restored
+PASS original database preserved on restore
+PASS native cron in isolated process
+PASS native third-party module activation in selected company
+PASS module DDL does not leak to adjacent prefix
+PASS native module deactivation preserves data
+PASS partial DDL marks update failed
+PASS partial DDL keeps global access blocked
+PASS failure occurred after actual MySQL DDL
+PASS restored DDL update resumes and verifies all companies
+PASS same migration class name works in separate module processes
+PASS maintenance
+PASS native cron scheduler runs without manual configuration
+PASS audit integrity update.planned
+PASS audit integrity backup.created
+PASS audit integrity module.release_reviewed
+PASS audit integrity update.published
+PASS audit integrity backup.restore_verified
+PASS audit integrity company.restore_verified
+PASS audit integrity membership.revoked
+PASS audit integrity company.created
+PASS audit integrity backup.created
+PASS audit integrity backup.created
+PASS audit integrity company.restore_verified
+PASS audit integrity company.entered
+PASS audit integrity company.entered
+PASS audit integrity backup.created
+PASS audit integrity module.approved
+PASS audit integrity company.entered
+PASS audit integrity backup.restore_verified
+PASS audit integrity module.updated
+PASS audit integrity module.approved
+PASS audit integrity company.created
+PASS audit integrity backup.created
+PASS audit integrity installation.organization_changed
+PASS audit integrity membership.granted
+PASS audit integrity module.release_reviewed
+PASS audit integrity company.created
+PASS audit integrity backup.created
+PASS audit integrity module.disabled
+PASS audit integrity backup.created
+PASS audit integrity settings.updated
+PASS audit integrity endpoint.created
+PASS audit integrity update.failed
+PASS audit integrity token.issued
+PASS audit integrity organization.created
+PASS audit integrity module.approved
+PASS audit integrity backup.created
+PASS audit integrity token.issued
+RESULT 68 native integration assertions passed
+PASS HTTP API token scope and cross-company rejection
+PASS automatic native sequential module migration 100 to 128 without a database button
+PASS migration retires lookup configuration without requiring administrator input
+PASS native Cloudflare test uses submitted values, rejects nonofficial endpoint and never persists the preview
+PASS wizard complete wizard profile certificate bulk modules and impact review rendered
+PASS wizard native organizations administration rendered
+PASS wizard native settings administration rendered
+PASS wizard native logs administration rendered
+PASS wizard search is bound SQL data
+PASS wizard invalid status rejected
+PASS wizard global credentials never returned
+PASS wizard administrative connection verified
+PASS wizard organization grid searches and paginates
+PASS wizard Multiempresa cannot enter a tenant even through direct API
+PASS wizard CNPJ check digits validated in backend
+PASS wizard automatic preflight succeeds without per-company administrative credentials
+PASS wizard registration is distinct from completed provisioning
+PASS wizard duplicate initial submit reuses same execution
+PASS wizard reused request key rejects changed data
+PASS wizard reprovision requires an impact plan
+PASS wizard database resources complete before schema stage
+PASS wizard first company completes every mandatory stage: None
+PASS wizard completed initial execution cannot run twice
+PASS wizard automatic exclusive database and module tables have no prefix
+PASS wizard normalized company profile persisted
+PASS wizard tenant uses a separate application credential
+PASS wizard Multiempresa never installed or activated in tenant
+PASS wizard company registration can be edited after provisioning
+PASS wizard editing preserves native data
+PASS wizard reprovision review declares reuse and configuration replacement
+PASS wizard explicit impact acceptance required
+PASS wizard confirmed reprovision runs a new tracked execution
+PASS wizard reprovision preserves existing business data
+PASS wizard impact confirmation is single use
+PASS wizard second company in same organization provisioned
+PASS wizard automatic prefix mode and module installation complete
+PASS wizard other prefix data preserved
+PASS wizard generated prefix credential cannot query another company tables
+PASS wizard manual root/global privileges rejected before changes
+PASS wizard manual existing database with scoped credentials provisioned
+PASS wizard manual exclusive database also has no prefix
+PASS wizard insufficient manual permissions detected before DDL
+PASS wizard manual prefix isolation with scoped table grants provisioned
+PASS wizard organization changes invalidate a prior impact confirmation
+PASS wizard abandoned execution is identified without confusing initial creation with reprovision
+PASS wizard confirmed retry resumes interrupted execution
+PASS wizard missing required A1 blocks success at certificate stage
+PASS wizard A1 upload works through native multipart endpoint
+PASS wizard certificate correction resumes and completes mandatory stages
+PASS wizard module failure does not report success and retains completed steps
+PASS wizard failed module can resume after correction without recreating completed schema
+PASS wizard failure logs filter by company and status
+PASS wizard new execution logs identify resumed stages
+PASS wizard filtered logs downloadable as JSONL
+PASS wizard persistent selector shows active company
+PASS wizard selector hides explicitly authorized companies of another organization
+PASS wizard same-organization switch completes without another login
+PASS wizard central session remains available
+PASS wizard deletion plan inventories exact tables
+PASS wizard confirmed deletion physically removes company
+PASS wizard prefix deletion removes only confirmed company tables
+PASS wizard prefix deletion preserves other companies
+PASS wizard organization deletion explicitly includes linked companies
+PASS wizard organization deletion physically removes linked companies and registration
+PASS wizard manual database preserved after deleting owned tables
+PASS wizard organization deletion preserves unrelated organizations
+PASS wizard physical deletion also purges organization history
+RESULT 63 wizard HTTP assertions passed
+PASS optional server actually rejects PATH_INFO
+PASS optional direct entry health works without server changes
+PASS optional lookup parameters are absent from global settings
+PASS optional native CEP endpoint returns internal lookup data without provider parameters
+PASS optional native CNPJ endpoint fills company data without configuration
+PASS optional invalid CNPJ rejected through the native endpoint
+PASS optional native settings page contains no technical lookup controls
+PASS optional all DNS integrations can be disabled
+PASS optional save registration without database credentials or DNS
+PASS optional duplicate save request reuses the same registration
+PASS optional draft does not allocate external resources
+PASS optional advance cannot provision a draft implicitly
+PASS optional draft registration remains editable
+PASS optional draft connection can be checked before provisioning
+PASS optional later initial provisioning uses the same draft record
+PASS optional starting a draft preserves the manually edited profile
+PASS optional no organization DNS record is required or created
+PASS optional no company DNS record is required or created
+PASS optional completion explains that current application address is used
+PASS optional initial provisioning request is idempotent after completion
+PASS optional changed draft provisioning replay is rejected
+PASS optional native SSO and selector work on generated entry
+PASS optional native public styles retain physical URLs for fonts and images
+PASS optional native routes preserve concatenated query parameters
+PASS optional retry impact has no DNS changes when disabled
+PASS optional legacy dns_configuration failure can be resumed without DNS
+PASS optional draft removal does not require a database connection
+PASS optional planned modules do not require activation consent while only saving
+PASS optional unprovisioned draft applies revised isolation and prefix
+PASS optional draft module selection still excludes central module
+PASS optional runtime configuration saves and validates through the module interface
+PASS optional invalid runtime choice preserves the working executable
+PASS optional wizard and editor inherit native Bootstrap modal and navigation
+PASS optional UI offers registration separately from provisioning
+PASS optional native navigation is consistent in access
+PASS optional native navigation is consistent in modules
+PASS optional native navigation is consistent in integrations
+PASS optional native navigation is consistent in events
+PASS optional native navigation is consistent in updates
+PASS optional native navigation is consistent in audit
+PASS optional module configuration uses installed module choices
+PASS optional logs display company names along with technical identifiers
+PASS optional organization without DNS can be fully removed
+PASS optional optional lifecycle preserves unrelated organization data
+RESULT 44 optional HTTP assertions passed
+PASS defaults one default list is normalized and saved
+PASS defaults changing defaults does not alter existing company modules
+PASS defaults central module cannot become a company default
+PASS defaults wizard receives the saved default list
+PASS defaults company grid counts available packages separately from enabled modules
+PASS defaults default packages are available while every module remains disabled
+PASS defaults progress distinguishes availability from activation
+PASS defaults availability never executes native installers or creates native activation rows
+PASS defaults availability never calls the activation hook
+PASS defaults native Modules screen lists the provisioned disabled package
+PASS defaults company administrator can activate an available package for the first time
+PASS defaults first manual activation runs the native hook
+PASS defaults manual activation leaves the other default package disabled
+PASS defaults first manual activation keeps completed provisioning intact
+PASS defaults clearing all defaults is retained in a saved registration
+PASS defaults wizard activates only the explicitly selected subset
+PASS defaults activation outside the provisioned selection is rejected
+PASS defaults review shows explicit removal of activation without removing availability
+PASS defaults confirmed revision can keep both packages available and disabled
+RESULT 19 module defaults HTTP assertions passed
+PASS feature numeric CNPJ checksum and normalization
+PASS feature alphanumeric CNPJ accepts the documented ASCII checksum
+PASS feature cnpj
+PASS feature cnpj
+PASS feature cep
+PASS feature http_url
+PASS feature http_url
+PASS feature Cloudflare token transmitted only in authorization header
+PASS feature Cloudflare token transmitted only in authorization header
+PASS feature Cloudflare token transmitted only in authorization header
+PASS feature Cloudflare token transmitted only in authorization header
+PASS feature DNS create then update reuses owned record ID
+PASS feature resource_owner
+PASS feature Cloudflare token transmitted only in authorization header
+PASS feature Cloudflare token transmitted only in authorization header
+PASS feature dns_owned_elsewhere
+PASS feature Cloudflare token transmitted only in authorization header
+PASS feature dns_owner
+PASS feature Cloudflare token transmitted only in authorization header
+PASS feature Cloudflare token transmitted only in authorization header
+PASS feature DNS deletion preserves unrelated records including TXT on same host
+PASS feature DNS resource lifecycle is durable
+PASS feature A1 owner and validity extracted from PKCS12
+PASS feature certificate contents and password stored encrypted
+PASS feature authorized backend integration accesses company certificate
+PASS feature certificate_password
+PASS feature certificate_file
+PASS feature organization_scope
+PASS feature organization_scope
+PASS feature organization_scope
+PASS feature organization_scope
+PASS feature structured logs redact nested secrets while preserving diagnosis
+PASS feature organization administrator cannot query another organization logs
+PASS feature database errors omit raw SQL values and credentials
+PASS feature platform_admin
+PASS feature organization_scope
+PASS feature legacy cross-organization membership cannot leak company grid
+PASS feature organization grid is restricted to assigned organization
+PASS feature legacy organizational grant cannot bypass audit scope
+PASS feature new company keeps previously applied organization destination
+PASS feature organization DNS plan can explicitly apply new destination
+RESULT 41 extended feature assertions passed (HTTP integrations use deterministic transports)
+PASS toggle native activation hook failure reported
+PASS toggle failed optional reactivation restores provisioned company status
+PASS toggle failed extension stays disabled natively
+PASS toggle failed extension stays disabled centrally
+PASS toggle state-only failure creates no full backup
+PASS toggle state change never changes onboarding progress
+PASS toggle successful retry remains a state toggle
+PASS toggle native deactivation hook failure reported
+PASS toggle deactivation failure does not strand entire site in maintenance
+PASS toggle failed first manual activation reports the original hook error
+PASS toggle failed first manual activation restores the usable company
+PASS toggle failed first activation rolls back installer data
+PASS toggle first manual activation retains its safety backup
+RESULT 13 module state assertions passed
+PASS DNS normalized token sent only in Authorization
+PASS DNS normalized token sent only in Authorization
+PASS DNS native payload A
+PASS DNS normalized token sent only in Authorization
+PASS DNS normalized token sent only in Authorization
+PASS DNS native payload AAAA
+PASS DNS normalized token sent only in Authorization
+PASS DNS normalized token sent only in Authorization
+PASS DNS native payload CNAME
+PASS DNS changing type updates the owned record instead of duplicating
+PASS DNS resource_owner
+PASS DNS cloudflare_endpoint
+PASS DNS normalized token sent only in Authorization
+PASS DNS http_403
+PASS DNS 403 preserves provider code without credentials
+PASS DNS failed initial GET leaves a removable reservation without provider access
+PASS DNS legacy failed GET reservation is released using logged proof
+PASS DNS normalized token sent only in Authorization
+PASS DNS normalized token sent only in Authorization
+PASS DNS removal uses the resource zone after global zone change
+PASS DNS normalized token sent only in Authorization
+PASS DNS normalized token sent only in Authorization
+PASS DNS normalized token sent only in Authorization
+PASS DNS wildcard shared across organizations creates only one record
+PASS DNS wildcard belongs to installation rather than deletable organization
+PASS DNS dry run makes no calls or resource reservations
+PASS DNS normalized token sent only in Authorization
+PASS DNS normalized token sent only in Authorization
+PASS DNS active hostname with pending SSL is not ready
+PASS DNS default CA omitted and configured custom origin sent
+PASS DNS normalized token sent only in Authorization
+PASS DNS ready only after both hostname and certificate are active
+PASS DNS normalized token sent only in Authorization
+PASS DNS normalized token sent only in Authorization
+PASS DNS explicit Lets Encrypt sent to provider without silently changing authority
+PASS DNS normalized token sent only in Authorization
+PASS DNS hostname_owner
+PASS DNS normalized token sent only in Authorization
+PASS DNS normalized token sent only in Authorization
+PASS DNS owned TLS hostname removed
+PASS DNS normalized token sent only in Authorization
+PASS DNS already missing TLS hostname removal is idempotent
+PASS DNS http_403
+PASS DNS real HTTP decoder retains only numeric error codes
+PASS DNS HTTPS proof accepts only the exact installation and hostname
+PASS DNS HTTPS proof rejects wrong hostname
+PASS DNS TLS failure keeps current address usable
+PASS DNS bounded HTTPS polling advances past an unavailable first host
+PASS DNS later company becomes ready independently of the failed organization hostname
+PASS DNS new settings saved encrypted with no token exposed
+PASS DNS simulation also suspends automatic hostname promotion
+PASS DNS simulation does not change active routing
+PASS DNS dns_zone_name
+PASS DNS connection test uses unsaved form values after normalization
+PASS DNS empty preview token retains the encrypted saved credential
+PASS DNS connection preview does not persist changed credentials or addresses
+PASS DNS cloudflare_configuration
+PASS DNS http_403
+PASS DNS DNS refusal reports supported token verification: active
+PASS DNS diagnostic only performs authenticated reads at official endpoints
+PASS DNS diagnostic never returns the API token
+PASS DNS http_403
+PASS DNS DNS refusal reports supported token verification: expired
+PASS DNS diagnostic only performs authenticated reads at official endpoints
+PASS DNS diagnostic never returns the API token
+PASS DNS http_403
+PASS DNS DNS refusal reports supported token verification: unsupported
+PASS DNS diagnostic only performs authenticated reads at official endpoints
+PASS DNS diagnostic never returns the API token
+PASS DNS normalized token sent only in Authorization
+PASS DNS normalized token sent only in Authorization
+PASS DNS physical organization deletion after failed DNS is usable
+PASS DNS physical organization deletion after failed DNS is usable
+RESULT 73 DNS lifecycle assertions passed (mock provider; no external mutations)
+PASS removed-company company_not_found
+PASS removed-company company_not_found
+PASS removed-company company_not_found
+PASS removed-company company_not_found
+PASS removed-company company_not_found
+RESULT 5 removed-company regression assertions passed
+PASS CORE obsolete registered fingerprint is automatically synchronized
+PASS CORE synchronization is idempotent
+PASS CORE previous core_changed failure resumes automatically without an impact plan
+PASS CORE unfinished wizard continues after internal release registration changes: null
+PASS CORE bootstrap structure is persisted before DDL
+PASS CORE bootstrap template is encrypted and bound to the company
+PASS CORE resuming keeps the pinned template when the primary schema changes
+PASS CORE template resume never reseeds or overwrites business data
+PASS CORE completed native code patch is detected without manual release registration
+PASS CORE failure schema_source_version (received schema_source_version)
+PASS CORE incomplete native update cannot publish a mismatched schema
+PASS CORE real native 3.4.1 migration fixture
+PASS CORE failure operation_busy (received operation_busy)
+PASS CORE live isolated worker blocks concurrent migration or rollback
+PASS CORE native migration runs automatically before tenant access
+PASS CORE native migration executes the actual Perfex SQL and defaults
+PASS CORE automatic native update preserves existing customers
+PASS CORE exactly one encrypted backup is taken before migration
+PASS CORE already current database is not migrated or backed up again
+PASS CORE failure migration_job (received migration_job)
+PASS CORE late worker with an obsolete attempt cannot execute database changes
+PASS CORE failure downgrade (received downgrade)
+PASS CORE failure rollback_backup (received rollback_backup)
+PASS CORE invalid automatic backup cannot alter tenant data
+PASS CORE failure primary_protected (received primary_protected)
+PASS CORE failure core_update_pending (received core_update_pending)
+PASS CORE failed migration restores customer rows automatically
+PASS CORE failed migration rolls back completed nontransactional DDL
+PASS CORE incompatible database is not exposed while automatic retry is pending
+PASS CORE automatic backup and rollback preserve generated columns
+PASS CORE pending automatic maintenance retries successfully after code is available
+PASS CORE successful retry removes maintenance state
+PASS CORE primary installation schema is never migrated by tenant maintenance
+PASS CORE automatic maintenance resources remain removable independently of the organization
+RESULT 34 automatic core assertions passed
+PASS maintenance principal installation links to an organization without becoming a provisioned company
+PASS maintenance identity without primary authorization cannot access principal data
+PASS maintenance platform_admin
+PASS maintenance platform_admin
+PASS maintenance SQL projection changes table identifiers without altering strings and comments
+PASS maintenance real reported marketing module contains its legacy table prefix
+PASS maintenance real ma activation completes before the deliberate subsequent failure
+PASS maintenance real marketing SQL seed populates the company prefix
+PASS maintenance original external module source and SQL remain byte-identical
+PASS maintenance fleet-generated files and gateway extension installation preserve central source
+PASS maintenance missing table name is available without exposing raw SQL
+PASS maintenance review explicitly identifies the failed module removed from selection
+PASS maintenance retry preserves completed database structure and modules
+PASS maintenance changed packages update automatically before the company is released
+PASS maintenance automatic package refresh retains every completed module step
+PASS maintenance revised failed execution completes only after all remaining mandatory steps
+PASS maintenance returning to registration reapplies revised fields
+PASS maintenance skipping interrupted module preserves its partial tables
+PASS maintenance individual deactivation preserves the company
+PASS maintenance individual reactivation remains available after recovery
+PASS maintenance deactivating legacy gateway removes its private native loader without breaking the next module
+PASS maintenance updating an active module runs its native migration without repeating activation
+PASS maintenance company deletion review identifies only the selected company and preserves organization
+PASS maintenance provisioned company deletion leaves every organization and sibling company unchanged
+PASS maintenance physical company deletion also removes scoped history and identifiers
+PASS maintenance confirmed company files and backups are removed
+PASS maintenance removing the last company does not remove or disable its organization
+PASS maintenance deleted company has no logical tombstone
+PASS maintenance organization is physically deleted
+PASS maintenance deleted organization identifier can be reused for a new registration
+PASS maintenance update removes legacy completed logical deletions
+PASS maintenance legacy deleted organization identifier is available after update
+PASS maintenance uninstall preserve option inventories companies and protects principal
+PASS maintenance confirmation
+PASS maintenance unconfirmed removal cannot deactivate the module
+PASS maintenance plan_changed
+PASS maintenance primary_protected
+RESULT 37 maintenance assertions passed
+PASS purchase licensed purchase installer reproduces all ten fixed-prefix INSERT statements
+PASS purchase previous core and module steps finish before purchase activation
+PASS purchase restricted shared-prefix user rejects the unadapted purchase INSERT at line 339
+PASS purchase failed installer has already created the correctly prefixed partial table
+PASS purchase old private cache is recognized as requiring automatic rebuild
+PASS purchase retry retains the completed structure and module stages
+PASS purchase real purchase resumes to completion: []
+PASS purchase native purchase activation is complete
+PASS purchase resumption preserves existing purchase settings
+PASS purchase partial company data and completed module data survive
+PASS purchase all ten affected defaults exist exactly once after retry
+PASS purchase legacy table owned outside the company is untouched
+PASS purchase private runtime is rebuilt without changing source fingerprints
+PASS purchase native purchase migration 101 uses the company prefix
+PASS purchase native purchase migration 107 uses the company prefix
+PASS purchase native purchase migration 108 uses the company prefix
+PASS purchase actual purchase migration 101 executes its adapted SQL in native Perfex
+PASS purchase migration also leaves the unrelated legacy table untouched
+PASS purchase exclusive database reaches purchase with completed core stages
+PASS purchase exclusive database reproduces the exact reported MySQL 1146 on tblpurchase_option
+PASS purchase reported exclusive-database failure recovers without recreating company or database
+PASS purchase exclusive core and real purchase module use no table prefix
+PASS purchase automatic exclusive grants survive privilege-cache reload after retry
+PASS purchase generated database names fit the persisted escaped privilege scope
+PASS purchase fresh purchase provisions automatically in an exclusive database: []
+PASS purchase exclusive company receives its own defaults
+PASS purchase business data is never copied between companies
+PASS purchase shared purchase source and original migrations remain byte-identical
+RESULT 28 purchase assertions passed
+PASS native CSRF rejects untrusted mutation
+PASS organization temporary suspension preserves scoped grants while denying entry
+PASS organization destination organization is rechecked when ticket is consumed
+PASS organization source organization is rechecked when ticket is consumed
+PASS organization unlinked primary rejects a previously issued return ticket
+RESULT 4 ticket scope regression assertions passed
+PASS organization unaffiliated primary hides every tenant from selector
+PASS organization unaffiliated primary cannot switch via forged POST
+PASS organization relinking primary never resurrects revoked company grants
+PASS organization missing administrator rejects before provisioning
+PASS organization administrator password never returned in company details
+PASS organization creator has no implicit company membership even with global opt-in default
+PASS organization creator is not cloned into the new company
+PASS organization new company admin has no global role or primary access
+PASS organization new administrator has exactly one explicit company grant
+PASS organization global administrator cannot enter tenant without a grant
+PASS organization initial administrator signs in and reaches only own company
+PASS organization tenant initial admin cannot manage global central panel
+PASS organization disabled local staff management rejects native POST without module fields
+PASS organization central employee without module fields follows denied primary default
+PASS organization central employee never inherits creator company grants
+PASS organization tenant employee without module fields obeys local grant default on
+PASS organization tenant employee never inherits primary access on
+PASS organization tenant employee without module fields obeys local grant default off
+PASS organization tenant employee never inherits primary access off
+PASS organization legacy global-all setting cannot bypass organization isolation
+PASS organization global access does not create inherited memberships
+PASS organization changing global access to explicit immediately rejects ungranted company
+PASS organization duplicate staff identity rejected without implicit merging
+PASS organization creator opt-in across organizations is rejected before provisioning
+PASS organization independent company never receives creator membership
+PASS organization primary cannot switch to another organization even with explicit opt-in
+PASS organization staff selector searches active employees without passwords
+PASS organization ten-tab render access
+PASS organization ten-tab render modules
+PASS organization ten-tab render integrations
+PASS organization ten-tab render events
+PASS organization ten-tab render updates
+PASS organization ten-tab render audit
+PASS organization ten-tab render logs
+PASS organization ten-tab render settings
+PASS organization ten-tab render organizations
+PASS organization ten-tab render companies
+PASS organization audit filters and integrity details render
+PASS organization module availability action leaves module inactive
+PASS organization stale availability request never disables an active module
+PASS organization owned administrator form offers only peers of its organization
+PASS organization deletion removes exclusively owned native login identities even without a grant
+PASS organization deletion purges owned identity from users
+PASS organization deletion purges owned identity from user_preferences
+PASS organization deletion purges owned identity from memberships
+PASS organization deletion purges owned identity from org_members
+PASS organization deletion purges owned identity from user_organizations
+PASS organization deletion purges owned identity from sessions
+PASS organization deletion purges owned identity from tokens
+PASS organization deletion purges owned identity from tickets
+PASS organization deletion purges owned identity from switch_tickets
+PASS organization company deletion preserves the pre-existing principal administrator
+PASS organization same name slug and email create fresh company and identity IDs
+PASS organization deleted company route cannot resolve to the recreated company
+PASS organization recreated company receives only its selected initial administrator
+PASS organization legacy foreign membership is rejected before cleanup
+PASS organization idempotent upgrade cleanup physically removes legacy foreign grant
+PASS organization upgrade removes orphan identity without inferring ownership from a leftover foreign grant
+PASS organization deleting one company preserves explicitly shared identity in the same organization
+PASS organization remaining authorized company keeps its own membership
+PASS organization last company deletion removes both exclusive and formerly shared owned identities
+RESULT 61 organization HTTP assertions passed
+PASS unprefixed direct provisioning ignores a prefix for a new exclusive database
+PASS unprefixed physical core tables have bare names
+PASS unprefixed initial administrator uses unprefixed staff table
+PASS unprefixed shared storage cannot enumerate a whole database with an empty prefix
+PASS unprefixed module deactivation preserves unprefixed data
+PASS unprefixed module reactivation works without reprovisioning
+PASS unprefixed encrypted backup includes all unprefixed company tables
+PASS unprefixed restore keeps declared destination prefix (empty)
+PASS unprefixed restore preserves column names and literal values
+PASS unprefixed restore verifies foreign keys within destination
+PASS unprefixed restore keeps declared destination prefix rest_
+PASS unprefixed restore preserves column names and literal values
+PASS unprefixed restore verifies foreign keys within destination
+PASS unprefixed legacy prefixed backup restores into a new unprefixed database
+PASS unprefixed restore never renames or overwrites source tables
+PASS unprefixed empty prefix never permits deletion of the primary database
+PASS unprefixed deletion plan inventories bare table names
+PASS unprefixed confirmed deletion removes unprefixed owned tables and registration
+PASS unprefixed deletion preserves the original restore source database
+RESULT 19 unprefixed assertions passed
+PASS access unique short random addresses include principal
+PASS access legacy staff link canonicalized alfa 200 http://127.0.0.1:8879/df3d28eaf74527321b37/admin/staff
+PASS access alfa native route admin/staff/member
+PASS access alfa native route admin/roles
+PASS access alfa native route admin/clients
+PASS access alfa native route admin/invoices
+PASS access alfa native route admin/tasks
+PASS access alfa native route admin/settings
+PASS access alfa native route admin/modules
+PASS access alfa native route admin/projects
+PASS access native employee table AJAX alfa
+PASS access native employee company field alfa
+PASS access legacy staff link canonicalized beta 200 http://127.0.0.1:8879/1980f99100a9d633c152/admin/staff
+PASS access beta native route admin/staff/member
+PASS access beta native route admin/roles
+PASS access beta native route admin/clients
+PASS access beta native route admin/invoices
+PASS access beta native route admin/tasks
+PASS access beta native route admin/settings
+PASS access beta native route admin/modules
+PASS access beta native route admin/projects
+PASS access native employee table AJAX beta
+PASS access native employee company field beta
+PASS access primary native employee form has company grants
+PASS access native employee created with two explicit company grants
+PASS access both grants saved without manual staff IDs
+PASS access unselected principal is denied
+PASS access new local employee is not implicitly administrator
+PASS access permission-only native save revokes access
+PASS access tenant form rejects forged grant to another company before creation
+PASS access native tenant employee creation completes
+PASS access tenant-created login has neither global admin nor principal access
+PASS access native module page offers deactivate
+PASS access native header precedes module content deactivate
+PASS access tenant module screen hides package mutations
+PASS access GET does not mutate module
+MEASURE native deactivate 0.330s
+PASS access native deactivate succeeds and stays listed
+PASS access native registry reflects deactivate
+PASS access state toggle does not create full company backup deactivate
+PASS access toggle preserves provisioned status and workflow deactivate
+PASS access native module page offers activate
+PASS access native header precedes module content activate
+PASS access tenant module screen hides package mutations
+PASS access GET does not mutate module
+MEASURE native activate 0.545s
+PASS access native activate succeeds and stays listed
+PASS access native registry reflects activate
+PASS access state toggle does not create full company backup activate
+PASS access toggle preserves provisioned status and workflow activate
+PASS access tenant rejects uninstall/purchase
+PASS access tenant rejects upload
+PASS access tenant rejects upgrade_database/purchase
+PASS access tenant rejects update_version/purchase
+PASS access native module toggle requires CSRF
+PASS access restricted employee login opens first permitted company
+PASS access selector excludes unauthorized principal and revoked company
+PASS access direct principal URL cannot expose its data
+PASS access known hash does not grant company access
+PASS access non-admin receives native access-denied page
+PASS access non-admin direct module POST denied by backend
+PASS access principal cannot grant access across organizations
+PASS access selector hides authorized company in other organization
+PASS access cross-organization switch rejected despite explicit membership
+PASS access direct hash entry cannot bypass the identity organization
+PASS access login restores last company within the identity organization
+PASS access Multiempresa can be disabled normally
+PASS access disabled module does not leak principal data to tenant-only identities
+PASS access disabled module keeps principal access despite last company preference
+PASS access administrator login remains available while module is disabled
+PASS access principal can reactivate Multiempresa
+PASS access tenant-created employee can sign in through central login
+RESULT 70 company access HTTP assertions passed
+PASS tenant messages authorized tenant session opens
+PASS tenant messages module page has a simple user instruction
+PASS tenant messages technical onboarding instructions are absent from tenant page
+PASS tenant messages failed toggle returns ordinary support guidance
+PASS tenant messages failed toggle exposes no administrative diagnosis
+PASS tenant messages failed action keeps the company active
+PASS tenant messages principal retains the technical reason and source in administrative logs
+PASS tenant messages browser denial is a readable page
+PASS tenant messages browser denial hides module name, internal code and technology
+PASS tenant messages JSON retains API code and sanitizes user message
+PASS tenant messages temporary unavailable screen gives generic guidance
+PASS tenant messages authorized activation keeps its ordinary success message
+PASS tenant messages tenant staff screen avoids internal administration instructions
+PASS tenant messages principal administrative panel remains available
+RESULT 14 tenant message HTTP assertions passed
+PASS lifecycle principal belongs to chosen organization and remains protected
+PASS lifecycle native card switches to company without signing in again
+PASS lifecycle old principal page follows the newly active company
+PASS lifecycle stale principal AJAX requests cannot read previous company data
+PASS lifecycle ungranted company ID is rejected by native switch backend
+PASS lifecycle company card returns to the principal installation without new login
+PASS lifecycle return to principal revokes previous tenant session
+RESULT 7 native switch HTTP assertions passed
+PASS DOM connection result begins hidden
+PASS DOM incomplete connection shows a visible validation failure
+PASS DOM editing connection clears outdated feedback
+PASS DOM successful connection is visible and keeps credentials private
+PASS DOM failed connection has a distinct visible error state
+PASS DOM connection test shows loading and prevents duplicate requests
+PASS DOM response for changed credentials cannot display stale success
+PASS DOM connection fields stay grouped independently from storage
+PASS DOM manual exclusive database exposes credentials and hides the unused prefix
+PASS DOM native modal markup initializes without JavaScript errors
+PASS DOM wizard opens through native Bootstrap
+PASS DOM wizard has Cancel and Back controls without header X
+PASS DOM default modules are preselected for availability with activation off
+PASS DOM navigation and total remain outside the scrollable wizard body
+PASS DOM company card appears above native user profile
+PASS DOM company icon is always visible without logo, favicon or icon font
+PASS DOM native Perfex progress initialization never writes undefined percent
+PASS DOM new company defaults to independent administrator without creator access
+PASS DOM foreign organization requires independent administrator and disables creator grant
+PASS DOM company identifier follows the entered name
+PASS DOM registration can be saved before providing infrastructure
+PASS DOM automatic mode inherits global connection and hides repeated credentials
+PASS DOM wizard explains the address when DNS is disabled
+PASS DOM select all excludes central and incompatible modules
+PASS DOM explicit bulk activation includes only selected compatible modules
+PASS DOM bulk keep inactive preserves availability selection
+PASS DOM deselect all clears the selection and activation choices
+PASS DOM review displays company and module choices without credentials
+PASS DOM Back preserves previously entered data
+PASS DOM visited step label allows returning directly to registration
+PASS DOM review can be reopened without recreating the registration
+PASS DOM Escape closes modal and removes the native backdrop
+PASS DOM save registration submits only the draft operation
+PASS DOM saved registration returns to the grid
+PASS DOM clearing all defaults sends an explicit empty selection
+PASS DOM complete CEP triggers automatically without blur or activation
+PASS DOM lookup uses a discreet loading indicator without blocking the form
+PASS DOM address fills automatically while manually entered fields are preserved
+PASS DOM suggestions do not replace a field edited after the response
+PASS DOM blur after automatic completion does not duplicate a successful request
+PASS DOM invalid CNPJ check digits prevent provider requests
+PASS DOM late response for the previous CNPJ cannot fill the current company
+PASS DOM manual edits made while loading are preserved and other company fields filled
+PASS DOM user can explicitly accept a suggestion for an unchanged field
+PASS DOM form reset discards pending responses from the previous registration
+PASS DOM outage shows a simple message and keeps manual registration available
+PASS DOM opening another modal closes the previous one and keeps one backdrop
+PASS DOM modal handoff waits for native hidden event during transitions
+PASS DOM individual company removal is visible in company grid
+PASS DOM company removal opens its own impact plan without requesting organization deletion
+PASS DOM failed DNS deletion offers a fresh review without a stuck expired plan
+PASS DOM fresh review resets acceptance and never executes deletion automatically
+PASS DOM invalid confirmation can be corrected without discarding an unconsumed plan
+PASS DOM retry sends the new plan identifier
+PASS DOM catalog availability is distinct from activation
+PASS DOM publishing from editor leaves package inactive
+PASS DOM activate all uses individual company operations and excludes Multiempresa
+PASS DOM deactivate all processes the same company and preserves individual controls
+PASS DOM failed progress stays at completed stages with readable native percentage
+PASS DOM failed workflow can return to registration while preserving immutable organization
+PASS DOM failed workflow module selection can be revised directly
+PASS DOM company interactions produced no DOM exceptions
+PASS DOM collapsible settings and all ten navigation destinations are present
+PASS DOM global module defaults load from saved configuration
+PASS DOM bulk changes mark global settings unsaved
+PASS DOM global default select all excludes incompatible packages
+PASS DOM installation and global save actions use consistent full-width form footers
+PASS DOM global screen contains no provider settings or lookup activation
+PASS DOM disabled DNS and manual database hide irrelevant global credentials
+PASS DOM existing DNS enables address fields without requiring Cloudflare
+PASS DOM manual DNS does not display Cloudflare-only diagnostics or certificate controls
+PASS DOM automatic integrations show only the parameters for their selected mode
+PASS DOM Cloudflare connection can be tested without creating a DNS record
+PASS DOM connection test sends current form credentials rather than silently testing stale saved values
+PASS DOM testing an edited credential does not save it automatically
+PASS DOM remaining global settings save successfully without a lookup object
+PASS DOM empty global defaults are persisted instead of restoring the previous list
+PASS DOM wildcard, simulation and HTTPS options persist through module settings
+PASS DOM global configuration interactions produced no DOM exceptions
+RESULT 79 native DOM assertions passed
+PASS native logout revokes company sessions
+PASS lifecycle uninstall requires explicit acceptance before deactivating
+PASS lifecycle preserve mode finishes resource check without deleting tenant data
+PASS lifecycle inactive native uninstall is intercepted for review
+PASS lifecycle native module code removal completes after confirmation
+PASS lifecycle preserve mode retains all company registrations and business data
+PASS lifecycle uninstall leaves no active principal login for tenant-only identities
+PASS lifecycle uninstall restores native entry and redirects outside removed alias
+PASS lifecycle reinstall reuses preserved registry and environments
+PASS lifecycle reinstall restores only logins disabled during reviewed uninstall
+PASS lifecycle preserved reinstall keeps principal short address
+PASS lifecycle remove mode inventories organizations and companies while protecting principal
+PASS lifecycle reviewed removal of all organizations and companies completes: 
+PASS lifecycle removal clears module company and organization catalog
+PASS lifecycle principal customers and staff remain untouched
+PASS lifecycle execution diagnosis remains available until removal finishes
+PASS lifecycle final native uninstall removes only module code
+PASS lifecycle remove mode physically drops all module tables after finishing
+PASS lifecycle full removal still preserves principal business data
+PASS lifecycle full removal deletes the module private configuration and encryption key
+PASS lifecycle other installed module packages remain untouched
+RESULT 20 uninstall HTTP assertions passed
+RESULT native module HTTP integration passed

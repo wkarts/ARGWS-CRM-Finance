@@ -1,0 +1,10 @@
+PASS routes primary receives random opaque identifier
+PASS routes primary identifier is persistent
+PASS routes strict_types remains first statement
+PASS routes repeated integration is idempotent
+PASS routes subdirectory URLs contain no organization or transport query
+PASS routes route lookup rejects unknown and malformed identifiers
+PASS routes removal preserves unrelated later native edits
+PASS routes existing hook content restored byte for byte
+PASS routes integration detaches symlinks without modifying their target
+RESULT 9 routes assertions passed
