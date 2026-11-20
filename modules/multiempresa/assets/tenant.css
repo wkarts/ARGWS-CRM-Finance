@@ -1,0 +1,3 @@
+/* Keep the native header in its normal flow and above content, below native modals. */
+@media screen { body.pme-tenant,body.pme-managed-header { height:auto; min-height:100vh; } body.pme-tenant #header,body.pme-managed-header #header { position:sticky; top:0; z-index:1001; } }
+@media print { body.pme-tenant #header,body.pme-managed-header #header { position:relative; } }

@@ -1,0 +1,1 @@
+PASS PHP syntax: 152 files

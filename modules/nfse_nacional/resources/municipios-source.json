@@ -1,0 +1,8 @@
+{
+  "source": "Receita Federal / Sped / e-Financeira — tabela Municípios, versão 5",
+  "url": "https://www.gov.br/sped/pt-br/assuntos/escrituracoes-digitais/e-financeira/manuais-e-documento-tecnicos/tabelas-de-codigos/municipios/@@download/file",
+  "retrieved_at": "2026-11-10",
+  "source_sha256": "4b80f443ba92abd93d1531562cc473a4d6feaa165d831d07b5464d0b1f6d5283",
+  "entries": 5571,
+  "mapping": "Código IBGE e nome obtidos da tabela oficial; UF determinada pelos dois primeiros dígitos do código IBGE. No DANFSe, traduz somente códigos presentes no XML, sem consultar cadastro atual do CRM. Na preparação de novas emissões, permite correspondência inequívoca de cidade e UF já cadastradas, sem alterar documentos autorizados."
+}

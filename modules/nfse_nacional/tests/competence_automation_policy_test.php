@@ -1,0 +1,50 @@
+<?php
+declare(strict_types=1);
+if (PHP_SAPI !== 'cli') { exit; }
+define('BASEPATH', __DIR__); require dirname(__DIR__) . '/autoload.php';
+use NfseNacional\{CompetenceRate,AutomationPolicy,Config,EnvironmentAuth,ValidationException};
+$n=0;
+function check($ok,$message){global $n;if(!$ok)throw new RuntimeException('FALHOU: '.$message);++$n;}
+function fails($f,$message){try{$f();}catch(Throwable $e){check(true,$message);return;}check(false,$message);}
+check(CompetenceRate::month('11/2026')==='2026-11','Brazil month');
+check(CompetenceRate::month('2026-11-30')==='2026-11','document competence');
+fails(fn()=>CompetenceRate::month('2026-02-30'),'invalid date rejected');
+fails(fn()=>CompetenceRate::month('13/2026'),'invalid month rejected');
+foreach(['-1','100','1.234','1e1','1,2,3'] as $v)fails(fn()=>CompetenceRate::percentage($v),'invalid rate rejected');
+check(CompetenceRate::percentage('6,25')==='6.25','decimal comma exact');
+$d=['competence'=>'2026-11-05','values'=>['simple_rate'=>'99.00','iss_rate'=>'2.00','total_tax_mode'=>'ibpt']];
+$settings=Config::defaults();
+check(CompetenceRate::apply($d,$settings,fn()=>null,true)===$d,'disabled unchanged');
+$settings['variable_simple_rate']='1';
+$pending=CompetenceRate::apply($d,$settings,fn()=>null);
+check($pending['values']['simple_rate']==='' && isset($pending['simple_rate_error']),'missing month does not fall back to static');
+fails(fn()=>CompetenceRate::apply($d,$settings,fn()=>null,true),'missing month blocks final gate');
+$resolved=CompetenceRate::apply($d,$settings,function($m){check($m==='2026-11','lookup document month');return ['rate'=>'6.25','updated_at'=>'now'];},true);
+check($resolved['values']['simple_rate']==='6.25'&&$resolved['values']['iss_rate']==='2.00'&&$resolved['values']['total_tax_mode']==='ibpt','full percentage independent of ISS');
+check($resolved['simple_rate_snapshot']['competence']==='2026-11','audit snapshot');
+$settings['automation']=['mode'=>'selected','trigger'=>'created','delay_minutes'=>'30','staff_id'=>'7'];
+check(!AutomationPolicy::eligible($settings['automation'],(object)['status'=>1],false,'created'),'nonselected excluded');
+check(AutomationPolicy::eligible($settings['automation'],(object)['status'=>1],true,'created'),'selected included');
+check(!AutomationPolicy::eligible($settings['automation'],(object)['status'=>5],true,'created'),'cancelled excluded');
+check(!AutomationPolicy::eligible($settings['automation'],(object)['status'=>6],true,'created'),'draft excluded');
+$settings['automation']['trigger']='paid';
+check(!AutomationPolicy::eligible($settings['automation'],(object)['status'=>3],true,'paid'),'partial does not issue');
+check(AutomationPolicy::eligible($settings['automation'],(object)['status'=>2],true,'paid'),'fully paid does issue');
+check(AutomationPolicy::due('2026-11-30 23:50:00',30)==='2026-12-01 00:20:00','delay crosses month without changing document competence');
+check(AutomationPolicy::due('2026-11-30 23:50:00',0)==='2026-11-30 23:50:00','immediate');
+$rows=[];for($i=0;$i<25;$i++)$rows[]=['id'=>'','name'=>'Pessoa '.$i,'email'=>'p'.$i.'@example.test'];
+$s=Config::sanitize(['accounting_recipients'=>$rows]);
+check(count($s['accounting_recipients'])===25,'more than ten recipients');
+check(count(array_unique(array_column($s['accounting_recipients'],'id')))===25,'stable unique IDs');
+$rows=$s['accounting_recipients'];$rows[0]['name']='Edited';$updated=Config::sanitize(['accounting_recipients'=>$rows],$s);
+check($updated['accounting_recipients'][0]['id']===$s['accounting_recipients'][0]['id'],'edit preserves ID');
+$rows[1]['email']=$rows[0]['email'];fails(fn()=>Config::sanitize(['accounting_recipients'=>$rows],$s),'duplicate email refused');
+$auth=EnvironmentAuth::prepareMaterial([],['auth_username'=>'one-user','auth_password'=>'one-secret'],[],'11222333000181');
+check(isset($auth['shared_login'])&&!isset($auth[1]['login'],$auth[2]['login']),'one shared credential record');
+$state=EnvironmentAuth::publicState($auth);check($state[1]['login_configured']&&$state[2]['login_configured'],'shared login visible in both environments');
+check(!str_contains(json_encode($state),'one-secret'),'secret not in public state');
+$auth2=EnvironmentAuth::prepareMaterial($auth,['auth_username'=>'','auth_password'=>''],[],'11222333000181');check($auth===$auth2,'empty fields preserve credentials');
+$cleared=EnvironmentAuth::prepareMaterial($auth,['auth_clear_login'=>'1'],[],'11222333000181');check(!isset($cleared['shared_login']),'shared credentials removed');
+fails(fn()=>EnvironmentAuth::prepareMaterial($auth,['auth_username'=>'changed'],[],'11222333000181'),'new user requires password');
+fails(fn()=>EnvironmentAuth::prepareMaterial($auth,['auth_password'=>"x\r\nAuthorization: evil"],[],'11222333000181'),'control characters refused');
+echo "OK: $n verificações de competência, automação, destinatários e credenciais compartilhadas.\n";

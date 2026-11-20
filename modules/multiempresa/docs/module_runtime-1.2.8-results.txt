@@ -1,0 +1,22 @@
+PASS module runtime PHP literal semantics and scoped SQL: single
+PASS module runtime PHP literal semantics and scoped SQL: double
+PASS module runtime PHP literal semantics and scoped SQL: binary
+PASS module runtime PHP literal semantics and scoped SQL: fragment
+PASS module runtime PHP literal semantics and scoped SQL: value
+PASS module runtime PHP literal semantics and scoped SQL: comment
+PASS module runtime preserves unrelated PHP content: unmapped
+PASS module runtime preserves unrelated PHP content: plain
+PASS module runtime preserves unrelated PHP content: identifier
+PASS module runtime preserves unrelated PHP content: qualified
+PASS module runtime preserves unrelated PHP content: dynamic
+PASS module runtime preserves unrelated PHP content: interpolated
+PASS module runtime PHP comments remain byte-identical
+PASS module runtime SQL payload text is not rewritten
+PASS module runtime repeated adaptation is idempotent
+PASS module runtime standalone SQL retains strict validation
+PASS module runtime mount adapts PHP using only known module tables
+PASS module runtime old private adapter is invalidated even with identical source hash
+PASS module runtime upgrade rebuilds the old private installer
+PASS module runtime upgrade preserves generated state of unchanged files
+PASS module runtime shared package source remains byte-identical
+RESULT 21 module runtime assertions passed

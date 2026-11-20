@@ -1,0 +1,28 @@
+PASS lookup fresh install creates the internal cache idempotently
+PASS lookup fresh install consults a fixed public service without configuration
+PASS lookup CNPJ maps company and address fields
+PASS lookup returned fields normalize without making the form invalid
+PASS lookup technical provider choices are not exposed in the lookup response
+PASS lookup repeated lookup reuses recent data without another request
+PASS lookup cached public response is encrypted
+PASS lookup expired lookup is refreshed and old cache removed
+PASS lookup legacy disabled flag, custom URL and token do not control automatic lookup
+PASS lookup settings API no longer exposes lookup parameters
+PASS lookup upgrade removes obsolete parameters and preserves database/DNS secrets
+PASS lookup old settings submissions cannot restore the retired configuration
+PASS lookup unavailable services fall back to public CNPJWS and public ReceitaWS without credentials
+PASS lookup last public alternative can complete the lookup
+PASS lookup incomplete responses combine matching fields without replacing higher priority data
+PASS lookup CEP not found uses the next public service automatically
+PASS lookup response for another CEP is rejected before filling fields
+PASS lookup foreign CNPJ rejected; active state registration matches the establishment UF
+PASS lookup total outage returns a simple message and allows manual registration
+PASS lookup failed responses are not cached and a later retry is possible
+PASS lookup public provider quota prevents repeated calls after three attempts in the minute
+PASS lookup identifier-only responses are not reported as successful
+PASS lookup useful partial data is retained with a short cache lifetime
+PASS lookup invalid cnpj rejected before provider request
+PASS lookup invalid cnpj rejected before provider request
+PASS lookup invalid cep rejected before provider request
+PASS lookup invalid identifiers make no external requests
+RESULT 27 automatic lookup assertions passed

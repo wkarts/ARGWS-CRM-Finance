@@ -1,0 +1,21 @@
+{
+    "tables": [
+        "nfse_nacional_settings",
+        "nfse_nacional_profiles",
+        "nfse_nacional_recipients",
+        "nfse_nacional_invoice_preferences",
+        "nfse_nacional_documents",
+        "nfse_nacional_sequences",
+        "nfse_nacional_events",
+        "nfse_nacional_national_documents",
+        "nfse_nacional_national_events",
+        "nfse_nacional_national_sync",
+        "nfse_nacional_fiscal_requests",
+        "nfse_nacional_accounting_deliveries",
+        "nfse_nacional_competence_rates",
+        "nfse_nacional_competence_iss_rates",
+        "nfse_nacional_automation_targets",
+        "nfse_nacional_automation_jobs",
+        "nfse_nacional_sync_runs"
+    ]
+}

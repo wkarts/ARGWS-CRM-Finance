@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-07",
+  "transport": "HTTPS via development proxy; not the production PHP transport",
+  "responses": [
+    {
+      "url": "https://brasilapi.com.br/api/cnpj/v1/00000000000191",
+      "status": "200",
+      "summary": {
+        "razao_social": "BANCO DO BRASIL SA"
+      }
+    },
+    {
+      "url": "https://brasilapi.com.br/api/cep/v2/01001000",
+      "status": "200",
+      "summary": {
+        "city": "São Paulo",
+        "state": "SP"
+      }
+    },
+    {
+      "url": "https://publica.cnpj.ws/cnpj/00000000000191",
+      "status": "200",
+      "summary": {
+        "razao_social": "BANCO DO BRASIL SA"
+      }
+    },
+    {
+      "url": "https://receitaws.com.br/v1/cnpj/00000000000191",
+      "status": "200",
+      "summary": {
+        "nome": "BANCO DO BRASIL SA",
+        "status": "OK"
+      }
+    }
+  ]
+}

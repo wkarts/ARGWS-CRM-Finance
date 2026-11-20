@@ -1,0 +1,71 @@
+PASS DOM native modal markup initializes without JavaScript errors
+PASS DOM wizard opens through native Bootstrap
+PASS DOM wizard has Cancel and Back controls without header X
+PASS DOM default modules are preselected for availability with activation off
+PASS DOM navigation and total remain outside the scrollable wizard body
+PASS DOM company card appears above native user profile
+PASS DOM company icon is always visible without logo, favicon or icon font
+PASS DOM native Perfex progress initialization never writes undefined percent
+PASS DOM new company defaults to independent administrator without creator access
+PASS DOM foreign organization requires independent administrator and disables creator grant
+PASS DOM company identifier follows the entered name
+PASS DOM registration can be saved before providing infrastructure
+PASS DOM automatic mode inherits global connection and hides repeated credentials
+PASS DOM wizard explains the address when DNS is disabled
+PASS DOM select all excludes central and incompatible modules
+PASS DOM explicit bulk activation includes only selected compatible modules
+PASS DOM bulk keep inactive preserves availability selection
+PASS DOM deselect all clears the selection and activation choices
+PASS DOM review displays company and module choices without credentials
+PASS DOM Back preserves previously entered data
+PASS DOM visited step label allows returning directly to registration
+PASS DOM review can be reopened without recreating the registration
+PASS DOM Escape closes modal and removes the native backdrop
+PASS DOM save registration submits only the draft operation
+PASS DOM saved registration returns to the grid
+PASS DOM clearing all defaults sends an explicit empty selection
+PASS DOM complete CEP triggers automatically without blur or activation
+PASS DOM lookup uses a discreet loading indicator without blocking the form
+PASS DOM address fills automatically while manually entered fields are preserved
+PASS DOM suggestions do not replace a field edited after the response
+PASS DOM blur after automatic completion does not duplicate a successful request
+PASS DOM invalid CNPJ check digits prevent provider requests
+PASS DOM late response for the previous CNPJ cannot fill the current company
+PASS DOM manual edits made while loading are preserved and other company fields filled
+PASS DOM user can explicitly accept a suggestion for an unchanged field
+PASS DOM form reset discards pending responses from the previous registration
+PASS DOM outage shows a simple message and keeps manual registration available
+PASS DOM opening another modal closes the previous one and keeps one backdrop
+PASS DOM modal handoff waits for native hidden event during transitions
+PASS DOM individual company removal is visible in company grid
+PASS DOM company removal opens its own impact plan without requesting organization deletion
+PASS DOM failed DNS deletion offers a fresh review without a stuck expired plan
+PASS DOM fresh review resets acceptance and never executes deletion automatically
+PASS DOM invalid confirmation can be corrected without discarding an unconsumed plan
+PASS DOM retry sends the new plan identifier
+PASS DOM catalog availability is distinct from activation
+PASS DOM publishing from editor leaves package inactive
+PASS DOM activate all uses individual company operations and excludes Multiempresa
+PASS DOM deactivate all processes the same company and preserves individual controls
+PASS DOM failed progress stays at completed stages with readable native percentage
+PASS DOM failed workflow can return to registration while preserving immutable organization
+PASS DOM failed workflow module selection can be revised directly
+PASS DOM company interactions produced no DOM exceptions
+PASS DOM collapsible settings and all ten navigation destinations are present
+PASS DOM global module defaults load from saved configuration
+PASS DOM bulk changes mark global settings unsaved
+PASS DOM global default select all excludes incompatible packages
+PASS DOM installation and global save actions use consistent full-width form footers
+PASS DOM global screen contains no provider settings or lookup activation
+PASS DOM disabled DNS and manual database hide irrelevant global credentials
+PASS DOM existing DNS enables address fields without requiring Cloudflare
+PASS DOM manual DNS does not display Cloudflare-only diagnostics or certificate controls
+PASS DOM automatic integrations show only the parameters for their selected mode
+PASS DOM Cloudflare connection can be tested without creating a DNS record
+PASS DOM connection test sends current form credentials rather than silently testing stale saved values
+PASS DOM testing an edited credential does not save it automatically
+PASS DOM remaining global settings save successfully without a lookup object
+PASS DOM empty global defaults are persisted instead of restoring the previous list
+PASS DOM wildcard, simulation and HTTPS options persist through module settings
+PASS DOM global configuration interactions produced no DOM exceptions
+RESULT 70 native DOM assertions passed

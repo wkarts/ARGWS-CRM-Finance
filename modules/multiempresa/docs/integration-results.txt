@@ -1,0 +1,22 @@
+PASS native Perfex schema fixture
+PASS native Perfex login
+PASS module activation through native Modules screen
+PASS native module panel
+PASS organization creation with native CSRF
+PASS database and prefix company provisioning
+PASS tenant messages authorized tenant session opens
+PASS tenant messages module page has a simple user instruction
+PASS tenant messages technical onboarding instructions are absent from tenant page
+PASS tenant messages failed toggle returns ordinary support guidance
+PASS tenant messages failed toggle exposes no administrative diagnosis
+PASS tenant messages failed action keeps the company active
+PASS tenant messages principal retains the technical reason and source in administrative logs
+PASS tenant messages browser denial is a readable page
+PASS tenant messages browser denial hides module name, internal code and technology
+PASS tenant messages JSON retains API code and sanitizes user message
+PASS tenant messages temporary unavailable screen gives generic guidance
+PASS tenant messages authorized activation keeps its ordinary success message
+PASS tenant messages tenant staff screen avoids internal administration instructions
+PASS tenant messages principal administrative panel remains available
+RESULT 14 tenant message HTTP assertions passed
+RESULT tenant public communication native acceptance passed

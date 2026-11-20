@@ -1,0 +1,2404 @@
+{
+  "format": 1,
+  "isolation": "NfseNacional\\PdfVendor\\ / NFSE_NACIONAL_PDF_",
+  "packages": [
+    {
+      "name": "tecnickcom/tc-lib-barcode",
+      "version": "2.17.3",
+      "license": [
+        "LGPL-3.0-or-later"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/tecnickcom/tc-lib-barcode.git",
+        "reference": "2fd80f8b4d2cb5f31ac20b784e2516f20c71fd61"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/tecnickcom/tc-lib-barcode/zipball/2fd80f8b4d2cb5f31ac20b784e2516f20c71fd61",
+        "reference": "2fd80f8b4d2cb5f31ac20b784e2516f20c71fd61",
+        "shasum": ""
+      },
+      "requires": {
+        "ext-ctype": "*",
+        "ext-pcre": "*",
+        "php": "^8.2",
+        "tecnickcom/tc-lib-color": "^3.0"
+      }
+    },
+    {
+      "name": "tecnickcom/tc-lib-color",
+      "version": "3.0.14",
+      "license": [
+        "LGPL-3.0-or-later"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/tecnickcom/tc-lib-color.git",
+        "reference": "99057a58e02c11bf1a826d09833059187edea4a5"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/tecnickcom/tc-lib-color/zipball/99057a58e02c11bf1a826d09833059187edea4a5",
+        "reference": "99057a58e02c11bf1a826d09833059187edea4a5",
+        "shasum": ""
+      },
+      "requires": {
+        "ext-pcre": "*",
+        "php": "^8.2"
+      }
+    },
+    {
+      "name": "tecnickcom/tc-lib-file",
+      "version": "3.9.10",
+      "license": [
+        "LGPL-3.0-or-later"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/tecnickcom/tc-lib-file.git",
+        "reference": "a26615b711c7fa76672a0391bc9af863e5558ee5"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/tecnickcom/tc-lib-file/zipball/a26615b711c7fa76672a0391bc9af863e5558ee5",
+        "reference": "a26615b711c7fa76672a0391bc9af863e5558ee5",
+        "shasum": ""
+      },
+      "requires": {
+        "ext-curl": "*",
+        "ext-pcre": "*",
+        "php": "^8.2"
+      }
+    },
+    {
+      "name": "tecnickcom/tc-lib-pdf",
+      "version": "8.84.0",
+      "license": [
+        "LGPL-3.0-or-later"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/tecnickcom/tc-lib-pdf.git",
+        "reference": "2be3a522329df9d2941381ce8315b6647d620c69"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/tecnickcom/tc-lib-pdf/zipball/2be3a522329df9d2941381ce8315b6647d620c69",
+        "reference": "2be3a522329df9d2941381ce8315b6647d620c69",
+        "shasum": ""
+      },
+      "requires": {
+        "ext-ctype": "*",
+        "ext-filter": "*",
+        "ext-hash": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "ext-openssl": "*",
+        "ext-pcre": "*",
+        "ext-xml": "*",
+        "ext-zlib": "*",
+        "php": "^8.2",
+        "tecnickcom/tc-lib-barcode": "^2.17",
+        "tecnickcom/tc-lib-color": "^3.0",
+        "tecnickcom/tc-lib-file": "^3.9",
+        "tecnickcom/tc-lib-pdf-encrypt": "^2.12",
+        "tecnickcom/tc-lib-pdf-font": "^4.8",
+        "tecnickcom/tc-lib-pdf-graph": "^2.18",
+        "tecnickcom/tc-lib-pdf-image": "^3.15",
+        "tecnickcom/tc-lib-pdf-page": "^4.18",
+        "tecnickcom/tc-lib-pdf-parser": "^3.16",
+        "tecnickcom/tc-lib-pdf-sign": "^2.0",
+        "tecnickcom/tc-lib-unicode": "^3.2",
+        "tecnickcom/tc-lib-unicode-data": "^3.1"
+      }
+    },
+    {
+      "name": "tecnickcom/tc-lib-pdf-encrypt",
+      "version": "2.12.2",
+      "license": [
+        "LGPL-3.0-or-later"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/tecnickcom/tc-lib-pdf-encrypt.git",
+        "reference": "887921e1fef98dc9885b33b85cbcd1b222b4b7dc"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/tecnickcom/tc-lib-pdf-encrypt/zipball/887921e1fef98dc9885b33b85cbcd1b222b4b7dc",
+        "reference": "887921e1fef98dc9885b33b85cbcd1b222b4b7dc",
+        "shasum": ""
+      },
+      "requires": {
+        "ext-ctype": "*",
+        "ext-hash": "*",
+        "ext-openssl": "*",
+        "ext-pcre": "*",
+        "php": "^8.2"
+      }
+    },
+    {
+      "name": "tecnickcom/tc-lib-pdf-filter",
+      "version": "2.11.9",
+      "license": [
+        "LGPL-3.0-or-later"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/tecnickcom/tc-lib-pdf-filter.git",
+        "reference": "7759b1a803d2423e9f3bb8d3fa32b5f14c183b9d"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/tecnickcom/tc-lib-pdf-filter/zipball/7759b1a803d2423e9f3bb8d3fa32b5f14c183b9d",
+        "reference": "7759b1a803d2423e9f3bb8d3fa32b5f14c183b9d",
+        "shasum": ""
+      },
+      "requires": {
+        "ext-pcre": "*",
+        "ext-zlib": "*",
+        "php": "^8.2"
+      }
+    },
+    {
+      "name": "tecnickcom/tc-lib-pdf-font",
+      "version": "4.8.0",
+      "license": [
+        "LGPL-3.0-or-later"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/tecnickcom/tc-lib-pdf-font.git",
+        "reference": "30804d3d493ddcf13dbb0a78c76c95b788c8948a"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/tecnickcom/tc-lib-pdf-font/zipball/30804d3d493ddcf13dbb0a78c76c95b788c8948a",
+        "reference": "30804d3d493ddcf13dbb0a78c76c95b788c8948a",
+        "shasum": ""
+      },
+      "requires": {
+        "ext-hash": "*",
+        "ext-json": "*",
+        "ext-pcre": "*",
+        "ext-zlib": "*",
+        "php": "^8.2",
+        "tecnickcom/tc-lib-file": "^3.9",
+        "tecnickcom/tc-lib-pdf-encrypt": "^2.12",
+        "tecnickcom/tc-lib-unicode-data": "^3.1"
+      }
+    },
+    {
+      "name": "tecnickcom/tc-lib-pdf-graph",
+      "version": "2.18.7",
+      "license": [
+        "LGPL-3.0-or-later"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/tecnickcom/tc-lib-pdf-graph.git",
+        "reference": "d023027a7f89e63aa50fda127571f5b86d1d6f1f"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/tecnickcom/tc-lib-pdf-graph/zipball/d023027a7f89e63aa50fda127571f5b86d1d6f1f",
+        "reference": "d023027a7f89e63aa50fda127571f5b86d1d6f1f",
+        "shasum": ""
+      },
+      "requires": {
+        "ext-zlib": "*",
+        "php": "^8.2",
+        "tecnickcom/tc-lib-color": "^3.0",
+        "tecnickcom/tc-lib-pdf-encrypt": "^2.12"
+      }
+    },
+    {
+      "name": "tecnickcom/tc-lib-pdf-image",
+      "version": "3.15.3",
+      "license": [
+        "LGPL-3.0-or-later"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/tecnickcom/tc-lib-pdf-image.git",
+        "reference": "c162371c7cb705f3cae0bd9e284ed023886e4180"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/tecnickcom/tc-lib-pdf-image/zipball/c162371c7cb705f3cae0bd9e284ed023886e4180",
+        "reference": "c162371c7cb705f3cae0bd9e284ed023886e4180",
+        "shasum": ""
+      },
+      "requires": {
+        "ext-zlib": "*",
+        "php": "^8.2",
+        "tecnickcom/tc-lib-file": "^3.9",
+        "tecnickcom/tc-lib-pdf-encrypt": "^2.12"
+      }
+    },
+    {
+      "name": "tecnickcom/tc-lib-pdf-page",
+      "version": "4.18.1",
+      "license": [
+        "LGPL-3.0-or-later"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/tecnickcom/tc-lib-pdf-page.git",
+        "reference": "86f854489301a79533454d3ca8d9d918cec95cb9"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/tecnickcom/tc-lib-pdf-page/zipball/86f854489301a79533454d3ca8d9d918cec95cb9",
+        "reference": "86f854489301a79533454d3ca8d9d918cec95cb9",
+        "shasum": ""
+      },
+      "requires": {
+        "ext-zlib": "*",
+        "php": "^8.2",
+        "tecnickcom/tc-lib-color": "^3.0",
+        "tecnickcom/tc-lib-pdf-encrypt": "^2.12"
+      }
+    },
+    {
+      "name": "tecnickcom/tc-lib-pdf-parser",
+      "version": "3.16.7",
+      "license": [
+        "LGPL-3.0-or-later"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/tecnickcom/tc-lib-pdf-parser.git",
+        "reference": "f83cadbc3b347732ed928cd7b654589688812c5f"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/tecnickcom/tc-lib-pdf-parser/zipball/f83cadbc3b347732ed928cd7b654589688812c5f",
+        "reference": "f83cadbc3b347732ed928cd7b654589688812c5f",
+        "shasum": ""
+      },
+      "requires": {
+        "ext-pcre": "*",
+        "php": "^8.2",
+        "tecnickcom/tc-lib-pdf-filter": "^2.11"
+      }
+    },
+    {
+      "name": "tecnickcom/tc-lib-pdf-sign",
+      "version": "2.0.10",
+      "license": [
+        "LGPL-3.0-or-later"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/tecnickcom/tc-lib-pdf-sign.git",
+        "reference": "b7c757b1a2eec90014c296bd5317a545c24be177"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/tecnickcom/tc-lib-pdf-sign/zipball/b7c757b1a2eec90014c296bd5317a545c24be177",
+        "reference": "b7c757b1a2eec90014c296bd5317a545c24be177",
+        "shasum": ""
+      },
+      "requires": {
+        "ext-hash": "*",
+        "ext-json": "*",
+        "ext-openssl": "*",
+        "ext-pcre": "*",
+        "php": "^8.2"
+      }
+    },
+    {
+      "name": "tecnickcom/tc-lib-unicode",
+      "version": "3.2.3",
+      "license": [
+        "LGPL-3.0-or-later"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/tecnickcom/tc-lib-unicode.git",
+        "reference": "1b400c9aeee482a153b9ec0c8b5d86c166cc92ba"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/tecnickcom/tc-lib-unicode/zipball/1b400c9aeee482a153b9ec0c8b5d86c166cc92ba",
+        "reference": "1b400c9aeee482a153b9ec0c8b5d86c166cc92ba",
+        "shasum": ""
+      },
+      "requires": {
+        "ext-ctype": "*",
+        "ext-mbstring": "*",
+        "ext-pcre": "*",
+        "php": "^8.2",
+        "tecnickcom/tc-lib-unicode-data": "^3.1"
+      }
+    },
+    {
+      "name": "tecnickcom/tc-lib-unicode-data",
+      "version": "3.1.3",
+      "license": [
+        "LGPL-3.0-or-later"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/tecnickcom/tc-lib-unicode-data.git",
+        "reference": "597a62c86c96a655d1d35e3d585ebec1232ad152"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/tecnickcom/tc-lib-unicode-data/zipball/597a62c86c96a655d1d35e3d585ebec1232ad152",
+        "reference": "597a62c86c96a655d1d35e3d585ebec1232ad152",
+        "shasum": ""
+      },
+      "requires": {
+        "php": "^8.2"
+      }
+    },
+    {
+      "name": "tecnickcom/tcpdf",
+      "version": "7.0.22",
+      "license": [
+        "LGPL-3.0-or-later"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/tecnickcom/TCPDF.git",
+        "reference": "e3e1ac6855a0f663b0012ab13158b2f2baa5fa71"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/e3e1ac6855a0f663b0012ab13158b2f2baa5fa71",
+        "reference": "e3e1ac6855a0f663b0012ab13158b2f2baa5fa71",
+        "shasum": ""
+      },
+      "requires": {
+        "ext-curl": "*",
+        "php": ">=8.2",
+        "tecnickcom/tc-lib-pdf": "^8.84"
+      }
+    }
+  ],
+  "files": {
+    "packages/tc-lib-barcode/src/Exception.php": {
+      "upstream_sha256": "db3fb2d6479f8cbbdbecb0928b25e18bd1002d94e6d1d494f08f76204427a919",
+      "sha256": "f4a935f90df41d1a73fb69ffcc3b2d87be134339afcac544fdd5f63ed2c65012",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Barcode.php": {
+      "upstream_sha256": "1296ba27c9d9aa479f8a8f288be05b85fb8f6764c0cc2991e185c94f8ca6e8f9",
+      "sha256": "1785509e7a639d75eda738fdf839d6000177733178fb04309bde43d8c01c6dce",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Math.php": {
+      "upstream_sha256": "9602c3fa0561759263bb0cece3c97d7262336c797272f87b59347e7176b038a2",
+      "sha256": "918495ddd7831efdbbb9f0e8892132444e039a0c43a4db5e3079675388291d84",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Model.php": {
+      "upstream_sha256": "9e9a8032992e7609299e0a698b5d80800979acd4b856aac0daa6bddd61c32a4b",
+      "sha256": "91c538d4689eb9db121e978b0d9e5c341dbd374c9729fdbcc262339905d95bc8",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/BarcodeType.php": {
+      "upstream_sha256": "a107f45f23b3f78cbf217d983b23a6ea5f4eda9b26297f6e3bd3f01421b2440e",
+      "sha256": "14005f0c8aa657989319f43aa850b865df27de1694caf1d7c1c1272190ea6096",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type.php": {
+      "upstream_sha256": "437413ba60c6c8b877d6a7c864e2b095d43bcb1a7cddc02445a8ad354f7b8950",
+      "sha256": "29340251010edde3981cf4c1247ca9016bae1ea6a4f124dbadb110e1d16a9477",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Raw.php": {
+      "upstream_sha256": "dc7109f6fc6165642c6d4f243f6de20eaaa4968ea58362906fdb0b460b90e44f",
+      "sha256": "42f19715a6c5f35f3628add72d3e42616c7f6cc691d7ed3dace012c855624364",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square.php": {
+      "upstream_sha256": "326e7e146f47757a2ff3b4db633788e1b425e751ddaa3a548a19253877f762f4",
+      "sha256": "63df8bea11d4329230a7aa1641d99dc1081901367f583b61257cf2b6ff26b5f5",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear.php": {
+      "upstream_sha256": "6403a3fe1a1f5cfec7f33f0377bebb737e4468fac9f1970b5b672800c90cf99b",
+      "sha256": "d3790578cc3255822b2102247cccbdae6547c07e8c1a19348fd7c289687c922a",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/GsOneElementString.php": {
+      "upstream_sha256": "b3f16296defa34e8eb01ec6e4cc605cff0e016520350a63c516fecf0672d5622",
+      "sha256": "389ccbd479f515a3e7354d3600391199ddf0681acfd356cc312d2d6d0e02a8b2",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/ReedSolomon.php": {
+      "upstream_sha256": "524eaa1c049143381f41d6da22f8cce5f21d47375148a0ec7ac3ad96a5ce0825",
+      "sha256": "21d3a1913c7909cd8549c6e0f8fe243ba0b6b19ba3b4d5e27a12b4e7a195612e",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Hibc.php": {
+      "upstream_sha256": "1be7035574425c39365958cf2983a3480509f72a01970e606941686d53a3091c",
+      "sha256": "081e7b33575da67e7b92817243a2b805a7b9c13172c48b34a80c7439e23fe81b",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Convert.php": {
+      "upstream_sha256": "4058cf1ca2afb000f4708fa3a6a4fd58203c652bf110826b52e30658ee64beb8",
+      "sha256": "ff27c53a5b71855cb10f5f9e6816401a8871415866e41c9113a1cf000f150a29",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/HibcPayload.php": {
+      "upstream_sha256": "e95b60c01e3511c4991b09c070fa4d29f2b54f24daa4a9e99421e9ed24984726",
+      "sha256": "4b66a15a9c45ca8af5cf24572d6d96c23739c34c45234b456f706654f95b2422",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/CodeOneOne.php": {
+      "upstream_sha256": "60c6d9cabdbdd6380d12adf3a237f39d48c284b99b53fb8ba37f58c401460ad2",
+      "sha256": "5a6c2368e2ccc39fbd7694a2f1ad2b7b0ed113219438ff2057b147602b43ddbe",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/Leitcode.php": {
+      "upstream_sha256": "7a8af907c512b6b8837a133ce9cdd4d93fbbd25175d3ca2cdbf23e5236446362",
+      "sha256": "071204452d10bc3506cf83906da2d1f2180c3c3bc6689595ecc404571871045b",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/Msi.php": {
+      "upstream_sha256": "0497b344554a13126a3e8ec738d6727860ae9443a6dfd85e1889b1e9e1ea08a1",
+      "sha256": "57c0fc97662b1f139744cbc83ebd4889eeef4673bcce56488b6eddf511052440",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/Raw.php": {
+      "upstream_sha256": "2ab0a31384a124fafc953aa03b401b0895408905130f58e9c3ecfbb2f0236bfa",
+      "sha256": "7ff79f171da30962bfe298c729ef12ee6873fb465d84b1be6bf1d552e1967140",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/HibcThreeNine.php": {
+      "upstream_sha256": "6decdcafac1dc3fec96cbb18c68069b9062dc22e6050f81140ff1a8f1550984f",
+      "sha256": "7b1afcf3e2e5562b234fd2cbd4d0f14a17e2d78f99303f4da6c0871950cf1ce2",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/GsOneDataBarOmni.php": {
+      "upstream_sha256": "d1a313ec581bc55c90b2d77bbce97450bddaf2dd6c468b1b125af7fd14b4449d",
+      "sha256": "64d6094b8d2de06ec29b72a20ff49c4c9892f43d1d36ae801df8a8698ae937b2",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/CodeOneSixK.php": {
+      "upstream_sha256": "b381c6eb14f4b4876dad06d0abe64fcbaecc0c35e585fc0fd4969fa453f022ed",
+      "sha256": "ac1f28d5bb42670b427b467be3ad9a14c7a5e79c2b676b90d9c79dbf843ec25c",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/StandardTwoOfFiveCheck.php": {
+      "upstream_sha256": "a9011313d27dd8147ca5162f3b612ca94cf752eb2ccff7ab4340cb168f0213be",
+      "sha256": "5913021ebccc3af741fd57ac510d6c0f6d00d1ec248d004d48919c138cdf2598",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/InterleavedTwoOfFive.php": {
+      "upstream_sha256": "f13b6839d76996a3b5727f8cf91eccdec328313b2eb56a86628d2a1dac108f33",
+      "sha256": "ba5f160ac54ef6fd029e0a43821d3dbac6af9840a3005a5d3a1f3dc0b883ba4a",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/UpcA.php": {
+      "upstream_sha256": "67e64b8ebc6913f8f86943c01f91595df0d3342afb2431b19ffe31bbb247ec87",
+      "sha256": "e5b60843af12babaaf8ad142101f7e1dedcedb8e0c1c0aaf66439d38f085fa34",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/CodeThreeTwo.php": {
+      "upstream_sha256": "8b4670879af9fd5dda66c3701581e6c08e06dd5e15c4aba94eaed008225685b3",
+      "sha256": "1f179b1a37132abef77f76f2e69f79353add3d3b0b05944a03cdb92c704b75e5",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/ItfOneFour.php": {
+      "upstream_sha256": "7789676c1f09a914a22735ba478d794e24657d3bb8f3c9a4ad338fe4384549e4",
+      "sha256": "e3b8720662d286bd6c19ed9955bf4a4a69efedac61b7a6c37eda6df930fb4373",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/RoyalMailFourCc.php": {
+      "upstream_sha256": "9ee96c27d1748d96bd8d3d629a9bb1afbc9fb1c10bbc2c0060e4853c6457059d",
+      "sha256": "2249fe190434608f41d74b815e25fffcff56b443f4859d830f0a44ce336f89c1",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/GsOneDataBar.php": {
+      "upstream_sha256": "25b0721b2aa415865e22a5ee80b7f9b3d2c776c28476d063d520de03cec1adb0",
+      "sha256": "e5e935ea8c25b73d4997dbc7e2553c4cd41a7cc44002ae0776726e1ef1c1fcd9",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/CodeNineThree.php": {
+      "upstream_sha256": "76ebdd1215bfa7bcaa977516aa9d05a788b41ba8ec00ef2d60aa0dcc68ce7be2",
+      "sha256": "1f347b14fabfada1387a4e31a393c3b28c8541f1a888a5209ed6db42ecdcb491",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/MatrixTwoOfFive.php": {
+      "upstream_sha256": "548f4ea94b4108ad59289185340d86825a98bb1e95218ca76d8a4a761289f4e0",
+      "sha256": "ec55ec067de4fe9fe3a42b1714f95077bd04b86800f1528b78515b3015ae63be",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/Mailmark.php": {
+      "upstream_sha256": "64bd0778136faba8921fe1734fd74518d7db9642e9008aad7e66904627b59322",
+      "sha256": "284d1eb89d191f3dbf1f308d88636f6bea586c17a74beefb6d04a03d76fbfe25",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/Planet.php": {
+      "upstream_sha256": "d5050382a9399074dcd8ebb4a2cd380653c9538ad64007a4b83fd87e8a11924e",
+      "sha256": "a4a24811e293c3b646533404c0a836771458683557a1012cde203f798c6a3136",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/EanOneThree.php": {
+      "upstream_sha256": "eb7ef272d02a40e94c1f703111a18863ddbd48effdfec16d383ec9e91cbf8062",
+      "sha256": "4869166a0bb3d0ac7a76f1263996fd50546e7b4c3d567d7fa5c502ebbdf87ab1",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/KlantIndex.php": {
+      "upstream_sha256": "d450646361e3c9f4b41dc43bef413e6a690c0d642d609d2e0e03a6cefed63c80",
+      "sha256": "3929b4daebe4d8a64ad682bd4ea2c0c9d6c5a803009f4d90b0469b79bc5bfab3",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/GsOneDataBarLimited.php": {
+      "upstream_sha256": "6ed32738997d93926bda1142305f1ee94b576523157508863e5d83993a622c50",
+      "sha256": "4cf9a380c52693e6302e7b517137822431e7faf47c7ea8b58abc105062332db5",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/Postnet.php": {
+      "upstream_sha256": "546d2dc400bc26c918f6a9691db008bc947780e4acfa9a96097da674e7650ae7",
+      "sha256": "6445efea3df6b8f2cd0ed92f3a0b39073c093db49807fc2d54c71ffe76cca0b6",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/GsOneDataBarTruncated.php": {
+      "upstream_sha256": "b9f11eb353ee6ca7a534544e724900a17fcd31aa4a199c1297707a19356023c9",
+      "sha256": "6d02a3b14c799ecd558cd2cb342617e3295dadae4078e03ec1ac7b9d6c20bd2c",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/ImbPre.php": {
+      "upstream_sha256": "5c7a92e7a8a54ebfe1a70558471637f66d4d4de9e3c2ed91fd7f8c42a65623c8",
+      "sha256": "7ec6158bbc8bba3fe9b265e3581d9976e29139742d2d59b0f7682797710af6db",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/PharmaTwoTracks.php": {
+      "upstream_sha256": "5fc605b3388e2f31ce155a43e495449cd1abf56400a21cbff3681d3c975673ba",
+      "sha256": "3b1e1a6eb589002926d4590fe346cd2b4ddb81422235344f051ff9edd6ba8116",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/MsiCheck.php": {
+      "upstream_sha256": "cfcdfeb8c7763c292150efda75487c9e58659a3b6e177c22562795125d18aad7",
+      "sha256": "2937c9d46cf48ca6714355cdad4db3c045161e0e9363d96f10ef0f9d6ee21b5c",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/Telepen.php": {
+      "upstream_sha256": "58f0fca44940e35e625400dd1cd71f5bc922182d6761aefedac7d2cd7c55f7f5",
+      "sha256": "7215cf9c72eec6c451198af0560bd8ed6d5c7a417d2274cd4f929210583c2c51",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/Codabar.php": {
+      "upstream_sha256": "336ae8b8c52499ee1f078ece1dda80fd009313b18bf78f565f4c0550d6bc8a7e",
+      "sha256": "67a57281a6f15c0c7fb4c33c2534619aefe5d64031963c155b01db1853f536af",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/Plessey.php": {
+      "upstream_sha256": "f19269963e67a6f66fad27c1588c3f6bb01e9e26fd65e38328989bfa9227af6f",
+      "sha256": "bbfabb3c199a41525b9db8dc19694a8ad62dc7111898978db1fe5d6f33ebe2a8",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/CodeThreeNine.php": {
+      "upstream_sha256": "95d107f97b5f2762670e16cfded94c0930eba076b84f5199945136684538543e",
+      "sha256": "8a93a1dde8cfd5b79c9cce81dcea9e149111ce6fcc24d48cfeda76dc92843d16",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/CodeThreeNineCheck.php": {
+      "upstream_sha256": "b7e3116004c991eec378ef7ed8cabbac03c5a0fbd1681d71429c622fed7f40c6",
+      "sha256": "f907f3766d727cd56cc1077dab9fe1e5a095df56d01c1fe4970de92344ed7099",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/GsOneDataBarStackedOmni.php": {
+      "upstream_sha256": "f023a1d0469674ca683da4a13de1b65ffa2d0178d485ae8612b92e8ee538e05e",
+      "sha256": "74273ce4226ef7691a0067bc7ed4f1e91e66bbaa48453840036279f640515980",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/IataTwoOfFive.php": {
+      "upstream_sha256": "f280942b9441e96c79fe39823617af59006e6802bd183637dfa2420f85505dc7",
+      "sha256": "e8a72b87ef71be918336d17f03e3d8b33761b50b0f90535e7897899b5f0c7f66",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/AustraliaPost.php": {
+      "upstream_sha256": "54a6a3163bb6576beffc5aa9873b843a678113d51a4277ad5a572095fe877a6e",
+      "sha256": "284abeff45b4cadc6ece5d6ec72d1747e5e239dc757dcf3135235f5007d08a2d",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/Logmars.php": {
+      "upstream_sha256": "a34c87a264b825f7c5af6f8e380b1c8f790186c4b2137e09e18a153c7eab9ef2",
+      "sha256": "5b592456f4274e2584c22a29079e10f5f04c0dd8d8af69081ff9a8bc1f7f41c9",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/CodeThreeNineExtCheck.php": {
+      "upstream_sha256": "88bc409d113f4162a5e339c00e898e9626922d600ac976c32baf2e7433e5d048",
+      "sha256": "5e57d28e560a9edcf4932d75b051b108f3804e0c8c3abf2e5637b162eea29b1a",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/CodeThreeNineExt.php": {
+      "upstream_sha256": "32d5ae30c3379f78ae4b5fc5435ec00a30e6c60d75ccde19618c4e78455ecd60",
+      "sha256": "b5ab8396c591c9c3ce3f19b80b1fce9116b4a673629ee72264c2231576155c53",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/GsOneDataBarExpanded.php": {
+      "upstream_sha256": "11c0d60ce1c34d8ac7184cce232200dcb260ab6d138a004241ee6187a149dcdd",
+      "sha256": "c86039eb6f38d53b24b1a758c00fbb28fedfa70d3b04818dd3b7676531b461b7",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/GsOneDataBarStacked.php": {
+      "upstream_sha256": "167b8ce8c9bd2c85d6c79f7b34597985251e96f2f99ffa26b0c17871b9f6e6a1",
+      "sha256": "9b64b04e79fdf73c1bf98996bc6d26a7a821ba231a664f11e548baad2ce93168",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/DatalogicTwoOfFive.php": {
+      "upstream_sha256": "6af16313d62d0edc2f7352ce126db3ed2b2b28f3f93c7f399ba594901c6f5e23",
+      "sha256": "7eb4346e58dae67c990a87e31b3f901a0dc9a9a402ba3f343cc6896c4e463fe1",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/FourState.php": {
+      "upstream_sha256": "218f104c11cd12aa47bf845a7ad025b7a077a6c728c2422cdb6a03f039c66501",
+      "sha256": "d12cd2dbd055966d93ee220fd77ab6c9d27fdb795bfc1c99bd90c7fec1f42eee",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/StandardTwoOfFive.php": {
+      "upstream_sha256": "cb91d339a8a37563f098f27314b9df15bd2bbc2ca0cf6d40ea349e8346d14ebc",
+      "sha256": "3ad96b96a77c37fb54dcc331858d25821d6b42faa8a38785d82d795fecc4c6e1",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/JapanPost.php": {
+      "upstream_sha256": "825a1a89c6221b2c8cf297ecf48b9c60828c63d018ab0edf16cb9923a7ff5dff",
+      "sha256": "201057f558daa4125f006da448ccd1022500247e34bd0d9fe2e4347f9a5c4805",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/UpcE.php": {
+      "upstream_sha256": "2537c7611577a38ab66ff696ea7331c33ce6c8661b4a4fc712e342fd97225048",
+      "sha256": "8b1f8a373af353329ba0bfa7631916bfa5f8eb8670f089c444c9e30a74cfdc48",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/SsccOneEight.php": {
+      "upstream_sha256": "c5a82639d17430084950862e959dd327939729f576cd9ecef3b3b0253858eda0",
+      "sha256": "dca31fcb34bd89a7762d0f3c45a4f879d6de600b4d1d8a706e09d70578a75597",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/EanFive.php": {
+      "upstream_sha256": "781c01f4363b57f5c6e06838df4fe242491011a59a6848ffc9627f5f948ef091",
+      "sha256": "fe4a2bd1b9231a2e933bdb2d52ca33b95319f85834711903f0ab2d9602949903",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/EanTwo.php": {
+      "upstream_sha256": "c55fda8bac15f6075d3f61ae2edcfa681f522ba60e8749ed8b2aa9880789a048",
+      "sha256": "14d6a8e94399158d41f802a8fdf8c65c357b2a8b79b7f5add45a132b8e21fad3",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/GsOneDataBarExpandedStacked.php": {
+      "upstream_sha256": "b85c5c6562bee2cd585069fcbb7daf8b05ce47e49cbdf3f1c4d9b7bf2c734ff1",
+      "sha256": "25edf9e8d6b303c491333ce5a4361e1177e0861b8e33cccabda99ead270bc147",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/FixedLengthCheckDigit.php": {
+      "upstream_sha256": "dbc3f663dc4461a3d034ad626bf4ee3fd53f5f3da587b27b8a8a07b93da241f9",
+      "sha256": "51857504dd360ff0ff94deb82c8f0b4ea8c0189604440ecd8cc61d5e2ea34ef7",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/Pharma.php": {
+      "upstream_sha256": "499b2ede721b2fa0db19bb37a21a4bb3c21538282971b1005cbf7575c25806fc",
+      "sha256": "399b3660d9ebc46031c70cb13aebc3841b30f938a3b6a06f810ecfaee6299fe8",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/CodeFourNine.php": {
+      "upstream_sha256": "194e9b1fbc19a0ce0efe32423724869e5ad5f13ab0845e4940245ebd8c9168cd",
+      "sha256": "702693489a37fd73bf0210190433510673cdd5999242a8dafa8364e3f639e8f7",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/DeutschePost.php": {
+      "upstream_sha256": "a96b24b71fc27b7fe461b49ddd0c1c92456341ca5e371d415f784d2ff48c9c08",
+      "sha256": "e524c2c827c14380fbe801dc2848375f9224bc536b892273e5e1362685862454",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/Imb.php": {
+      "upstream_sha256": "73f4899a202d952a22c3da3c4d3b40ffa4dba54f9f1737f960447bb45321bdbb",
+      "sha256": "0239e8792f150d16420e943bf7e2fddd064049171b3d739ae650512b0bf7adb3",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/Pzn.php": {
+      "upstream_sha256": "78ceabb6dcc8eb4cfda3c0a8158a293c75826379e0e5962133ed336348a5e043",
+      "sha256": "af8e8ce1b112da35690d7eb7b9fff4c4542e8c15ee44f2b7e71fd2168a69536c",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/HibcOneTwoEight.php": {
+      "upstream_sha256": "cba1e415fd319125a29bbb2a148a4801e5be3311fad643f1b2ebb15e478a4c04",
+      "sha256": "edb5b7fd54c80f39a9aea2aa2fd2264f3e51d0beeed8ce11b67eb90793d39ea6",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/CodeOneTwoEight.php": {
+      "upstream_sha256": "02d2b14cce938c222ccc130f3082341b06112c5592bcbc980b305fe869b1f4fd",
+      "sha256": "552a0b027ab8904c1e29be18cddb23f454369575c47200e0d5048ebafd744cc8",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/InterleavedTwoOfFiveCheck.php": {
+      "upstream_sha256": "843d8842991bf99edd32826e7d25f2ca990a24c055a0763018d9f542034351ad",
+      "sha256": "f5f326bfd43e8f2bd975232c80955da20a560fc3ea0f37bc16d4880aba037771",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/EanEight.php": {
+      "upstream_sha256": "2ba8a7031af522603719112729d714fe50ca2f71649cc1e2ffd119526dbf665f",
+      "sha256": "703001bb777874310db4f386d2dfd1f86bed0e16182d4abef6c6f277e415ee66",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/GsOneOneFour.php": {
+      "upstream_sha256": "1c232c2cf021d17991a86a158e3ba3e61d07201fcd933dec2151a0bcc9ac59ef",
+      "sha256": "28d0823b99410807234aaa27ae144b60229ce0eedb3acca79617436990dafb42",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/Identcode.php": {
+      "upstream_sha256": "1f918ef37a8cb1251e29e05696b3c8ce2dd2327f33bae2fe5a5c30cf734bb79a",
+      "sha256": "dcddd215e2f2985e85af192ca1fa911b33c7798021baf50d39c3eabe13ec216f",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/GsOneOneTwoEight.php": {
+      "upstream_sha256": "d4e385d101fbe0cb9d151c7b9ca7f7ae5f8bbd5047cbb00c13b1deb80c94aeba",
+      "sha256": "8970648243dc3c76746ec4c65173af8f8be9fb8826c20a69eaf8e6b4fce1e31a",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/Raw.php": {
+      "upstream_sha256": "da09081907bbd316422c02e7291ec23fb5e40201019fa65d8b84041294da5735",
+      "sha256": "0d8b6f7a753e17ccf6280bd6fc5c260dd9fc2128e44789e86c5f33ab9a579311",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/Dmre.php": {
+      "upstream_sha256": "ae6fcee89b9f12ba7668df3f5c13f4e6f8ab47984998a30456847d48e165cd49",
+      "sha256": "0a9a0f86653898d7284cebb85a239a43ed5c89be1e16930b6f1ce0ad3c7489c0",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/Datamatrix.php": {
+      "upstream_sha256": "acef1a9a95434ded39234c91a9ab4851dd03bdd6479e044f8db3e4f0a362e244",
+      "sha256": "3e4dcf7c2dc1acc9d3420b4edb800e173e8ff83abc5bec825bfa44b56542044a",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/AztecRune.php": {
+      "upstream_sha256": "f31e94d06dfbef1ab74788f69fc78cc820f38d3980c3886466de1afd37feb570",
+      "sha256": "c45b26640a16e32c5d40dd2e8819caa139309bc253993581d4ced87b69ac9752",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/HibcDatamatrix.php": {
+      "upstream_sha256": "45f5fbb2173a53c388e60a6bc71b4c62d40029b47b807a2a4bd0a53289dc7d3f",
+      "sha256": "4cb94e1fc750e4f7e5639361f602022a0cbe8284d802934c070450ba76832be3",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/QrCode.php": {
+      "upstream_sha256": "a15de266f9f04ad837a4db5fd54cf4f4cd36523777061cc46225fbc28205ec65",
+      "sha256": "783bfcf125e630ce3ae28b7624d80becad6d232e8646286b20c02b7b7cfcedf7",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/MicroQrCode.php": {
+      "upstream_sha256": "ce8d9a4c0949be83928e06c5af08d887c7de74ebf77299c3a0e57f111a1fc802",
+      "sha256": "a3c610a03b946b6230e8a6b5070154d8259d50743116b2a6483b63ce6a9d1acb",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/Aztec.php": {
+      "upstream_sha256": "39f1e7287637bebeb70747dc532cbde4abc97ff29b8f13f6f50bc1e0a5982313",
+      "sha256": "ed7d810aa57a6b3fb32df1bebddc70c67aef21b74a18a25164aa1e4e60dc54d3",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/HibcAztec.php": {
+      "upstream_sha256": "b2ec07f9df0f9d871385ba9615119ba82683e98e8a333a3299d2f3149689352c",
+      "sha256": "853b6cd30cd4a710dc12608da4147fc267254a959943252ad2d248d34d05bb0d",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/PdfFourOneSevenCompact.php": {
+      "upstream_sha256": "e7471f6436c67a70f969b99480b724ab0d9445e9d122fd1dcd8ff042b3458add",
+      "sha256": "8b9e221af321c1d8a5864fc809383925f45d3c51cb42be39d40c433867c0fd55",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/HanXin.php": {
+      "upstream_sha256": "2d89b969b2cd04cfa6b68ceb27b6dd9cdce2ca67033bb126511cfc0fa19433ba",
+      "sha256": "84ecd8f13890e80f5232afbe53fe15f5205477f123668e7b3ab4756c91225ebe",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/HibcQrCode.php": {
+      "upstream_sha256": "f3673fffdb3ee990424dfd7d2a67d311eaaa79099485dd015e8fd554afc6bda8",
+      "sha256": "63ca6e93f419e8e22f31302e341f3511e98a4b6c23d5bd57a5fd9f656ada60df",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/PdfFourOneSeven.php": {
+      "upstream_sha256": "4e778df479b68d4da5d980607d80cfb9bb1ac6b062f0bb690593d59066c9308c",
+      "sha256": "5a1ddd58b642124a3d952f4d8fff064e07f7dd4fc2e4b9cbde7a07d4bfa88c63",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/GsOneDataBar/Data.php": {
+      "upstream_sha256": "11eb1fa9dfb4272bd0d59c96fc059c41c6f84e6b4836225b6a67d76ceb927cc2",
+      "sha256": "e90d354ff2df480aad6215d6ef8aa8bbd6fb1dc41b02a0d162628ede72864b44",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/GsOneDataBar/Encodation.php": {
+      "upstream_sha256": "5dcb833c36055c4efce9c5d293f2e6279494fc2183095065b920243330801435",
+      "sha256": "94b340f88ee0fde3a57d28005e70f1e4129516406fa1e300383991837bb4f56d",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/GsOneDataBar/Compaction.php": {
+      "upstream_sha256": "60181a2375836e0e71a46bead4804856218b0be605f47bd24983682e51bd6d1e",
+      "sha256": "271c9292035d93935e016261172e4fd5b763f8aaaffa4887dd5cf9d85daf1399",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/CodeFourNine/Data.php": {
+      "upstream_sha256": "cf00ac02a78ab38cbc826fc8578726bdc6f749527ecbbe45ec593e382ed16906",
+      "sha256": "2c5013ab85f803ff6f5270b719f18dc294569aad71a98974118e1339f74e8c74",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/Mailmark/PostCode.php": {
+      "upstream_sha256": "2260e1fddfaadc3e474b4d94e74ca3eed00a577b05bb23148a235a3acea04645",
+      "sha256": "4c748dc75c092aece06edd238802e7cd66aa9a83f9d6988d7b870bd62e6200f6",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/CodeOneTwoEight/CodeOneTwoEightC.php": {
+      "upstream_sha256": "1408c2761d1a55d2ca529d08f1ac87de48653de65565f4fd176c7f105ea3bd53",
+      "sha256": "76e1bef860b238ec1b7a0fd5ad810d7a7e395ef41040e64577acd95801172e3e",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/CodeOneTwoEight/CodeOneTwoEightA.php": {
+      "upstream_sha256": "44971a39dd093934c980611312e5747d6e7b1460036c30dc628c1093377189b7",
+      "sha256": "f68eb48299b07cc82501d04ec5ec56480310343c0b27e6bde9fe44d066777018",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/CodeOneTwoEight/CodeOneTwoEightB.php": {
+      "upstream_sha256": "fb05b1987c4668597b87988ad977fdc6b2cf3660b03126ffac23a3c3f6336c9d",
+      "sha256": "a83e928525ebdec58c2ce9dbfaeb64e8203b1bc081f730b9cc3cdba6aae55595",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Linear/CodeOneTwoEight/Process.php": {
+      "upstream_sha256": "d80e30bb4045e62177d573f1ae04617881f2bc34f0f4a63c0f55efa25291f2d1",
+      "sha256": "e56a6bd165b2ef1bf597d0f627921d3d97e4e8b0d3e9ea1a2f397410a368904f",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/Datamatrix/DatamatrixEncoding.php": {
+      "upstream_sha256": "5aa6a92fb92b91600dd9235147a748047545fe7b9a7c2fbf908ef0475da11d8f",
+      "sha256": "ab1afe0553df58e9ec156911a9fbea44260be1c22576ef2025bc49419369315c",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/Datamatrix/Encode.php": {
+      "upstream_sha256": "bba2e58c6ea0a0058783a3ee506c5e32403c5b288094381a6471fed12ea91809",
+      "sha256": "1ec8789518d133a8dc0410f74c8e23e10a677a22b215cd008159295e6e326b79",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/Datamatrix/Data.php": {
+      "upstream_sha256": "85ef492a9d04e3d1bdeb83750cf60459347fc282ae401e9e9d31817015ca99d3",
+      "sha256": "33fb3a4164bab524def311d5d54367ba9d25d9e6438f5a8abc2cd9c85ce40caa",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/Datamatrix/ErrorCorrection.php": {
+      "upstream_sha256": "02905ab8d6af427123e6b08003c4ea9a53bf13d92de6695f0bb96e6b2dc325b3",
+      "sha256": "1392bd6c848168b246950906517d9078204d7b428360f6eea3c0b700749d5798",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/Datamatrix/DatamatrixShape.php": {
+      "upstream_sha256": "8b43be24c5c295605bf2a9a1b34c766b8f5e31d07df58da3c11070d6ddc5a723",
+      "sha256": "ba47cceb8485a8c998dac9b9027a2f863a7ac8c244d59c5e613a708dc3909b24",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/Datamatrix/EncodeTxt.php": {
+      "upstream_sha256": "dd88dac2c011542a61c392051a14da85a19b454bfaecf1ee8960d31702782dfd",
+      "sha256": "6982caaacd55dd505b833dc9bb05bd32355bd91e3180f9c75a8deb870c84d7ef",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/Datamatrix/Placement.php": {
+      "upstream_sha256": "5b539f05b9acee1047921b848ad75f664630d6ec84f48097175bf4826ca24e1c",
+      "sha256": "1a1b1552302cab92e2d500752b250989eecd38d503ebd9317f999269cab99694",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/Datamatrix/Steps.php": {
+      "upstream_sha256": "95e1a9aee8146c5ab60deb5f2395e529d139606eea7ce2a52878f5bad34d96c0",
+      "sha256": "ce5cfdc24020676d850e630786583e507b690176d450df62b2e672542ee21e12",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/Datamatrix/Modes.php": {
+      "upstream_sha256": "3c12662be2b4000ffc29dc78d9b413749d6e8109a04c3514d3a0f8275316c5ce",
+      "sha256": "1562ed49bfbbdb303942882e86d618fef58922905be8e8add49b2e6b65959db5",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/HanXin/Geometry.php": {
+      "upstream_sha256": "1f4e3bc16d3319459227b80adedb0eb83a0e4f119e96499c3e4cb6df886f6ec0",
+      "sha256": "2e392725cf0b4b823996562347263be071862d1a2162e6f02e74ccbffc4e6696",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/HanXin/Encode.php": {
+      "upstream_sha256": "56114306d44e5aecf856f270c3c62efa2b66e79f23a7d09b210ad6748bf181c5",
+      "sha256": "5b3e91bc8fe5f3239851179ecc58a9165cee5c33a110dbfb6566d21bde796705",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/HanXin/Data.php": {
+      "upstream_sha256": "e4eb66dfbcb370ffda3314a9ddb062bd400c83efcd4dbddc35c9795f878ba13a",
+      "sha256": "d9efb15485103983831408e5a271696c6a1c4c2813431dce0cc1cb653c522912",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/HanXin/HanXinEccLevel.php": {
+      "upstream_sha256": "81f8d7ef15b9ce83d16f502e6b5bdc61eaa332835e2e128e7e070beb89388751",
+      "sha256": "c1e6eae35785f475687eb92ea66542fc59e931a1a05165d86bcf8ea7756b7840",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/HanXin/Compaction.php": {
+      "upstream_sha256": "3db9c1e460910764b08f0a4899436c2d1591905292c2eb667b7d03ce327ef5bb",
+      "sha256": "d631b1b0701d1ffba47a6202587c3c21072669446f187aed32892b236c7e8876",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/MicroQrCode/Encode.php": {
+      "upstream_sha256": "f9c764d451d084936109fb24fd79d6fd5de48a6bd36adc9004304d2413e61aa5",
+      "sha256": "d1eda5471fe7f49f44c26a69dbbc5340d0cafba1d00fe181532cad622f7bb934",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/MicroQrCode/Data.php": {
+      "upstream_sha256": "6d5e96d47911de56f0af6f94641744dc8f0d91171c5a9303ccd00b80a92a5ed2",
+      "sha256": "7e97764e0563c33644b4b2ba4349d69043eed8a671e60279f35abb4783df3753",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/MicroQrCode/MicroQrEccLevel.php": {
+      "upstream_sha256": "fc46b708673187a130d8399df2ce51edf4abbfc8aea336b63fea5d2e62061166",
+      "sha256": "ab88e0cfd8cdd0282d392f5153cb46cb85aa6598ea56ceb82d71edf16bb6b010",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/MicroQrCode/Compaction.php": {
+      "upstream_sha256": "611616d92778ba85f74117f05de8337a3c108370b5a98088b6a1f5848494cd29",
+      "sha256": "36d35d2e6ebccb468a47cfc7790d4b7dd61ffcdd33e49aaf46aaa952ef4784c6",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/MicroQrCode/MicroQrEncodingMode.php": {
+      "upstream_sha256": "7de9d111304630f76d0a66c858a3039248b25680482d2287d75d982f2e4cf8b3",
+      "sha256": "dbb08de26e3e08ec5ba111f0a9a7cbdaee3cc0f69bf96606c9ad67fa8d4df28b",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/QrCode/Geometry.php": {
+      "upstream_sha256": "e38b008a8ee90e36cb0319b936abd4ab9df36387c34968005c8d0549304efa56",
+      "sha256": "fc5659d67a94727ead43e6b743e23bedfba6ec62784657cce80b0b628a5f57ea",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/QrCode/Encode.php": {
+      "upstream_sha256": "3ecc90b48d1a28e4ce3654261f214bbf380d1ec3d46e96f1e3276a7c7ff31ea3",
+      "sha256": "f7c2ac3153647b60a1f85bebdb1d680098dbbeaef9fd776cacb36679b50d04ef",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/QrCode/QrEccLevel.php": {
+      "upstream_sha256": "0d941e927ee18ad798a7ef64cfe95d1670694e117a7979ce34aa7abfb1f9aa75",
+      "sha256": "5fbca1b5f8ca3ddee1a9c7ea7b9bbca52afadf8c7797244e41ef230522881d1a",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/QrCode/Data.php": {
+      "upstream_sha256": "2f749d332c0bc11cb54a97e899635ea588ff5eb493f0bc254cd642be6675872f",
+      "sha256": "d7ab580e874d0d112fa71906cb5878c35129217162c197f766894b2493c0a9f6",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/QrCode/Compaction.php": {
+      "upstream_sha256": "d488849d3d67cb1bccb328a5cce1529454e7b8f6e33151ea10afc7d24c694f48",
+      "sha256": "b54d365a2db54fa893edbbb45e1598fd324c23d276a63f1eb73df40997bb8a54",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/QrCode/QrEncodingMode.php": {
+      "upstream_sha256": "3fc3d7313762a4ed2bf184ead6c35c52b4988e338e6308ef7d217f9529b54427",
+      "sha256": "95b39538e50a451ea078cb0b690468bb0f555144f2594984dfdf464183ccb564",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/PdfFourOneSeven/Data.php": {
+      "upstream_sha256": "2970d682d9e3d78a36cbdd56267b90e13179ee111a82082b6efdc3e1a7056912",
+      "sha256": "756bea50f40cf90f4f2ac02a3adf5884655ae78e4e093034aa897f877ff6dba3",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/PdfFourOneSeven/Sequence.php": {
+      "upstream_sha256": "1b706d4e4824e4ad265950804acc4e73e4e4ca265226d7deca3198559d1f8128",
+      "sha256": "ebaa834824c4c04e5d59753e52f0c9059f70290dc86c60606f9f5a3416f6ebea",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/PdfFourOneSeven/Compaction.php": {
+      "upstream_sha256": "1d3eb0323460180d7593e38c10a738a9a0493b2c959fcf871a58e5a78fde9af2",
+      "sha256": "4dcdcf7d2103ef5da7bd3e388ae3a7ac496042dc18f10acc4c61a4fa582d6851",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/Dmre/DmreSize.php": {
+      "upstream_sha256": "53459abd8434db77e72449d338de973ddf6ed29262f9cb572e8e48150e5a6fec",
+      "sha256": "63fed13f2b3a602fe5b7cccb3c6f10ee8dca61a5cc97fadeede57e160a47f932",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/Aztec/AztecHint.php": {
+      "upstream_sha256": "413095d80a1cf8c17040a2d0a95a5c43a921faf2110101f319603da3ab69d206",
+      "sha256": "9653c0d31d77a86b677e3fd9c32b51366a240ca1eb6bf00794573f5f17f078bc",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/Aztec/Encode.php": {
+      "upstream_sha256": "6284137f181ded5cf12ad48214f27e8b0431d1d7779c3d00ef754bee60f82f38",
+      "sha256": "f704c4ab0e5cdf8b1936be00e82867e4661617e9224ffdc16601c31e051dc5e5",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/Aztec/Data.php": {
+      "upstream_sha256": "6b695ecc4b825b5d2a8cebad0a7a8a074b70061467ba70e166b3cad557303e53",
+      "sha256": "9bb75e92ec228b93ef2c1c4c5ab8727a3f6e0701274278e46aa995a40fb74595",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/Aztec/Rune.php": {
+      "upstream_sha256": "0ccbbb5fdc31a96cda679dc6dbbfac068c4097730126a7d70b90945060a7cbd5",
+      "sha256": "5fa3c73657f3c178a9a36c467d5f585794d5b5babaec5635c50c63a38111042d",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/Aztec/Codeword.php": {
+      "upstream_sha256": "81cb026f631608a417b2ce9c7388d9287a08adad89c4d02af063ea5b397240f1",
+      "sha256": "3c8b5190249f4c1497dcec07471ea1d00a9b86ff7687a2c91159e5b300af45bf",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/Aztec/Layers.php": {
+      "upstream_sha256": "5d95ec1f137b3c44f73e26405f8ae2bffae4fea63643863a5088215cde900151",
+      "sha256": "afbb5e34623c42861da958a7bf1cef7b5b904dbae80e4cebd92379301849e1fd",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/Aztec/AztecRange.php": {
+      "upstream_sha256": "94278f601ec4932cb219c1a6287c33c5ce05615302d13c363dc62f235889f59c",
+      "sha256": "aa31ebc07a6030929c05589446d9c04c42b1df5abcba98bc66e90bbf8ef825d7",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/src/Type/Square/Aztec/Bitstream.php": {
+      "upstream_sha256": "f5da23d0d6a36e01ebd7b098a0023267a12e5b3ffc96cec5f87189f856b96e06",
+      "sha256": "859cd2897bcfec2dd74b7067753f5d055b571cd6bafbd96c3ed4c4b2799e73df",
+      "modified": true
+    },
+    "packages/tc-lib-barcode/LICENSE": {
+      "upstream_sha256": "ffe5b41b5f7c66ae1e82e9200ece9bbaa0ed9cfeb99a48f4a8b54b8de0db90ca",
+      "sha256": "ffe5b41b5f7c66ae1e82e9200ece9bbaa0ed9cfeb99a48f4a8b54b8de0db90ca",
+      "modified": false
+    },
+    "packages/tc-lib-barcode/VERSION": {
+      "upstream_sha256": "cd8d9ede022ed9f20881518234eca20a8676103cb25a413240f1e31fde42d163",
+      "sha256": "cd8d9ede022ed9f20881518234eca20a8676103cb25a413240f1e31fde42d163",
+      "modified": false
+    },
+    "packages/tc-lib-barcode/composer.json": {
+      "upstream_sha256": "6ce9596446788c18e1a794e596c3d519a7eec8991c29614016d3d72e0f633858",
+      "sha256": "6ce9596446788c18e1a794e596c3d519a7eec8991c29614016d3d72e0f633858",
+      "modified": false
+    },
+    "packages/tc-lib-color/src/ComponentNormalizer.php": {
+      "upstream_sha256": "f296cb6d0a0cb6d0d1b2e7a9c9cfd580b1c7ed4db9d35e083f21f5af8384606a",
+      "sha256": "317cbb7c9fb2f617825cb810040befadc464a2678c1e823c76916f0defdad7e7",
+      "modified": true
+    },
+    "packages/tc-lib-color/src/ColorModelType.php": {
+      "upstream_sha256": "8c8dc5bc8b2d8440153ea4ffafcc3538b7c15c8c98747c1c71dd46145d2fec11",
+      "sha256": "63f243fce0e5dd7ffc3bcf2fa848c3918717d290997dda19b0b6d098185410ab",
+      "modified": true
+    },
+    "packages/tc-lib-color/src/Exception.php": {
+      "upstream_sha256": "351e68cde51bcafc1d2492b16f7eae17f8b7340dcbad8c9280379ce6124066e8",
+      "sha256": "8ed2f11e080c480a31df22b927a1a9eec4e37442cb8c9b17d2dae23a77e6d092",
+      "modified": true
+    },
+    "packages/tc-lib-color/src/SpotRegistryInterface.php": {
+      "upstream_sha256": "da591114a588af403a28f91a1a4a8389e5d69ccf3ebf3542989cd5a9b9653104",
+      "sha256": "e84c4844686b38b47d12da4ca19f7179de91c943ee98b455c932776f9c914073",
+      "modified": true
+    },
+    "packages/tc-lib-color/src/ExceptionInterface.php": {
+      "upstream_sha256": "dc8a001693822c2bc2d40b497d595fee094f926a3a2fe92343e9def83c817a59",
+      "sha256": "c60deb2d13a4f103045aebef8c9ddfca5b760ff87cbd14e93a2da72d67035b4e",
+      "modified": true
+    },
+    "packages/tc-lib-color/src/ColorParserInterface.php": {
+      "upstream_sha256": "03b9240d07f0c5425f7234453bcf525cf03d345b8040a597cd734360a933a971",
+      "sha256": "df2dede4c5af8483a4c77905d8d2338c95e6481c3c571e96c5f3a54691e766cd",
+      "modified": true
+    },
+    "packages/tc-lib-color/src/Spot.php": {
+      "upstream_sha256": "1738a78a0d28f7234bfb0d95e7998efddd81ef8e67fee08006071b008bcb16e3",
+      "sha256": "5223e382a970b337b50902cee8000453ecc7525f43388b715d6ab2c9b8d2b494",
+      "modified": true
+    },
+    "packages/tc-lib-color/src/Web.php": {
+      "upstream_sha256": "9c41f9d4a20ab342b8f7c2ded59db47f1fff9e517edc22b06980f60e66d2cded",
+      "sha256": "7a0202c245df737b0ebc45e1f2841355d494b08cab737acf540e41aa85a0a64f",
+      "modified": true
+    },
+    "packages/tc-lib-color/src/UnknownComponentException.php": {
+      "upstream_sha256": "1f4ecf5acc58db34b8c60e41040e83644ffa9e89a7960c39d788b5d366ad5167",
+      "sha256": "f8c572b4c9eff4d4b06a1761a87aac822289c52a5cb462d8390be41156bbe5c6",
+      "modified": true
+    },
+    "packages/tc-lib-color/src/Model.php": {
+      "upstream_sha256": "2e25cddb3667e1e9c50ce649f55e9b3effca2a19eea765859c058812e440493b",
+      "sha256": "0cf63f70ef1b3b05f24cfee70e283807600b7174b420e4bf0386eb70822bea5f",
+      "modified": true
+    },
+    "packages/tc-lib-color/src/Pdf.php": {
+      "upstream_sha256": "7d418e5a1556f756c3cc20b2fc1a1abd78582176bb63be02ead19d15a7f69195",
+      "sha256": "47799d612411c5868bcc4f2ab3adf8a855a21aafca06eb526085c184ac1bbc7b",
+      "modified": true
+    },
+    "packages/tc-lib-color/src/PdfColorWriterInterface.php": {
+      "upstream_sha256": "c884d2e9968875a3a3fc1da274ea1247e5f847644cdb90997134e7468cff083f",
+      "sha256": "a76949c8e5f986ca2ed8cb6382f926210fd1f2563983945b5e8e9a85f389bce5",
+      "modified": true
+    },
+    "packages/tc-lib-color/src/Css.php": {
+      "upstream_sha256": "8b0bf64b43fb3baaf37b87fb4bbac3b0224a31af3eed4fba25676277e071c5d9",
+      "sha256": "1136c68e613417a89ce5d0b3e18337ce8f06eb8d3b17ddad9bb6582051ee1d8f",
+      "modified": true
+    },
+    "packages/tc-lib-color/src/Model/Template.php": {
+      "upstream_sha256": "8103a1c21ba9a7460b168d0a69453aaeb8dbbbe7a3c0b18461550915b6c3b5b3",
+      "sha256": "89db9781a66c8351e28acc7b7aae861ea2cea023a25ab865559a9ad3f91d2446",
+      "modified": true
+    },
+    "packages/tc-lib-color/src/Model/Cmyk.php": {
+      "upstream_sha256": "3ea1a60c0c4362c18142fde5d07c4a127c6cd26f7c1684a4850f763f884f068c",
+      "sha256": "98ac3c3a9e9b19b5fd319906e15eb65b56c31670bd5e12b138027cb2fd6fbd5e",
+      "modified": true
+    },
+    "packages/tc-lib-color/src/Model/Gray.php": {
+      "upstream_sha256": "b22b6d6221c1674473fdc300a317a9633f1ead146f21742dcccf7413d88bcaaf",
+      "sha256": "a1f8158f351719ad4d221a82e2d2f7bd344156c402406d593e02b70eb99400d1",
+      "modified": true
+    },
+    "packages/tc-lib-color/src/Model/Hsl.php": {
+      "upstream_sha256": "9534f0a1cfa55ed81dc9a5929c8359f315a630d450f418c9f05ed3d2dcf0fbcb",
+      "sha256": "1efecb207bbb25a1fe0bf5444d36d96692677735ea2985127f19031f9c3797fa",
+      "modified": true
+    },
+    "packages/tc-lib-color/src/Model/Rgb.php": {
+      "upstream_sha256": "d75d481d03ff3a4de6c52c5a276467ad88578c26b08e9065d1de7d9351ecedf7",
+      "sha256": "275efeb72ee05a995d4c9e5fb8960d8a93bc9819154b293e7b52b07fe53d6b3d",
+      "modified": true
+    },
+    "packages/tc-lib-color/src/Model/Lab.php": {
+      "upstream_sha256": "5ba64f8f1d53c5c8876c7c546cfde718a4ad688e2954ba92a7aa9ed09af0e345",
+      "sha256": "55d43043e7a2880b5a9658da7861768c44449d6eaa92eb812012ee147e9b798a",
+      "modified": true
+    },
+    "packages/tc-lib-color/LICENSE": {
+      "upstream_sha256": "0c51904f8d5babb903e68d08935161382c3fc247008fa9869a36d4cf9ee6a25f",
+      "sha256": "0c51904f8d5babb903e68d08935161382c3fc247008fa9869a36d4cf9ee6a25f",
+      "modified": false
+    },
+    "packages/tc-lib-color/VERSION": {
+      "upstream_sha256": "4849fd59130f411a4e6b46bcb708b942df340ce5f317536690c9323867afd11b",
+      "sha256": "4849fd59130f411a4e6b46bcb708b942df340ce5f317536690c9323867afd11b",
+      "modified": false
+    },
+    "packages/tc-lib-color/composer.json": {
+      "upstream_sha256": "1c3ffc3adec9254b95b0aabe848e72ecb5c35d972d6aef5be311b51d8431d874",
+      "sha256": "1c3ffc3adec9254b95b0aabe848e72ecb5c35d972d6aef5be311b51d8431d874",
+      "modified": false
+    },
+    "packages/tc-lib-file/src/Dir.php": {
+      "upstream_sha256": "1afaa7ab7ea28e6ace2df173f6fa049bdb242d549c28e403d8f2037a3a7fdbea",
+      "sha256": "0d3ea2c011a912733ad9fa4499ca577c22b7747c550489e886b06d543013f308",
+      "modified": true
+    },
+    "packages/tc-lib-file/src/File.php": {
+      "upstream_sha256": "9d9497272ce63a392fb5137a00877df66b554238b3823f7f09dd5045023931e1",
+      "sha256": "9ca8e4b2d3c9cb5182d43372b472da9eba30d66e18332b0e41bdfdaac1596bb9",
+      "modified": true
+    },
+    "packages/tc-lib-file/src/Exception.php": {
+      "upstream_sha256": "c804a3378ee9a41a26d67c5cf5146a9fd16a8d1651db33c83b448644c33f204d",
+      "sha256": "58651ea6ebc88f643c9fd4550c098d66c3be39c21c2567fddddfbb3d259b9ee0",
+      "modified": true
+    },
+    "packages/tc-lib-file/src/Cache.php": {
+      "upstream_sha256": "06622d06af581075233899a07fa4825463a3a8c6b20c30710933c918ec76d80f",
+      "sha256": "f07ab8e61b12c475e45bbcf3a99fbbc23a9cab006a0bf6d09c186eadd873a7c1",
+      "modified": true
+    },
+    "packages/tc-lib-file/src/Byte.php": {
+      "upstream_sha256": "e64dcc7bc7b4c0391af64f6cd53f437d2d1da6059fe7ff3bf82a1e85d36d6163",
+      "sha256": "6959610660389a422583f37cec45f1b4e3f67f9fa7c8cc842df2e4d84a2758db",
+      "modified": true
+    },
+    "packages/tc-lib-file/LICENSE": {
+      "upstream_sha256": "194714f8536f711c11d64e9c1885615206f7fc813e11951d64726e95bfb7a9c8",
+      "sha256": "194714f8536f711c11d64e9c1885615206f7fc813e11951d64726e95bfb7a9c8",
+      "modified": false
+    },
+    "packages/tc-lib-file/VERSION": {
+      "upstream_sha256": "0c10e4c12f396da6fafe92a74d8874db18436933a5d3daf2bbf49b313cbcc0af",
+      "sha256": "0c10e4c12f396da6fafe92a74d8874db18436933a5d3daf2bbf49b313cbcc0af",
+      "modified": false
+    },
+    "packages/tc-lib-file/composer.json": {
+      "upstream_sha256": "0110e2f8bd9ff1bd4cc78e7942f2d59907a920931086003e18947d2fbf4af7e1",
+      "sha256": "0110e2f8bd9ff1bd4cc78e7942f2d59907a920931086003e18947d2fbf4af7e1",
+      "modified": false
+    },
+    "packages/tc-lib-pdf/src/Text.php": {
+      "upstream_sha256": "b54848e8a85b3a5ecdc8d89f36ddd1d1ded55bd25f5d12b6bc1b1010631bce3a",
+      "sha256": "c37fd8117493cbb341e275f06da847ce0cbe4812bb471387065f7eec0abd609f",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/HTML.php": {
+      "upstream_sha256": "654d2d523e689656e13733e4c60c0c036dec0c26aa658b64e513b7bca2855ab7",
+      "sha256": "3afb8ccded1ef454f971f77cbc1916e93d73d7e75f129ec7ea6073d89f763199",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/CSS.php": {
+      "upstream_sha256": "537e9ea60ac481d766981a72a6cda1782a01b07f81786e139e216edf62532ad8",
+      "sha256": "c7797a2c8c4ea22584d08e253f44172b74ec22762075f55c520346d6ef20ea43",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/Base.php": {
+      "upstream_sha256": "2c104bcdc5d9f08319fe3c4a21d67a31d87df81779d021c477596a19f0ebf62a",
+      "sha256": "31b5a75579cb9cac30bc208478f38f05081dea78a7316706813eabd8d38996a9",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/Tcpdf.php": {
+      "upstream_sha256": "634d1331929e3630e6ac5645053b6ad8079043d4b1349da409f42d2583e9dd35",
+      "sha256": "9e649924491734f2e4d766d8b99b610db674b4685d0e07c631de158d153fadb6",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/Exception.php": {
+      "upstream_sha256": "1ff00cb4709605722635ba3d3d9bdaa9c13a759b308fe5e8966c98ba20a17e37",
+      "sha256": "765369c1bce25f2a41d6ec217134a5652a277be8655c5387eaa20108ae9bf6b8",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/HybridProfile.php": {
+      "upstream_sha256": "270b68ae9c8c7a37da147515f12e7e742c76458329803cfdb7111f91d6e909a5",
+      "sha256": "5dfcbfe3d7dea0351fd082e100caffe663b9be519327dc0c2e1d07e135671666",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/MetaInfo.php": {
+      "upstream_sha256": "04f6767a693f6dbb2d3db88320fbcdfadab54a8b70943075af2419cd220da3bd",
+      "sha256": "c44a9b13f3ff12bcd117e52542f5648a1939d81088689944816a1c6821abd5dd",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/DisplayZoom.php": {
+      "upstream_sha256": "4c4b0bd8c248812e6d86173b388b93532d1d3e635ee7dfe318bba3066b63cdea",
+      "sha256": "f23539007647a0acb68a480d257ab47cfa30b8bf59cd24facf93aacf980edaea",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/PdfConformance.php": {
+      "upstream_sha256": "47d045345023b36f5720c5e1d669944504110f29d456f8adee96bbb8f64b070d",
+      "sha256": "6d351d4da00e94a69affe5bca2f6782e9bedb31701c0274b0f80be84f9e32168",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/TextFitMode.php": {
+      "upstream_sha256": "b1b1c61f2d7ade29827b3a5851b76cc3af22084be56faaf1546e2fcb3f4dbca4",
+      "sha256": "315662385edb88c2e83096cb5a42b274cc87293b399faf630b3d556f40524d44",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/Output.php": {
+      "upstream_sha256": "7ae5739542f0f81c489dbea1045d3f74009270d212331cc48f8582ca0bf98f6b",
+      "sha256": "aeb6bb9b78b48a96255342a0c04b57498c826da49b09434352fa37ffdb770928",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/JavaScript.php": {
+      "upstream_sha256": "b72e86744f72730c55f51e1d11df18728636d522af2f3269dce15bb0f454b84f",
+      "sha256": "3004d6784e013121e9ba4e387c9fa5083b5721e62ba8263d4805c6b5db97bd33",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/Cell.php": {
+      "upstream_sha256": "230acf39a6691c65925b5a5d90491b3247e34195da9119c4bbfbe015455f0620",
+      "sha256": "6edf0dfd269000ce845181a4a3be84c07927b9e45ba7ddf2a01ad3413affa230",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/HybridConformance.php": {
+      "upstream_sha256": "eb6901806579923372478f31a8f68dc764b347a10b9414f85394def0ff7669a8",
+      "sha256": "33161110be4c611fef6e2ceb51b5a2dba91295166efcddcd0e9813a51647f364",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/TextVAlign.php": {
+      "upstream_sha256": "9614228c23a180554b1a32253c801174f6d3a5ce335a4a638039c96fdd713ce8",
+      "sha256": "fea23c1478857dfebd391c69c13b7602fe6d6747a4b2df6d28ea4ea198b59ec0",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/PdfColor.php": {
+      "upstream_sha256": "4d8c833f00a3921cbbb0ac8ac12cc2c256f6e1b97538c6ba4812d0b08c698248",
+      "sha256": "133f53022e1fb99525c6250518f0244ce27fff210aca9e3d8f19f94022e9f97c",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/AFRelationship.php": {
+      "upstream_sha256": "25236ec1a711251df780c7ad6157558465e641858f6daa77736f826e29048dce",
+      "sha256": "2b449120261a96b16dba2ee6755fa689814e9f4b1491e341ec9f4b5f19e39b3f",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/TextHAlign.php": {
+      "upstream_sha256": "c3240251e72cd568d98e259073c1fd3ab3ac4369c68f59bcd22747d0c9988e72",
+      "sha256": "e66bc4b9d3c76a0d316425c1a741ea4cb07ac31ef8aca9d87085e6a05d4cf9a1",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/SVG.php": {
+      "upstream_sha256": "11b73c2d9c00dc2dc433f898f9c6be6637e45d89e8bddf929f269563d95c1092",
+      "sha256": "5010edc6b72f3d95002acf67adffc80c890190deb2734d448f7e50ce565a601a",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/include/sRGB.icc.z": {
+      "upstream_sha256": "044324e5df9b94f37f39638f13e879ec672b47577d33b06bf9646fe7f2e7d3f2",
+      "sha256": "044324e5df9b94f37f39638f13e879ec672b47577d33b06bf9646fe7f2e7d3f2",
+      "modified": false
+    },
+    "packages/tc-lib-pdf/src/Import/ImportUnsupportedFeatureException.php": {
+      "upstream_sha256": "28db3f7624582a04d85925e844fd3b1958063344f931055cf458e34f1acbc2a1",
+      "sha256": "33e3000dbe72fb7ecf87150ac214bee052d3fda889efd82cb4e88772e927bb7d",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/Import/Importer.php": {
+      "upstream_sha256": "45070a1e73fb6f57ef36d5809f195199502818e31016a1157096ebc27fe11541",
+      "sha256": "cdffa3efafd28d18c7eefb16f1e0456df6db84f26b5c8d8924f60d779672c2d6",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/Import/ObjectMap.php": {
+      "upstream_sha256": "f0fcd797aa7968c276b3f9bae318451f29fcf52a21cefaf7459a7bbee810130d",
+      "sha256": "0f93a4ed07b4975ef029f5c6972ae65919ada09237ee5c027077591f671cf34b",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/Import/PdfName.php": {
+      "upstream_sha256": "3c0f0eac9dbf4c7d4ee85c17190a462de2eaf2365a70060b051c4681645ae2a4",
+      "sha256": "b14cd94ca8627f9ba3a0dc710440c24696210e02691c2f8d1912f090b80e1e73",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/Import/ImportCorruptedSourceException.php": {
+      "upstream_sha256": "a865c04344dee249085957d5da14b0e4b8f8db71dc9f5715bfa46115b06ab30d",
+      "sha256": "079a5fc5e3c0e344e9e7400ad506b2041bcaac29857fea4d6dbe6706a64cc42c",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/Import/SourceDocument.php": {
+      "upstream_sha256": "7a49b8b2f2d606ea75ce5a6568a0c278bceb0eaf1b5f99fd39f4aa0e7a811dc0",
+      "sha256": "ab71f2114ed77aa8ad7bcbae218f92191d358e155171c0a83f395c5e670c6eb3",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/Import/PageTemplateInterface.php": {
+      "upstream_sha256": "d79a1c9314b5be9583999ea8fbb237a72e09bfda9e50d3e06f8254d002198f35",
+      "sha256": "abc7c8f990c9d9427f2664007a578711c97f11cf96ef7aa74af58766e48c72f6",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/Import/PageResolver.php": {
+      "upstream_sha256": "c9143fb4547252869c8ece4e806a31a483562ad8ef3f1d9d36be475e3162a005",
+      "sha256": "30c88c19d94429a1f4847b67cb19174284b901f719f9ab8f879cb86de8348b25",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/Import/ResourceCloner.php": {
+      "upstream_sha256": "3f8f49d834facaa252044d3f9fe00d81771aa2b370ca62a84752ec34f68017ff",
+      "sha256": "d1dacb729073b9ce2bda81212deffb753a05b9f696ed6f355ff788fd4bf40ab8",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/Import/DictParser.php": {
+      "upstream_sha256": "86f8708273abb599feca9b4cbdce4273ca951c996d474612b40c4db8dbbe58b5",
+      "sha256": "8251508fc68b9a6fe916a93e918b0956024f328f38efb46531d0bf5f94d304cc",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/Import/ImportResourceLimitException.php": {
+      "upstream_sha256": "191f5a218a98337e3d7056f65d0d6096f6ed0ca6a3787b6fbde6f11fc6ba10f2",
+      "sha256": "bbec7a73130ac403048cacd34651ecaf0cb0daba30a719cef349aae202448114",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/Import/PageTemplate.php": {
+      "upstream_sha256": "d59444d414d569d98d72efb51cdde075416d29a74c1a7ec52b97c241da4fd60e",
+      "sha256": "9eff2cdd7f7721d8b7661b0cb0ca050205f4e581d0b532e0734e1bc0c1b63322",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/Import/FontInspector.php": {
+      "upstream_sha256": "ed5effb0d347af89fde033a4d602da9b1c2b003de6f7b950b7ab689805a8f42f",
+      "sha256": "2ddf5fabe61caf90a3eca1f9f2721b02f46bd15d22d5e62b0ed88747e4fc3e80",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/Import/ImporterInterface.php": {
+      "upstream_sha256": "d96193c60442b5811d9ac270a423d29fbd2faee790c9fb16f3dcdd1622634469",
+      "sha256": "a0a38765956201d5e1ee74f3372d649a0e5053b3a7669abef3a174f3826b0896",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/Import/ImportException.php": {
+      "upstream_sha256": "e31d4fe827d6e0aaf2cd1d723b6b29318bdf9c1bc0b667f48f3018c39ec3ae6c",
+      "sha256": "7e8988c4ba77d2de3dd943d700de257e64cf2117fc072249ad9d501d404d8b53",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/Import/ImportPageOutOfRangeException.php": {
+      "upstream_sha256": "6ce2168ea46c11e3adc8869f2a4345a55a530b1d7b3a18450200fbde18c8228a",
+      "sha256": "9b5b4e66ae87b9ddb730308ae00f346d453db16ff295089c45fbe7c604a70040",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/Import/ImportSourceNotFoundException.php": {
+      "upstream_sha256": "e8a1812dca572f6e5c94c2fcdffe618c104156461dc33f90b3fdc62b840bf55a",
+      "sha256": "260a14f0f8b2471816067cea74170717089cbd549626fa414f1adef34036f9a0",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/Signature/External.php": {
+      "upstream_sha256": "74ef6553ea41ae075e9c6cdea82d9995eed39db732518491e9b9b613a2e5420d",
+      "sha256": "b5d650bd4feb914e7b4c35f3f41485a7ec983d3cb93f54dab58d18cba01f14c0",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/Signature/SignatureAppearanceMode.php": {
+      "upstream_sha256": "f6b28b1f019a5b9850cfd0169aa8a002a2cd928c573f44405b50a15be6ebf72a",
+      "sha256": "567e69c5cfa401ce7be3da869bea4f421f52f6622853153d1dc35c4b951db73e",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/Signature/Appearance.php": {
+      "upstream_sha256": "1c7baf40883fa7cf4aa72ae82c47be327e56d299074e7319c58f7caa931f7be2",
+      "sha256": "a7ba863cd36a9fcbd6a7e20dc10037cf39f82721b46403004442e06e20c0a105",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/Signature/Facade.php": {
+      "upstream_sha256": "4add098b13c86120c04f29dbe281ac719cae93c56ebc92e38ac40c41b4022cb8",
+      "sha256": "e918a5fedcbbc10d3ee63aa5fa270d7f4c0ee125b8a9420588df3972ca751448",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/Signature/ExternalSignatureEncoding.php": {
+      "upstream_sha256": "d6e16401dc031863a6646f5f795e43c174505c9f66ec4d36c3181e681892de4a",
+      "sha256": "089a197df81abd350c6aab1533b2d981b8d5f5342c875fcc1b2313875f672523",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/CSS/SelectorMatcher.php": {
+      "upstream_sha256": "0e483353a223f50650a531e06c5d7bf10ac14a3a1a260a4bfb66fa9f6914482d",
+      "sha256": "c9f21bcb836a90b960942821547949f045a1bbcb2ab0b6e144b5d29fbfbec5f2",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/CSS/CascadeContext.php": {
+      "upstream_sha256": "4a030a6e55c7cb2796386c3e8a9e946e3288e77d1af5ba2ff59a9cddb8bd4b35",
+      "sha256": "a458e4de8cf1a2c9dc7070732a4b021a544f1f0cde1f6ce7b37a2d8b66b68fa4",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/CSS/ImportanceNormalizer.php": {
+      "upstream_sha256": "94143ca2ba47bb4155afe62f4199b43d7d9d7e56d716ad9351996de174822881",
+      "sha256": "3c3adae4c6cfcdc622cf81bf85a0cd5b1b4550be4eac1f8acd53fc8b7dfd5523",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/CSS/Specificity.php": {
+      "upstream_sha256": "728b9c42e69bf3a97e39cb31e0e186c0c1cf575c3afe6565dc16b7049ba3eb8f",
+      "sha256": "8b8771c3ff2bf6fe643df62cf4d38f244f745062650a6bb5d2ad335af2a06755",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/CSS/ListStyle.php": {
+      "upstream_sha256": "fb77d12cb2d864739688fa0e8820c7af47e0d966a3e6d6174adc7bef64eb8258",
+      "sha256": "e865cd5d90952a3a38716f8e5c8c7cdb1d248c808b25141d6f549e5d471ac074",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/Cache/CacheInterface.php": {
+      "upstream_sha256": "d9794bba9c0b72d68108cb1819191e3ec7c8dad72f9d6f42c6f40923c33a2885",
+      "sha256": "de51a81eecfa6c24020c0da83b7891b38737c6404808733bf5f2acbddf927089",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/Cache/ImageCacheAdapter.php": {
+      "upstream_sha256": "9c6f8e034974ea766936249747ff3dbebabccdd0dbdbe957c0be998f2b18a543",
+      "sha256": "9b25f6483d6a56726f650e42a8afce4266bb186f8f512dc7e49d3c86b4fb9119",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/Cache/SelectiveCacheInterface.php": {
+      "upstream_sha256": "02f14c014b5b1515769fc9a0658e7a2c0d2240e23efdf89551b51537745ab261",
+      "sha256": "d6138923c8cb0a70173e2bb12c35c05f04c9608a2714dd2e039c3183a4acd394",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/Cache/CacheType.php": {
+      "upstream_sha256": "4275265c8a278d2f0347416eae866c95e77321c20cedaf676d17e44cde606b76",
+      "sha256": "575e94f16d23e6c6386c1f5370212ac0cd9ffd8305e56c5cfba2022a30b15d57",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/src/Cache/FontSubsetCacheAdapter.php": {
+      "upstream_sha256": "197ee1875a47d8e3977ca7261dfb4d6cc5a07fa7a4335fa6a0c53cd26dedce74",
+      "sha256": "bbbe841ba21b43f5060176369c2e4541b6e1881ffea327e3fd66f45026c36195",
+      "modified": true
+    },
+    "packages/tc-lib-pdf/LICENSE": {
+      "upstream_sha256": "d22e33df461b9fc706ae8c3ece6270b4eba2bb4346a9f52dbed6d11c0be5d76b",
+      "sha256": "d22e33df461b9fc706ae8c3ece6270b4eba2bb4346a9f52dbed6d11c0be5d76b",
+      "modified": false
+    },
+    "packages/tc-lib-pdf/VERSION": {
+      "upstream_sha256": "e7aaa0de3640d85862ca3c5afa7ea645435373acbbc5b189eb732d30b9bf8a49",
+      "sha256": "e7aaa0de3640d85862ca3c5afa7ea645435373acbbc5b189eb732d30b9bf8a49",
+      "modified": false
+    },
+    "packages/tc-lib-pdf/composer.json": {
+      "upstream_sha256": "8c779f34aeaeae6d317817ce1afe947d234c2d8044cbfda3b668f23560c1148a",
+      "sha256": "8c779f34aeaeae6d317817ce1afe947d234c2d8044cbfda3b668f23560c1148a",
+      "modified": false
+    },
+    "packages/tc-lib-pdf-encrypt/src/Compute.php": {
+      "upstream_sha256": "984c27684e2309252cfdec51efca93c05746221ae3612c99496be434553724fe",
+      "sha256": "bd164b32843f4f701329856c8636c69033dbb9b40c50154dedaa3be66a42cca0",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-encrypt/src/Data.php": {
+      "upstream_sha256": "d4f0a2173854fece6e3a2b086c613c41be8186a9b1c02ae7c173f3501e2b78a7",
+      "sha256": "a467da96d2a5101e6ab0a851b1939c9a1c447d4ebec9af43a94037fbc35d7c65",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-encrypt/src/Exception.php": {
+      "upstream_sha256": "f94a9ae9bac9f5ce5df3c05e1738c805454ac7e1f630cdf8bfee7cda58a83341",
+      "sha256": "c301a7671a01a6f1638b226ebc7c3fdf19dd65d3022837d527b337743daafe95",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-encrypt/src/Encrypt.php": {
+      "upstream_sha256": "7819331380abbb0b60b43692d50cf710cb37e9ddd8d5f5f9a5ae15f0db5b9f42",
+      "sha256": "5f31a323d952d89a1b2105bc0b1dbf39634f891ff210d98d8deef2f284259890",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-encrypt/src/Decrypt.php": {
+      "upstream_sha256": "a5f864594bf678ed40428102c4443af26c0987d8fc85214299edd1417d464a55",
+      "sha256": "1636000fd64c2a4887c6c1e286c2fc43dcc128a8f172f010708014f99116cadc",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-encrypt/src/Output.php": {
+      "upstream_sha256": "cc7030dedfad0f08ee12b4f19ff576117fbd4a7d4bb13c5c985c16c01bf67968",
+      "sha256": "5f000e76c0c2b81da41d59c53b90fdcf97a199837e922cb0ff06677055c9e32c",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-encrypt/src/Type/Seed.php": {
+      "upstream_sha256": "be8b5ec680c59ad15557740f0f4788eed8049f400a0a74ab6f7162f978452ffc",
+      "sha256": "d1143fed51d42fa5f470cebe0a514173137f7daae16e223db2d6333d98191659",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-encrypt/src/Type/AESSixteen.php": {
+      "upstream_sha256": "471bd3cf0d11f42d33bda221baf3cd85eac862b8384734bc9b16869c7d21bce0",
+      "sha256": "03e6d5c6c55846bfcdf4a12b6e9b9c5cc3975707c47f1f8708609dfc16ac262b",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-encrypt/src/Type/AES.php": {
+      "upstream_sha256": "3fb7261235ba8e3b10894d9503c4cd3b57bf07e669918ff7bb57961752637e4d",
+      "sha256": "6572ac8e09bdea2b9c35b2116fed110c44408a4900bb03dcaafb835664f93e24",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-encrypt/src/Type/MDFiveSixteen.php": {
+      "upstream_sha256": "28ec5549ce79989b599cd1f457db5932bd811bd50dd63bd13f64db7489f7cad9",
+      "sha256": "b542d73168e66a2bf22345a6d9732ae3d6602678830f04ac4e40d21f39ecabb1",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-encrypt/src/Type/AESnopad.php": {
+      "upstream_sha256": "9f90691754d2665c45088d512ed549a56deae01a60c8b055f2a2074898a0e37f",
+      "sha256": "8f6ab50cc4ecf2f13f6410b5deeb6524e52e0f1d2a07a8735d16e64df4f73900",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-encrypt/src/Type/RCFourFive.php": {
+      "upstream_sha256": "e7b46d90efdd1cdce46326e275ee6bef03085d4f4c62fe939a97bb19d9e9b986",
+      "sha256": "1a629c7e75d578919fc8edffe815709ec04341c2b95992779439cea6a442f489",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-encrypt/src/Type/AESThirtytwo.php": {
+      "upstream_sha256": "504262462e5141792b63b206f03ec871d38b2b0cd6846d72527f5d596b0b8058",
+      "sha256": "7572ba0ef8bf1247e02b3c32e32591e5f203fd0d08e76665f129c427f54db730",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-encrypt/src/Type/RCFourSixteen.php": {
+      "upstream_sha256": "5cb933efbefcb40c27f9544acdc3dca0d789b8c2602092113a75d7183c0775e1",
+      "sha256": "3a485980ebcc57580f609598ba3399803a27a53dc6c49830599e077ba28539cb",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-encrypt/src/Type/RCFour.php": {
+      "upstream_sha256": "8e980a1bf4cef93d4161bcee416ecdd2695a8c4911b33a0150978ec420bdf60e",
+      "sha256": "404c41264400945024e5013573bd204ad26c2da31977a734ca6cc35ee16bce53",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-encrypt/LICENSE": {
+      "upstream_sha256": "7b72d77f811d38da2302a3ee2d86613f481027a1cd2ef1decfec35bb2d1874b7",
+      "sha256": "7b72d77f811d38da2302a3ee2d86613f481027a1cd2ef1decfec35bb2d1874b7",
+      "modified": false
+    },
+    "packages/tc-lib-pdf-encrypt/composer.json": {
+      "upstream_sha256": "9dba5e5efa9a749436f523b58ab01f4778c0451c0aa08a9765af38661fa51f52",
+      "sha256": "9dba5e5efa9a749436f523b58ab01f4778c0451c0aa08a9765af38661fa51f52",
+      "modified": false
+    },
+    "packages/tc-lib-pdf-filter/src/FilterType.php": {
+      "upstream_sha256": "358bcda10e1476aac4a2193f1037331b6254a0e50c4e8634dc1eb45205c0ebc9",
+      "sha256": "207d43065573a4af360dcb7587441a04e589b0de3f3346b6f5d02fb3d5446a9c",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-filter/src/Exception.php": {
+      "upstream_sha256": "b5054c512dd4e6300b070c709cac09441e0339133bf3dba65cf4ad986bbe0deb",
+      "sha256": "3d38674fc0ccbe1bd2dc936cb170c7a816abf48630efa9d0b6ca01b4b99e54d3",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-filter/src/Filter.php": {
+      "upstream_sha256": "f83cc060045e120228364efd305a1c67a51fdcb997040e78958746f67f2fc134",
+      "sha256": "ae1751054a06166dc9ae3f12e41f6768630b6af57556b6c08cdeccb36cdbbc50",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-filter/src/Predictor.php": {
+      "upstream_sha256": "81aa81f3893d52b23a164f5b43564e036cbb3f3ca3334f3af59cb3923ee75523",
+      "sha256": "48e23a3c2aae07253487c3a32cbd6161153089e63b5c682e9d6fce36519983df",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-filter/src/Type/Flate.php": {
+      "upstream_sha256": "80c24a7516885c7f2e8863b302ced4bc49b0ff02515e7533507bdcc87ae46f96",
+      "sha256": "c98325d1ae6fe135530a685e39ee427e5cbaca71c448d5ed35951822b39ae369",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-filter/src/Type/Dct.php": {
+      "upstream_sha256": "22de36b5ca5b4cf66dd4d5d5107d79c57d58773f88eaeb0209239f6389e5ceec",
+      "sha256": "b8d29b7c6c031cc3907af529914271d2ceba12407da19c7c46ddd6862c3e7e02",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-filter/src/Type/Jpx.php": {
+      "upstream_sha256": "773fe2ca4f1292bda6db99574783dbf0288b8add2067bf595b715448bb28f0b1",
+      "sha256": "953a68bdd7a2d6186146e0a7350ab3283a5a76da63eeb91fbd2eb4feb193ebe3",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-filter/src/Type/Template.php": {
+      "upstream_sha256": "dbb434701b3ea2a3df3d739b8b529677a67db19ae99914414a862f812fc781e8",
+      "sha256": "72797bfe8736413742d47b9d86e50469da5d7a7c379ded4da95e07e1899c7a02",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-filter/src/Type/AsciiEightFive.php": {
+      "upstream_sha256": "20da206fb0d2fbc5794b2ab19c219d930917d92eb858e89fb74affb2d88e8108",
+      "sha256": "d0d3305ebc74927bfe8315bfa00da794b68997fe4edf4c2f0449a17cd4e6510f",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-filter/src/Type/Crypt.php": {
+      "upstream_sha256": "f226f4abd80e4b1a578f13c5a0414be445b719b34d54e64b14d9e28e9e89847b",
+      "sha256": "5124901353ba7f8b427c446690a6e374524667d44d7501d7a9e471c244bc601b",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-filter/src/Type/AsciiHex.php": {
+      "upstream_sha256": "5a2746127f03c3f349e4fcffece845c02c92a366071f72b910338bd8292d97c7",
+      "sha256": "06b05327819c225de9469457f7444db72ba02eacb405f9d330010760244b7353",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-filter/src/Type/CcittFax.php": {
+      "upstream_sha256": "ab7ccf03561fc3485c97203ad2fa671f38acd329db207b1d3fb849d5a06141dc",
+      "sha256": "71c730a44b611d31e1be989045597830b2817c25f539c9584443e855f40b268a",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-filter/src/Type/Lzw.php": {
+      "upstream_sha256": "dfa81c62196a191dd95e20e48984f8ae42fa164dd3e3bbee49e623acc6db9d64",
+      "sha256": "11f0a74415e5e50b0ea7f1853911d6bb5739179beef3c2d434e4c13ae1542c2a",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-filter/src/Type/RunLength.php": {
+      "upstream_sha256": "7c0b2a0b7c6e0c733cead0a35b80c0317b9bd949baacb6dca4b9f2f5223a3e2f",
+      "sha256": "c816b14bebe634fe36cb25b0982ed613610cea99dae71c19f6214a22fab7cc73",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-filter/src/Type/JbigTwo.php": {
+      "upstream_sha256": "707022a37abd7cc15018ac4b372ec463d3a56c28f53b80428ea3e442bf619632",
+      "sha256": "9c2dbf54a54399699c79c397f036648a84ed29d42688d573fa49caab1347e509",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-filter/LICENSE": {
+      "upstream_sha256": "0bb3083ac9b94a3d956b1cda7801ae48dccf3cd7d8dad1e61535b5ee8886f348",
+      "sha256": "0bb3083ac9b94a3d956b1cda7801ae48dccf3cd7d8dad1e61535b5ee8886f348",
+      "modified": false
+    },
+    "packages/tc-lib-pdf-filter/VERSION": {
+      "upstream_sha256": "e0887f5c95246f9fe39e85536eb64f394347e2bc53cc42d62d312a4abfc54d3a",
+      "sha256": "e0887f5c95246f9fe39e85536eb64f394347e2bc53cc42d62d312a4abfc54d3a",
+      "modified": false
+    },
+    "packages/tc-lib-pdf-filter/composer.json": {
+      "upstream_sha256": "e413a9d5745fb611bfcd6ffdef76a8a5eae9e871b342feee4a5fec08a9c99fb1",
+      "sha256": "e413a9d5745fb611bfcd6ffdef76a8a5eae9e871b342feee4a5fec08a9c99fb1",
+      "modified": false
+    },
+    "packages/tc-lib-pdf-font/src/Load.php": {
+      "upstream_sha256": "5721c33379239aaccad700b41cc346b20ff7342619d00645094eff1064960d13",
+      "sha256": "730c4053c47196ed808a335ed7625a5f932ebc042082676329e1b72eb97306c3",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-font/src/Subset.php": {
+      "upstream_sha256": "c5aeb3325961962babdd02fdd148d42c7cb6f749bf51d224a443189c051e30cb",
+      "sha256": "b89445e2ce18df5b1614936492f3f4e526ba3b229824a0fd09c3bd2ac6113dc4",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-font/src/Font.php": {
+      "upstream_sha256": "f3aa15ffd5973b2f8462b4e8c54bf70513af947378fbc7f5306942b9b9532ebb",
+      "sha256": "42b94a443c49a3987abc6aa6ccefa37852418a6c1e9a4542584eb2221f95b47b",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-font/src/Zlib.php": {
+      "upstream_sha256": "03bc5a86639c3d2e382f494aa7c69b6c0b11c7fdd6c60f3f138cc48de9061e22",
+      "sha256": "1c5d1622da0ac9e63545a92d12277befc4b599c806a197d583845f7d29f1ee63",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-font/src/Stack.php": {
+      "upstream_sha256": "153ac904aabc86770527104a3eacf029ff49b9ade6f487261395898572f4e8e2",
+      "sha256": "cb55935530f9367e198454d38ad50135639ce9df07eba1670698aff22c19d4f8",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-font/src/Exception.php": {
+      "upstream_sha256": "a82981e0d86464c27de3004833f66973404525391e9245a438b57cb34d3bdccd",
+      "sha256": "c80e0b37e0d798c3d3a66b53dfdd4b43614ded6564d44f9a643ef26c6f6512a0",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-font/src/Buffer.php": {
+      "upstream_sha256": "de177ab5c18982964c403011a801128b7ff2c2f5531291d685a17744ee3964cb",
+      "sha256": "699f55e82b49b77cc384b1caf8db2f84a931f5aebe068f5d1fc220184ff43fe4",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-font/src/UniToCid.php": {
+      "upstream_sha256": "b62115230f54e945903151e3a0f0e6731f0e80b9c1e662b77d52919260b07ee7",
+      "sha256": "0d038438dd02672a9824e0ce4a30eb3868df87a8c90725e45a56b21723dc43a5",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-font/src/Core.php": {
+      "upstream_sha256": "11a72a474c62e3f73fc5a25d6004c7868f2fba822fee85d431b760d2e2cff480",
+      "sha256": "1b926c1f8ec58e8c2db3829365fa7868d66becb06455d6b34f9a7941ee8bfedb",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-font/src/FontType.php": {
+      "upstream_sha256": "f0138f55c8719749352831a524a74a634f4bb942104e1d12f63ca408877e7523",
+      "sha256": "ce1288e1a10923b7df0daed644461a51dcbb159ff4ded1a8d441f300d21aeb48",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-font/src/OutFont.php": {
+      "upstream_sha256": "c20c897a6015508fc1d8685a09a23d53b639e7a6ab402fad170e75cdf0d88789",
+      "sha256": "6a9c637649c8c5525c035a479ac9529d493c39250fc6ac45bb3c222bb5caee4d",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-font/src/FontSubsetCacheInterface.php": {
+      "upstream_sha256": "9c56c6dc9501d121a281eb1084272ed2cb64d961fd7a7320049ea5631e1e7317",
+      "sha256": "f6e884fee1422dca8da534ef64a5a130269529bf26cdf7399d8a0703c6c0a0b3",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-font/src/Definition.php": {
+      "upstream_sha256": "59ec50ff0999640ce5ecdc6ee1c7aba24fb784f85e56ad123beee25dc2d6d79d",
+      "sha256": "ca58a73b0b56a906c371e950c044cd91e42a71795b9be5fd8f38caba94f43731",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-font/src/OutUtil.php": {
+      "upstream_sha256": "377e6936a06bd04e72ff7a1739adf059d7796de879eb9bd92c72783cade4ef8f",
+      "sha256": "323056cc9251c3ecc74bd6c8b8a33006ba20931da6953aec5ee1da2c600962a7",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-font/src/Output.php": {
+      "upstream_sha256": "83441bdf15de0f6cecb7a00207e2f391383f4f22c3010c00cbaf624b41800139",
+      "sha256": "593a64198f5af30eadfacff8561d33ee0f2d814bdd3d557bb18b0171b15203ab",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-font/src/FileWriter.php": {
+      "upstream_sha256": "182650383cb1cbd24daaa0a9fa4ee8571447bf86f7aa534916c0b23b7744258d",
+      "sha256": "9192bb7a1c749b06eed0beef41de45839b6b06e3fd02761cd0705c09a1611f54",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-font/src/FontPaths.php": {
+      "upstream_sha256": "4f647a5b6c5369ff489337a904314301408ded39db374059ca76987fa71cee56",
+      "sha256": "69ad22d0d05d7934913f9ace0317d2c1c5102e5a86409dac499ee240d97550a0",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-font/src/Import.php": {
+      "upstream_sha256": "7f5e5aeafcad306356fe623de183ada4f88bb6891be719547b80a1797042a371",
+      "sha256": "3c4ed3bef6c01cc174570b3e3bdd604a992006577401e608e6ebecf1a8cce1c9",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-font/src/Import/TypeOne.php": {
+      "upstream_sha256": "a00f9ba486f09dce97af85a79f0e87cff6a73d55101fc42173655043d0c4108f",
+      "sha256": "262bcf8b7fdb2c14bfa7c3f712a092dfe4a253e869fccab9f0281bc27be31586",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-font/src/Import/Core.php": {
+      "upstream_sha256": "92870ded5ba40999f1c5d528bb687f8f5540f5a205161fe6f951759bef8122ab",
+      "sha256": "6a08c6e6f4939446a2ca5dcd3fc7b94cdfefc83da0dcf7d0eb84ab6bcbc1c5bd",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-font/src/Import/ProcessorInterface.php": {
+      "upstream_sha256": "ef063765f8b52f5a0dcc9b6462b9a345ecf1a0f94d371ec86f759836915f1dd6",
+      "sha256": "7c7f7e539bf59cfa13afccc7047df0d55088295ec747b503e8b7fca4e2ab54b4",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-font/src/Import/TrueType.php": {
+      "upstream_sha256": "851beb16e1541f0907420621213d09155f71b1625c39b11e8c1df133215904b1",
+      "sha256": "0295d15c0e32d602ada011ebb7285c999e128444f63b4910c698eb41fb20c524",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-font/LICENSE": {
+      "upstream_sha256": "48ab09381c5c0b3eba94c6e15efe51608634bdcdf5ee4cb107a7e5bd5d938100",
+      "sha256": "48ab09381c5c0b3eba94c6e15efe51608634bdcdf5ee4cb107a7e5bd5d938100",
+      "modified": false
+    },
+    "packages/tc-lib-pdf-font/VERSION": {
+      "upstream_sha256": "4938ef88cd76dd7f6297a3d1d0c57af9c8e420e9359e778f3fc3725a8781af0a",
+      "sha256": "4938ef88cd76dd7f6297a3d1d0c57af9c8e420e9359e778f3fc3725a8781af0a",
+      "modified": false
+    },
+    "packages/tc-lib-pdf-font/composer.json": {
+      "upstream_sha256": "15966c132144ae950e3272a522dd0934f4a3377d07bdbd584f40b3782db04faf",
+      "sha256": "15966c132144ae950e3272a522dd0934f4a3377d07bdbd584f40b3782db04faf",
+      "modified": false
+    },
+    "packages/tc-lib-pdf-graph/src/Gradient.php": {
+      "upstream_sha256": "8250aafeca6deb93a6d9b0adc1d06178b8350beb40d3430a2955a87e2d86deca",
+      "sha256": "46ae2f58fb58ed04d477013f14b5b8e2a2d8c2eb418c443f0314c12a13180063",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-graph/src/Raw.php": {
+      "upstream_sha256": "367f4af6947d0cb1fb74262d88cebe7358504b9a98e0ebac04593f8cf4003739",
+      "sha256": "9a3f47677c4026962f5aabe6fdf06d8a30208d979e26674ae86faa07a81319f0",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-graph/src/Transform.php": {
+      "upstream_sha256": "9572ada06bb48dd7989cfcc18a8d164dbef4d0d1feadb9bacefc3af828ddffe7",
+      "sha256": "2d7e32bcac83ea35d24598afa22260f940a3a26ae6d16e6c3915d958521ae0ca",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-graph/src/Base.php": {
+      "upstream_sha256": "9949324a5c9ca1797063184dffdb9a9b31fc24e10ca1d3bd563ce5fb46858c38",
+      "sha256": "77741733d908d2b12eabcff9124b80115df0a4d38f5db6cdb5557cb6afcf869d",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-graph/src/Draw.php": {
+      "upstream_sha256": "7a78930a4ae188f529f3e496ef3dbd30c35aa4b60262328dfdde91a4a6db9cd7",
+      "sha256": "262da68710501f7db769f3ca01135178210be70fb5baf5d5fd8b590c7a019da3",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-graph/src/PathPaintOp.php": {
+      "upstream_sha256": "5c207f2857ab67e63330bcc42b5a82e2b1d7d9d1781d6dc09c31a6e308876b33",
+      "sha256": "d50fb2d41633fe1cfa5f5f8b97a285b166e657e417f40359aa39818b7954b422",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-graph/src/Exception.php": {
+      "upstream_sha256": "2baec36eb266d2ad27b198ebb7d2bd9cd48a5dead279e045982ff01721b7edb2",
+      "sha256": "74910f970b6dfd20a7d01bafd8df91778e62832daa557881d9a432915a25ef84",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-graph/src/BlendMode.php": {
+      "upstream_sha256": "20995592e15e3c4d4409249f168182a14649e710a6d5325df9904d5292b055f9",
+      "sha256": "ba25d0aca6cd9424bcbba0c96c3303610d3ae6dfedf56330b869f03104594a80",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-graph/src/Style.php": {
+      "upstream_sha256": "2b4d92bd927a6d6a5592ea05daf8779f0240a1d96d914d22f1ccb2370bbfb2f4",
+      "sha256": "7681cabb88318fef9ff997f1d172e35ac48f96a07ee3aa26d1ffa0ab3d53c8e6",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-graph/LICENSE": {
+      "upstream_sha256": "62a4a51d73bc3336e8a0707e2b588590185b568279d1bec4ca0c1728879d32b8",
+      "sha256": "62a4a51d73bc3336e8a0707e2b588590185b568279d1bec4ca0c1728879d32b8",
+      "modified": false
+    },
+    "packages/tc-lib-pdf-graph/VERSION": {
+      "upstream_sha256": "3e58a5919b89c09e3341f170d549a675f3109546ff8901b986186a9f38964331",
+      "sha256": "3e58a5919b89c09e3341f170d549a675f3109546ff8901b986186a9f38964331",
+      "modified": false
+    },
+    "packages/tc-lib-pdf-graph/composer.json": {
+      "upstream_sha256": "79ab7388e025bd6ca49c38733072067308b7e9fc92b35af0d2fcf12a39debbdb",
+      "sha256": "79ab7388e025bd6ca49c38733072067308b7e9fc92b35af0d2fcf12a39debbdb",
+      "modified": false
+    },
+    "packages/tc-lib-pdf-image/src/Exception.php": {
+      "upstream_sha256": "137fc0162f184e183fd9411712d1b73320e341c3dcf2b821ca9b1c53e9249648",
+      "sha256": "a968747512e560aa22958dddd09de8a8656b38e061e3e5953341c11d78b87b83",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-image/src/ImageCacheInterface.php": {
+      "upstream_sha256": "aea150fc6d926a0bcb806a50a94e5aabacc518b50131e948a2c1c93d03246cf2",
+      "sha256": "45c63a825cb403457699097fdf720ad54e6540d2c3246b329ef7efcafbe4f1b4",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-image/src/Output.php": {
+      "upstream_sha256": "587ee74d0370089b7ebb4223c85446c31418192c40921ed55ae8a9e0d850bc2b",
+      "sha256": "3835869f530a7f35e10eb5240d1df052e5d33fac995b4a7f41f3e872384f0ae1",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-image/src/Import.php": {
+      "upstream_sha256": "e6166adaeba33cef1063e907dbd75a2bb0dfa2ff12ba77a772b544bb8fad9b96",
+      "sha256": "4406a42516371d55eb77e868a2ae717a6e19851d22692af4e74429813eae2be6",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-image/src/Import/Jpeg.php": {
+      "upstream_sha256": "263be956cfe6b58e35bda52c39915dd6f1caba5212a4c6cf7267c8e0413a9725",
+      "sha256": "fde09fe862b480915141604aa2b0729525b206bbbd3912a9eabe9eaef4846ec5",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-image/src/Import/ImageImportInterface.php": {
+      "upstream_sha256": "43f9deda2bf3469a5b8d48c303197f363c0563e781554b3155d5d1dbde105ab5",
+      "sha256": "1b888365af11915b83d50dc551d60e5a4cba15c5513c6318b71a3908ae645f77",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-image/src/Import/Png.php": {
+      "upstream_sha256": "19753b2493dc28e9d45a25edf7a403ff1abdb0c135aabc6aa41a1530320ef352",
+      "sha256": "cf98e22b3df27c2c621455c6e550a738abd81f5a4b6cbc091f4bebe40c127bd3",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-image/LICENSE": {
+      "upstream_sha256": "7af24f2d1de7cc2439b02c7bbe1b6ab35e236d02c33b46f3b2a2fc1261fe0644",
+      "sha256": "7af24f2d1de7cc2439b02c7bbe1b6ab35e236d02c33b46f3b2a2fc1261fe0644",
+      "modified": false
+    },
+    "packages/tc-lib-pdf-image/VERSION": {
+      "upstream_sha256": "585d6112e66cdcc99c5be6df30294c57bcbd9490e5b5f33056784852f68d8135",
+      "sha256": "585d6112e66cdcc99c5be6df30294c57bcbd9490e5b5f33056784852f68d8135",
+      "modified": false
+    },
+    "packages/tc-lib-pdf-image/composer.json": {
+      "upstream_sha256": "2cf2fa901d5b103e5cb9a2e24babc7da204e6823a8bbd3ff578a1ee6304a9a59",
+      "sha256": "2cf2fa901d5b103e5cb9a2e24babc7da204e6823a8bbd3ff578a1ee6304a9a59",
+      "modified": false
+    },
+    "packages/tc-lib-pdf-page/src/PageLayout.php": {
+      "upstream_sha256": "9963718d5a8e9679a6a25d09b276678f0f819fba542b3266b958312a76a5e8ea",
+      "sha256": "c02ee403dc0acf537f479264dc69d57c5ffa0d301f6452bf8319d4d969e34b6b",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-page/src/Mode.php": {
+      "upstream_sha256": "bae3ad731d0659aaf452d33d72b248a93f17578498e6d188c863b40475911bce",
+      "sha256": "05d2ff9701ec09eb2dfccfa5f3411c925486a156c6674b4f65c625610dad139c",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-page/src/Settings.php": {
+      "upstream_sha256": "9c1d60c17bc81f348b502665ce98802757bd31e2ece32f0ebc574f6b617f7451",
+      "sha256": "52cfd5cf4edce37dc941053077626fc6e65e6f2b4077858767d26aebb1c6c054",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-page/src/Exception.php": {
+      "upstream_sha256": "a174dc66c38145606d56a07c6f7b6e358e0e4e048de910a489410b9099d38a08",
+      "sha256": "e8519856767f321cb51ba7f8ad0c3a86f4cb9b15ebd52683998f970fbcee05c1",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-page/src/Page.php": {
+      "upstream_sha256": "3bd825df2cc357b4666ff572a78777d24a0091a8edc8838a6647e5ca1560fed3",
+      "sha256": "3d5c67ab4c21c9545691a1231c4b38a14c4cdd8a73ba5ded357f68167d7b681f",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-page/src/Unit.php": {
+      "upstream_sha256": "d510ee274b2d3909f25a7f9e9faa2d636a445320debe021261abc536506ffdca",
+      "sha256": "5b663690806a5d0627895017444d99c5f0efe7ba889811f00abccd3fb1ff6067",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-page/src/Format.php": {
+      "upstream_sha256": "2475e91554c390f661c95049eec355b93740e158023dff5c470f1771be4c5f1f",
+      "sha256": "8531c76ab3c198d0bdc150335384cc7c83aa553ae448fbc1df8b0b5ed1b652a9",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-page/src/Region.php": {
+      "upstream_sha256": "04d65743d4d63d51c16e10faba30e3a2a71caeab7267d029135de13ea5a3d741",
+      "sha256": "6c849b478b8ec312c843490d355bae0dd4cb589a74deaa17561d00e058593403",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-page/src/Orientation.php": {
+      "upstream_sha256": "b6e325133f01ffb601507a614ee48156ba5f58ea8a7a720b0fd017e5f1af9ce5",
+      "sha256": "0936db035ca7e9f04077e0c66d703552a8a99794bd618c3504b8504a9bcbf2f9",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-page/src/PageDisplayMode.php": {
+      "upstream_sha256": "e4607560f15c387b1da00264c508888afe724841cf37146141129d7c11450f01",
+      "sha256": "0b8abe4c05775f02254755b16127d9a8712ffdd47bddc219614c3952889e2291",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-page/src/Box.php": {
+      "upstream_sha256": "f803e1c9539b88c1c412ecf76993ad6fbc7c5c064f86af59f69d02e1494c2c97",
+      "sha256": "87666010f25c534103585a4981e24857be4db570892cdb255ea7be72f5f5b78d",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-page/src/PageBoxType.php": {
+      "upstream_sha256": "c91fd52c27b33473d41bac0debf7ad6a772b4b7f2ee53d6ecedf05a395526bbb",
+      "sha256": "5de62208a3611681e2beda481e2499da09d04e3d739dc70f78a3d9af1d4ce948",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-page/src/TransparencyGroupMode.php": {
+      "upstream_sha256": "9857c1808ebdbc5bd55b441f5e05b798c845871d94de9857ef43a1975b9393d5",
+      "sha256": "2cd64d04b3e8e6e64a8b99e62c92ae6d67eedae0ad4e5c683b9d39b35f8fd3f4",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-page/LICENSE": {
+      "upstream_sha256": "2f6c57c249dac00af0b514db64a58228437f79b480a4dee3d9a2ae72a33bee3e",
+      "sha256": "2f6c57c249dac00af0b514db64a58228437f79b480a4dee3d9a2ae72a33bee3e",
+      "modified": false
+    },
+    "packages/tc-lib-pdf-page/VERSION": {
+      "upstream_sha256": "1dc6ecaaf89f583fd99219d6e984dc795cac20814c897af2417a6cd355cc84d0",
+      "sha256": "1dc6ecaaf89f583fd99219d6e984dc795cac20814c897af2417a6cd355cc84d0",
+      "modified": false
+    },
+    "packages/tc-lib-pdf-page/composer.json": {
+      "upstream_sha256": "6d4d19ce2e89b14e3cfd64a4580036b7dc97f81f84c8feac18f861c1d8370f98",
+      "sha256": "6d4d19ce2e89b14e3cfd64a4580036b7dc97f81f84c8feac18f861c1d8370f98",
+      "modified": false
+    },
+    "packages/tc-lib-pdf-parser/src/Parser.php": {
+      "upstream_sha256": "b6872a51ae16c0013db1cfe3a71c76ec09bbd20e4d54acc149e722325632c722",
+      "sha256": "26595d29e54888a1d6ced58f16e0c963ee821149eff7e840c9c7e1aa07a436ae",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-parser/src/Exception.php": {
+      "upstream_sha256": "2d4087417b55932ab0201bbe185de2d6195ad229b68f8061cce7c09a6d714314",
+      "sha256": "6f9819d2b6c24e316ac2200a1bb30896da0330b88c7a9d61eca2b655736a6095",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-parser/src/LimitException.php": {
+      "upstream_sha256": "141ab17a748683f36c669a38e6019071ed6bd37372f6dc2f967f263fe8995510",
+      "sha256": "35c35825ad9ded60a61a7d8995d8baa70a22a98ac41af57aa2d1331faa72807a",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-parser/src/Process/RawObject.php": {
+      "upstream_sha256": "538022c85f6492e07afcaa5d828b9072b5644b7c45ef3c0c69dfca62c5cacdaa",
+      "sha256": "edb6e6a863d777046adb5e8095a0f7a3eae2f926e1a0777037f618c268ac0d42",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-parser/src/Process/Xref.php": {
+      "upstream_sha256": "5ccdff326c264e3b276536f6fd6bbc3f3d87ce9d879546b197ce7397f48dc73a",
+      "sha256": "21b42a94c5ce8d89661442408ceed8cba397794db5c87510582830c677471281",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-parser/src/Process/XrefStream.php": {
+      "upstream_sha256": "a7b61022d2a9c2f000e6e511ef98c7f884fa089f7aae04bfe4f384d67f71d69b",
+      "sha256": "00976be473499f38c77b9b217deed701e3a10f4e3556604329843a815ec26cb1",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-parser/LICENSE": {
+      "upstream_sha256": "6261de925cb87ba8bdfb48f41a65c25a9269bab17f2c6f7c31d2b4812b8c388f",
+      "sha256": "6261de925cb87ba8bdfb48f41a65c25a9269bab17f2c6f7c31d2b4812b8c388f",
+      "modified": false
+    },
+    "packages/tc-lib-pdf-parser/VERSION": {
+      "upstream_sha256": "5cb856bc2f48a8e849450fe4253e8fad6c61c7fdbb834ca5ea5f423d9692242d",
+      "sha256": "5cb856bc2f48a8e849450fe4253e8fad6c61c7fdbb834ca5ea5f423d9692242d",
+      "modified": false
+    },
+    "packages/tc-lib-pdf-parser/composer.json": {
+      "upstream_sha256": "edb1eaf7e23048be0101a7f91186e456da4169b81c55677719c0dab9ba6adc3d",
+      "sha256": "edb1eaf7e23048be0101a7f91186e456da4169b81c55677719c0dab9ba6adc3d",
+      "modified": false
+    },
+    "packages/tc-lib-pdf-sign/src/DigestAlgorithm.php": {
+      "upstream_sha256": "ca97e05839b5648805becd6f0675bc1737753013d5be358fd9de9c77df1c89ed",
+      "sha256": "970be4cbadcd4844f3f8e39ae565d4417871099c79d310a50f8cb18061397ca2",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-sign/src/Exception.php": {
+      "upstream_sha256": "7c6a9bf81367f2ead8db11f66ae30d6fe984667cc4823f29baaa985d1e311cd0",
+      "sha256": "568817555082abe8a39b1fe9b5663359d66ffc1a40b17cbea9b96417459f8210",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-sign/src/Config.php": {
+      "upstream_sha256": "2d02f47aa43c9914d1cf9e469a5567e7e5e90bcdf49db7528f1a86dca8d2400a",
+      "sha256": "36a0f7e72e1305b926bb862c34a126294185f848a9f084db9175ae2cc09e14ca",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-sign/src/RevokedException.php": {
+      "upstream_sha256": "0da6f9bd8ff648b2458add25219d4d554d8a0b4ea0e0babf526b409516ba9245",
+      "sha256": "36eb9c4ea7e43c51dc9be9cbeec0d8afc672468aa777799bc2e0ec1c91363b54",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-sign/src/Signer.php": {
+      "upstream_sha256": "89f88ab0d506fbe943da36f37a4392e0efd1f1a0708458f6f4ef9e147de32c8f",
+      "sha256": "a2da70d0272c0c2b225825e8d2312279de5ed73e233e96b29936d63e7a71fb99",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-sign/src/SignatureProfile.php": {
+      "upstream_sha256": "ebfec7b1f6024d2901887c69371112b49c6ac26c93ef2e11d1a55ecb0d1ad20f",
+      "sha256": "64936884adfb2ae893236758977ddf712b21395ffc0b9e739c1ffeabf5d55c50",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-sign/src/Cms/Certificate.php": {
+      "upstream_sha256": "9a3b0406fdbda4cf0918020a5c29d38562f1b0c6a40b6a5d7b18669297f9f3d3",
+      "sha256": "c4033506154f471e6733f8a7890576ad8e20fd859880be84981b8c563376ffa8",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-sign/src/Cms/SignatureVerifier.php": {
+      "upstream_sha256": "4f440e64277b0558a488ef4fafbcd00feeb577a6a8caa9e0b474b0d0657f2d50",
+      "sha256": "6343b83a0f7482a9bcb0ceec2fd15d63d8e603bfab9f02b8587825f9af14ea7d",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-sign/src/Cms/Asn1.php": {
+      "upstream_sha256": "7ddf79e64e7ee5ac85e2eca97b7e1fb9a7e0bd557f7e05bf23acc4a5b22e93db",
+      "sha256": "f6ad3f03acd4e3762706180c3780f0cca6f160967eb832bfe4ce2403dd07053f",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-sign/src/Cms/SignedDataVerifier.php": {
+      "upstream_sha256": "3acf308c522a07c92c317652489ac30c73bd3481ead0a3d26ef1330c91621df5",
+      "sha256": "9f55b8e0ad3416effbde3c3d8e88c396b382888621e7f853d141f366d0c2421c",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-sign/src/Cms/Oid.php": {
+      "upstream_sha256": "40e16ff6de4b98f42964f078fc7e7a1297c25e3266253a3f74009bd9374967c1",
+      "sha256": "94a792134a9c4c73e7568545526f30aad137890bf44255d67c2c5049e474f469",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-sign/src/Cms/Builder.php": {
+      "upstream_sha256": "99917fb9b09d8865ed35d3d14dea3f80e4cbc6716cf72e183078e986aa6cc248",
+      "sha256": "a59b77a15dd60436ac2308ed5dba7cc39083fefc1385eb9c03c9ea67bfce6f43",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-sign/src/Cms/SigningRequest.php": {
+      "upstream_sha256": "199c52c371e21971e48006c80499d4d3ef4321c89f14ef952701cfaafe0f4b1d",
+      "sha256": "ba2c6b2f8942d71f6a5e79b833bec385794c345b9f2c445ed925032e8b521bd3",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-sign/src/Cms/SignatureEncoding.php": {
+      "upstream_sha256": "859213a92ade9fb9d168d4902b4a0c56db606bbaa9d77c8a6fd0b7d83583861d",
+      "sha256": "a3da296183ca30157d2de21b4b2eb55899d528a01f450756dba0610210623553",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-sign/src/Ocsp/Request.php": {
+      "upstream_sha256": "ac8f2c758821421bbf4cea66fe78ee8d5b318fa61770d66bfbf58837f221bfbf",
+      "sha256": "92c5412bac203e99872b02b8dcf444bf8dc0241aa748bf1afed25792fb61a4e1",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-sign/src/Ocsp/Client.php": {
+      "upstream_sha256": "e7fa38fce0b4bbbb51bc33c866a5deac8a8a6d3a8375447ef954256f6c51432d",
+      "sha256": "f657d79c4463f7127a5376cba62b5b446fd2da21d948c7745f47fdc2c26701c2",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-sign/src/Timestamp/Request.php": {
+      "upstream_sha256": "0f47024d378640fbc0cb6f2785b54c381df70987880303aaa8feb35074a0dbcb",
+      "sha256": "d9ca6bdd4ffd15f6be95d585d8665bc5529f97b2ea8e57b95c412b893c1684ab",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-sign/src/Timestamp/Config.php": {
+      "upstream_sha256": "b5ee2cbe9ff62da6e376ac2dc19666e8150ab2831285d5f8d12ffc4903e5e436",
+      "sha256": "2f0b636dc42b22d70ec5f637dbb6ebf8d236fe065028825832cc4ef75cdfc26d",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-sign/src/Timestamp/Client.php": {
+      "upstream_sha256": "909fccb4761909d96dd603973e2acb4c0e4ac9a47ae6a6792b9bf6606e6b4ce6",
+      "sha256": "68d4ddc445e7c105a7e23dbf103656d166aff6d60106c8341ce7d1c0a25afb5d",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-sign/src/Output/Dss.php": {
+      "upstream_sha256": "cd4617850e69451c7b9e0455ada7bb7ef95a3c8f9d7a78519b3120f5eea8827d",
+      "sha256": "8ca33c7a927dd727043f29d106f9d02d9687a29a88d340eebd37308033e19559",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-sign/src/Output/Signature.php": {
+      "upstream_sha256": "cc1913c27391608ec0a190a4c4561672fdf9d88408d33c8c5caf28b233d3f40e",
+      "sha256": "4efc87a8ca3aa53a2aca71ee428e78027cd1c159e2d1efd76e880e57c5cfb4b0",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-sign/src/Output/Widget.php": {
+      "upstream_sha256": "82bb99c3cc33e58e63d9c34e364f735a5c22fcd4d59c343cdfc3c1945b9abb7c",
+      "sha256": "0f24ac7ada8a4de8cdd41add945d3fda5d1e41ddb5c0589f0135981b4e29eb8d",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-sign/src/Output/PdfString.php": {
+      "upstream_sha256": "4a1298e49f6a7af6c358511af684a74ad0c2b13ac5c6f6bd2a5fcd37f14c47be",
+      "sha256": "a87627c752476c0d636b626d49ec67489df89a3d3f4ce62d8ff150404f737b71",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-sign/src/Output/DocTimeStamp.php": {
+      "upstream_sha256": "b177fce869d4befa15af13238b5a84e0f8b37fce229c27ec2889f5aa9807fd5b",
+      "sha256": "c92eed43d43a375a0e58241c31580391ff849d8b52263e76e238270cd8784b0b",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-sign/src/Ltv/Crl.php": {
+      "upstream_sha256": "23f01bf9b8fe8a76d69f423361dd01a9a222e25c1ebbba10f1b2b6f0a68b58bd",
+      "sha256": "18ad08046d2f53ce89b047f5dc9bfcd2a4230ee650c9ba7e95cac0f4c065da7e",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-sign/src/Ltv/SkipReason.php": {
+      "upstream_sha256": "907195cbdb9655fd32fd94d9e0bf6bd11b6d3d4d9d59f0ce27f1770dd5c24935",
+      "sha256": "4cf89e6ce6f6717b6d1ca5a80527c52d44d089b9325d3252194e005aee4b92c7",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-sign/src/Ltv/ValidationMaterial.php": {
+      "upstream_sha256": "b80d85fe5ea53ba022b4a16bd8a0be72b5ad069d438aface8a2928de2e41520c",
+      "sha256": "b2cc0dba3ef52fc445cce0fcd5f90a168b2c7791adb0822aa4daaf69f91f84e2",
+      "modified": true
+    },
+    "packages/tc-lib-pdf-sign/LICENSE": {
+      "upstream_sha256": "62d185a30d936a2eed968dfade4a88357edc5d7d4eadfc578cfa4ef18daab8ba",
+      "sha256": "62d185a30d936a2eed968dfade4a88357edc5d7d4eadfc578cfa4ef18daab8ba",
+      "modified": false
+    },
+    "packages/tc-lib-pdf-sign/VERSION": {
+      "upstream_sha256": "7294581d3addafc90b7c0dd6cdd580247b66eb5dedca2fded320dca2b205a9ba",
+      "sha256": "7294581d3addafc90b7c0dd6cdd580247b66eb5dedca2fded320dca2b205a9ba",
+      "modified": false
+    },
+    "packages/tc-lib-pdf-sign/composer.json": {
+      "upstream_sha256": "a314c5ebee6cd0cf6bf251a6b9c092dd1389d3175c72ffa1625084e32c59f5b8",
+      "sha256": "a314c5ebee6cd0cf6bf251a6b9c092dd1389d3175c72ffa1625084e32c59f5b8",
+      "modified": false
+    },
+    "packages/tc-lib-unicode/src/TextDirection.php": {
+      "upstream_sha256": "bb034c9f9b5492a775c851bac44403143ab01f8698bc9aa068714d555615fdac",
+      "sha256": "92d55405f55d51a43c6430e68384cd41aa15d7159edf2bd7686e23ebbdd95125",
+      "modified": true
+    },
+    "packages/tc-lib-unicode/src/Exception.php": {
+      "upstream_sha256": "e4e3896643a1b05344bc91f6e3ba263ef31e8e37fbb344d4107494d7841a72d9",
+      "sha256": "99e5964c9eefa7feae845db1df6d00624a7fc3b362689f6f6e61344d06e81472",
+      "modified": true
+    },
+    "packages/tc-lib-unicode/src/Bidi.php": {
+      "upstream_sha256": "8d69bb029b2017f849e5d95c3c31cfa4b2ba3987815a97c13ae30353ed3ebac9",
+      "sha256": "a9cadc0ca0e33481e4adfcd8b2337b40e25c30b99010904ac0f309075e9279b3",
+      "modified": true
+    },
+    "packages/tc-lib-unicode/src/Substitution.php": {
+      "upstream_sha256": "cb1f959da6c216a5a0a78c54ee7284150464ff3b69fc414196dd40d4eea661be",
+      "sha256": "e4232f7ad34a6587cee59fa5addd8a160516bee8f92fb8709e477cd84e9082d2",
+      "modified": true
+    },
+    "packages/tc-lib-unicode/src/Convert.php": {
+      "upstream_sha256": "3c613827338d883fb1c687f3354646be219491dcc9e54c0c0394ab1b36ae4303",
+      "sha256": "e85126a56d03439f29cb2bcde01cd37000fc8a5540ba7ee07c629c6b5985a891",
+      "modified": true
+    },
+    "packages/tc-lib-unicode/src/Data/Devanagari.php": {
+      "upstream_sha256": "f7d4ecaf550222c1e8c997fd7b382b34b14bb7bf379fd04f3c7a235295fe4d51",
+      "sha256": "7d7a97636fa0a8636d5f9ebc4a948d46e1768f1f9030228fe3200014283c9338",
+      "modified": true
+    },
+    "packages/tc-lib-unicode/src/Data/Hangul.php": {
+      "upstream_sha256": "5437f288234786cf4f52e223c8f73aef51c455547e330ed1bd236e069f57d7a5",
+      "sha256": "8e95f9e9aa55cc01f4062818e00fdb23b23424ddd424d8210d974e3fa769a886",
+      "modified": true
+    },
+    "packages/tc-lib-unicode/src/Data/ScriptRanges.php": {
+      "upstream_sha256": "3045b2027ec068224ba733c6e26160b96e670b5535cddda2abc0afa224b15234",
+      "sha256": "ed1393ef67ef22047685f0a28244cd80b3a7010b1336571341e635e6c40802be",
+      "modified": true
+    },
+    "packages/tc-lib-unicode/src/Data/Thai.php": {
+      "upstream_sha256": "4cf32bfbb44d5a6d7832ca14c405439419ac9ad23f6e6fde458d92c3f95db842",
+      "sha256": "7e6fdc11009625b086a364ce36dbdbc9cd317cb53ea4ba44683df6ba4e716f53",
+      "modified": true
+    },
+    "packages/tc-lib-unicode/src/Bidi/Shaping.php": {
+      "upstream_sha256": "2433102261ddb2df77d3252c203fa51839378dbee30e9c9f6769f02d6fe2af30",
+      "sha256": "47d9b26c559ce1fdc03d02a9890677265f8702402afc4c768f04f1cc73c6e1f9",
+      "modified": true
+    },
+    "packages/tc-lib-unicode/src/Bidi/StepW.php": {
+      "upstream_sha256": "ca52db9001c3877c139dbc62b510dab9d80a9977b5f7807279a43bfaedfa0622",
+      "sha256": "5d8b02db9cfe8c54d1974f1c4a1d63f66d241127d8ddd28d97472eccc31e6b49",
+      "modified": true
+    },
+    "packages/tc-lib-unicode/src/Bidi/StepP.php": {
+      "upstream_sha256": "9407b3d4f41cf4262ed28b8a2d99ec3f5d2f9f3d16ef81ba03524358d6610ccc",
+      "sha256": "84197740b4263f11a622fb7d0f112af46298c0c4c826525cad182c147dc9b921",
+      "modified": true
+    },
+    "packages/tc-lib-unicode/src/Bidi/StepBase.php": {
+      "upstream_sha256": "70e2af7e4e2b4303090b0bf2ec8a5eb7e07102347d1fafe5ff142f47f4839d94",
+      "sha256": "31b950feb1344ac81bc83ffac04cdfcf6672e85cb8fe58420281b26a0527613f",
+      "modified": true
+    },
+    "packages/tc-lib-unicode/src/Bidi/StepX.php": {
+      "upstream_sha256": "97bc079df18232af585dfeb9b23a7c6dd7717eaf0f02b5af41b699cf7b3d5675",
+      "sha256": "de659a31ac2427eded25c97d4da901362cab5c522dbc93c4c8605b455409e687",
+      "modified": true
+    },
+    "packages/tc-lib-unicode/src/Bidi/StepL.php": {
+      "upstream_sha256": "e00c52fa29a8882fd9055152a854a03b73cac59322f649a5d4a66dc58f49fc7f",
+      "sha256": "40f5497c61310959d1c1d1fe249f82aff84d9f5f8243077e568c2de0b3e232d2",
+      "modified": true
+    },
+    "packages/tc-lib-unicode/src/Bidi/StepN.php": {
+      "upstream_sha256": "3efac82ef4097bb04466ba2ae8421fe2448e70726e7563592e7fefcd66a6df7e",
+      "sha256": "85d0378368842a1cbd9d974cd98981f56b768fa1030bd5916424628d67db0fa3",
+      "modified": true
+    },
+    "packages/tc-lib-unicode/src/Bidi/StepXten.php": {
+      "upstream_sha256": "5c53c3ed7161657ffeb38b63e257fae75c9ff3c5e17c738f5b6fa15a8337e238",
+      "sha256": "a8ed7656573219a4a60775f00ad12b59f15cc65098e77169f09bc9237f233a9b",
+      "modified": true
+    },
+    "packages/tc-lib-unicode/src/Bidi/StepI.php": {
+      "upstream_sha256": "ed90b28063e10d0ec4d15e5af6d2d0c9245cc61d069bee755b33549cf81d3e34",
+      "sha256": "917b6963f873247e09cccde6aa1a7383af0c936969ddcf8617d61292bda45a4d",
+      "modified": true
+    },
+    "packages/tc-lib-unicode/src/Substitution/Devanagari.php": {
+      "upstream_sha256": "2390a08c08024c174fd9fbe24ab7bf6e8e3ff90d569d81341922de1706dc8146",
+      "sha256": "9d0448158741d85eac52dba999277a91da978a44d72ba773b351cfb8b00b1d1b",
+      "modified": true
+    },
+    "packages/tc-lib-unicode/src/Substitution/Hangul.php": {
+      "upstream_sha256": "bfd612fe5d0fb087b80cc2da9de00ee5e1bfa80857fa3eade84e92c36acf03cf",
+      "sha256": "551554b717768381b4755b44e569d20b6e9ce7fc8927ef19c3c1a0351773b126",
+      "modified": true
+    },
+    "packages/tc-lib-unicode/src/Substitution/Thai.php": {
+      "upstream_sha256": "1a67da3dda1baf37e97bc1bcb0b76cd21dfe0fa2436d849e045d95697333091e",
+      "sha256": "e2e52048c631225d38233cadcc8051b1c18b49adb5512ed9f93edc3947955ae4",
+      "modified": true
+    },
+    "packages/tc-lib-unicode/src/Convert/Encoding.php": {
+      "upstream_sha256": "2526eba77227b852c2244bb2be52eb16c0573e99cdc66c57520ccde8837552fc",
+      "sha256": "7f785edc393149754641dcd33862b216ebda3c7b15769c6528be0b6ea427f97a",
+      "modified": true
+    },
+    "packages/tc-lib-unicode/src/Bidi/Shaping/Arabic.php": {
+      "upstream_sha256": "8916557cc021e8596d3ff405b1f1f061b43180b0c41be5b06c7a98b0a3a1529d",
+      "sha256": "8adcf141c8680f3e8548f4ecf596c1fb3a7264e8abc16af7002cabfa6febfd3c",
+      "modified": true
+    },
+    "packages/tc-lib-unicode/LICENSE": {
+      "upstream_sha256": "4d639d59707355a1b13ea6fa81335df4870e15392f4563396dfe496ac7b23dcf",
+      "sha256": "4d639d59707355a1b13ea6fa81335df4870e15392f4563396dfe496ac7b23dcf",
+      "modified": false
+    },
+    "packages/tc-lib-unicode/VERSION": {
+      "upstream_sha256": "8bac95a38f37afadb73bad656f4abdeaea9a73b43bc160a8ba2282b5d61018cf",
+      "sha256": "8bac95a38f37afadb73bad656f4abdeaea9a73b43bc160a8ba2282b5d61018cf",
+      "modified": false
+    },
+    "packages/tc-lib-unicode/composer.json": {
+      "upstream_sha256": "2d8f04f37cba7210627e37482b56be06b8d823ccc25bedbe04624a561c15ad34",
+      "sha256": "2d8f04f37cba7210627e37482b56be06b8d823ccc25bedbe04624a561c15ad34",
+      "modified": false
+    },
+    "packages/tc-lib-unicode-data/src/BidiClass.php": {
+      "upstream_sha256": "f6c3b4a4f6611f458fab1f7f51d0409c42367110fafa0b6e79a78af8c5a61b8f",
+      "sha256": "8802ca6df0df74a9330fd7f5a17be0d24bacd64a23e6bf020f7888ab0af22c9c",
+      "modified": true
+    },
+    "packages/tc-lib-unicode-data/src/Constant.php": {
+      "upstream_sha256": "0266e7df334bdb199c5a0d13d0648354908d1cca56911c49ad8adcd9ae889004",
+      "sha256": "5cfe37cd043a0a98c30aace9974cd95ef88ce810205d843c5abaed977b0de8b8",
+      "modified": true
+    },
+    "packages/tc-lib-unicode-data/src/Encoding.php": {
+      "upstream_sha256": "88afa7bed9e4cda922d244e4edb6c5ead0b95050e6e189667833bfd24dc15b86",
+      "sha256": "5a99c6f9062f891454e19344885149c78505704863642b2abaebd0b2d57ac368",
+      "modified": true
+    },
+    "packages/tc-lib-unicode-data/src/Arabic.php": {
+      "upstream_sha256": "84870beb4b9ebd1d0a054ad292f808585b0f11f61cf66b6a5f0c2c199a75c942",
+      "sha256": "2cc77fa08f656a9603513c52404fa455216ea85feeae32dd45ce64a7991c073a",
+      "modified": true
+    },
+    "packages/tc-lib-unicode-data/src/Pattern.php": {
+      "upstream_sha256": "ec2c41886457acd346820511c76d87f0c723bdb7e2214b87e02c7f674441e2e3",
+      "sha256": "c59285b5d76a00f6d9e869e6dc73ce8363cc685a4ec8f4851f83a14c49f23c21",
+      "modified": true
+    },
+    "packages/tc-lib-unicode-data/src/Latin.php": {
+      "upstream_sha256": "54583db19b9f8a101a5df951a9adb3c57e6e0f59094ba6982cf8272a94936d05",
+      "sha256": "35d9a38711360f49ee579797c374f42d99d4bf3998428c0db6c37f84b807d660",
+      "modified": true
+    },
+    "packages/tc-lib-unicode-data/src/LineBreak.php": {
+      "upstream_sha256": "5090e2e297e797fb51a23c818cac7d1c8dd736952a8eeaaf3ec9128a292165d0",
+      "sha256": "9e2cc122c5dfa1ba521945b1c2dd18c3fda84be2996fba6f9f21157974c17b42",
+      "modified": true
+    },
+    "packages/tc-lib-unicode-data/src/Identity.php": {
+      "upstream_sha256": "b0571ad161d630ca95465e796eaa282c0c50aabc04d6adcf7d5c6c6bf01d09a8",
+      "sha256": "1b5809c002d39e27eabb8826ef031b4d96dde5126b4391b0fbf9c61fcb8281f0",
+      "modified": true
+    },
+    "packages/tc-lib-unicode-data/src/Bracket.php": {
+      "upstream_sha256": "f14e4c71bb9d2cf5caf03a3befbfac2fa65758be1ed31b32e43e1862227cdbea",
+      "sha256": "1eae791cf2ccc2c87dd4dd3df6acdecf4832e0439a53fac9afd0e49dce78b180",
+      "modified": true
+    },
+    "packages/tc-lib-unicode-data/src/Mirror.php": {
+      "upstream_sha256": "061c1ce39157be7eb936a2282e6ca91155e43a13fbdc80d7a4c51d2fea5f5b3c",
+      "sha256": "c9ab618f69e0dcebaf2be5a43d8ec457ab5a5834711cacc4e043c689dd352147",
+      "modified": true
+    },
+    "packages/tc-lib-unicode-data/src/Type.php": {
+      "upstream_sha256": "93c67d9214c75709b71a36aac6f4d1ff6d9cfe083b88237ff9fcf4489bb60938",
+      "sha256": "90d1a315274468ad2e680684d43ddc8f740692e2e6615e218315e7c7000cea3c",
+      "modified": true
+    },
+    "packages/tc-lib-unicode-data/LICENSE": {
+      "upstream_sha256": "10923bdf8f265ae66afae5eeb0ba87d276b4a76b4e1bf935e274654e33df9e22",
+      "sha256": "10923bdf8f265ae66afae5eeb0ba87d276b4a76b4e1bf935e274654e33df9e22",
+      "modified": false
+    },
+    "packages/tc-lib-unicode-data/VERSION": {
+      "upstream_sha256": "2aaac27dade3045a30c64834f4c1ce9f5a5a4864c43e547bec804bc6e0186f43",
+      "sha256": "2aaac27dade3045a30c64834f4c1ce9f5a5a4864c43e547bec804bc6e0186f43",
+      "modified": false
+    },
+    "packages/tc-lib-unicode-data/composer.json": {
+      "upstream_sha256": "07ba69d9f7a7f53137dba49a7e13de11598918fe13f5e8c795fd7fcd14d12095",
+      "sha256": "07ba69d9f7a7f53137dba49a7e13de11598918fe13f5e8c795fd7fcd14d12095",
+      "modified": false
+    },
+    "packages/tcpdf/tcpdf.php": {
+      "upstream_sha256": "30c829172fcbb1a37437b84f76fc642b4b29cfda3e0208008cadb9bf9fc1cedf",
+      "sha256": "403bf5d941a489f1fa10b7d3e7c76f7ffc5a651cb6858277f96cf789420b984e",
+      "modified": true
+    },
+    "packages/tcpdf/LICENSE.TXT": {
+      "upstream_sha256": "b487950190a6516795240c2b155649e0309c2cad8e5b161d5ce2e3e4b022763e",
+      "sha256": "b487950190a6516795240c2b155649e0309c2cad8e5b161d5ce2e3e4b022763e",
+      "modified": false
+    },
+    "packages/tcpdf/VERSION": {
+      "upstream_sha256": "70e56a4c95d1f10350820dfcea7a58def1a26a7387b2e747423ba40bf88575dd",
+      "sha256": "70e56a4c95d1f10350820dfcea7a58def1a26a7387b2e747423ba40bf88575dd",
+      "modified": false
+    },
+    "packages/tcpdf/composer.json": {
+      "upstream_sha256": "d16c056c3e02ca00b8555138693d9c31b99d14722b2ca9ae5c2ff1385679128e",
+      "sha256": "d16c056c3e02ca00b8555138693d9c31b99d14722b2ca9ae5c2ff1385679128e",
+      "modified": false
+    }
+  }
+}

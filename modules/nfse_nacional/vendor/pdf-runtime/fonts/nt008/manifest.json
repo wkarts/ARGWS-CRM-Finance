@@ -1,0 +1,41 @@
+{
+    "format": 1,
+    "fonts": {
+        "arial": {
+            "family": "Arial",
+            "bold": false,
+            "postscript_name": "ArialMT",
+            "source_sha256": "413c78f91bd39e134f3c0bb204b1d5a90f29df9efddc8fd26950a178058d5d74",
+            "embedding_flags": 0,
+            "resources": {
+                "arial.json": "e042cc519a5609b81d709edceda459f15132e4b1a464dd998b29122de5bd0dc0",
+                "arial.z": "247df1d9ac853c48ed109de73a720fc0def49d950df2fedfccfba065ad955bb8",
+                "arial.ctg.z": "c3c4dd960a9e3ed6d57e8300e0f679e7d417f86778621efcc001f53afa30cf74"
+            }
+        },
+        "arialb": {
+            "family": "Arial",
+            "bold": true,
+            "postscript_name": "Arial-BoldMT",
+            "source_sha256": "df70597f0bdf49da3af270138f8a34396e4f5618c671a1db3480e626f38aaece",
+            "embedding_flags": 0,
+            "resources": {
+                "arialb.json": "01a7f6a408d4d9cff9c7eed9477686af7edca901c14e6b51881ece9320791c5f",
+                "arialb.z": "02c2057962a762adb811ec12c47c4b868c104a5fb086d97c942a28b22e5a3888",
+                "arialb.ctg.z": "c3c4dd960a9e3ed6d57e8300e0f679e7d417f86778621efcc001f53afa30cf74"
+            }
+        },
+        "microsoftsansserif": {
+            "family": "Microsoft Sans Serif",
+            "bold": false,
+            "postscript_name": "MicrosoftSansSerif",
+            "source_sha256": "8e379d710ae7c475bcaf81dc5ca68e06c45dc88bbc7b4c00eeac5296e6a89970",
+            "embedding_flags": 8,
+            "resources": {
+                "microsoftsansserif.json": "dfb4443b072100f7d3dc1532e4798c4148727c451d9ebc599e9f684641cbdafb",
+                "microsoftsansserif.z": "52f83b0b6fa11f6eb55425db1f061f3f6bde019151bf62ab35790eff013c4e59",
+                "microsoftsansserif.ctg.z": "82b32a49eb3b2acc731e71b742b0096054a4902f60606b2a3d20bc77c03d1d6b"
+            }
+        }
+    }
+}

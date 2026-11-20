@@ -1,0 +1,26 @@
+/* The active Perfex theme owns layout, typography, colors, navigation and forms.
+ * These rules are restricted to fiscal content or an explicitly marked action. */
+.nfse-root [hidden]{display:none!important}
+.nfse-root .nfse-feedback{overflow-wrap:anywhere}
+.nfse-root .nfse-feedback p{white-space:pre-line}
+.nfse-root .nfse-subline{margin-top:4px}
+.nfse-root .nfse-error-summary{max-width:290px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.nfse-root .nfse-amount{font-variant-numeric:tabular-nums;white-space:nowrap}
+.nfse-root .nfse-no-wrap{white-space:nowrap}
+.nfse-root .nfse-actions>.btn{margin-right:4px;margin-bottom:6px}
+.nfse-root .nfse-actions.text-right>.btn{margin-left:4px;margin-right:0}
+.nfse-root .nfse-access-key{overflow-wrap:anywhere;word-break:break-word}
+.nfse-root .nfse-preserve-text{white-space:pre-line;overflow-wrap:anywhere}
+.nfse-root .nfse-technical-details summary,.nfse-root .nfse-history summary{cursor:pointer}
+.nfse-root .nfse-technical-details td{white-space:normal;overflow-wrap:anywhere}
+.nfse-root .nfse-json-result{max-height:320px;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere}
+.nfse-root .nfse-service-field .dropdown-menu{max-width:100%;min-width:100%!important}
+.nfse-root .nfse-service-field .dropdown-menu>li>a{white-space:normal;overflow-wrap:anywhere}
+.nfse-root .nfse-service-field .dropdown-toggle .filter-option{overflow:hidden;text-overflow:ellipsis}
+.nfse-root .nfse-service-summary{max-width:300px}
+.nfse-root .nfse-busy{cursor:wait!important;opacity:.7}
+a[data-nfse-grid-action]{margin-top:6px}
+
+/* Aviso somente informativo: sem modal, foco forçado, botão de fechar ou bloqueio. */
+.nfse-root .nfse-ibpt-expired-notice{display:flex;flex-wrap:wrap;align-items:center;column-gap:6px;row-gap:2px;margin:5px 0 13px;padding:6px 10px;border-left:3px solid #b28d48;background:#f8f6f0;color:#675534;font-size:12px;line-height:1.45}
+.nfse-root .nfse-ibpt-expired-notice i{font-size:12px}

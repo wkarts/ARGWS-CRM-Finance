@@ -1,0 +1,240 @@
+// Native Bootstrap/jQuery DOM behavior. This is not a browser rendering test.
+// npm install --prefix /tmp/pme-dom jsdom@26.1.0
+// MULTIEMPRESA_TEST_DOM_MODULES=/tmp/pme-dom/node_modules python3 tests/native_http.py
+const fs = require('fs');
+const path = require('path');
+const assert = require('assert');
+const {JSDOM, VirtualConsole} = require(require.resolve('jsdom', {paths: [process.env.MULTIEMPRESA_TEST_DOM_MODULES]}));
+const fixture = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
+const base = path.resolve(__dirname, '..');
+const reference = process.env.MULTIEMPRESA_TEST_PERFEX_ROOT;
+let assertions = 0;
+function check(value, label) { assert(value, label); assertions++; console.log('PASS DOM ' + label); }
+const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
+async function settle() { await pause(15); }
+async function until(predicate) { for(let i=0;i<200;i++){if(predicate())return;await pause(15);}throw new Error('DOM operation did not finish'); }
+
+async function page(active, provisioning = {}) {
+  const errors = [];
+  const console = new VirtualConsole();
+  console.on('jsdomError', error => errors.push(error.message));
+  const dom = new JSDOM(fixture.html, {url: 'http://127.0.0.1:8879/admin/multiempresa?tab=' + active, runScripts: 'outside-only', pretendToBeVisual: true, virtualConsole: console});
+  const w = dom.window, d = w.document, calls = [];
+  let company = JSON.parse(JSON.stringify(fixture.company)), workflow = null, impactError = 'http_403', planNumber = 0;
+  let checkResponse = async () => ({message:'Conexão, permissões e destino validados.'});
+  let lookupResponse = async () => ({fields:{},message:'Não foi possível consultar agora. Você pode preencher os dados manualmente.'});
+  const bootNode = d.getElementById('pme-bootstrap'), boot = JSON.parse(bootNode.textContent);
+  boot.page = active;
+  boot.provisioning.default_modules=[boot.modules.find(m=>m.compatible).name];
+  boot.provisioning.operation = 'automatic'; boot.provisioning.dns_enabled = false;
+  Object.assign(boot.provisioning, provisioning);
+  boot.modules.push({name: 'future_probe', label: 'Future module', compatible: false, minimum: '99.0.0', description: '', version: '1.0.0'});
+  bootNode.textContent = JSON.stringify(boot);
+  w.fetch = async (url, options) => {
+    const u = new URL(String(url)), route = u.pathname.split('/').pop();
+    calls.push({route, url:u, method: options.method || 'GET', body: options.body});
+    let data;
+    if (route === 'companies') data = fixture.companies;
+    else if (route === 'company') data = company;
+    else if (route === 'provision') data = workflow;
+    else if (route === 'installation') data = fixture.installation;
+    else if (route === 'global_settings') data = Object.assign({},fixture.settings,{modules:{defaults:boot.provisioning.default_modules}});
+    else if (route === 'save_global_settings') data = fixture.settings;
+    else if(route==='company_action'&&options.body.get('operation')==='check') data = await checkResponse();
+    else if (route === 'lookup') data = await lookupResponse(u.searchParams);
+    else if (route === 'organizations') data = fixture.organizations;
+    else if(route==='company_action'&&options.body.get('operation')==='module_available'){const name=options.body.get('module');if(!company.modules.some(m=>m.name===name))company.modules.push({name,active:0});data={company:JSON.parse(JSON.stringify(company)),message:'Disponível e desativado'};}
+    else if (route === 'company_action' && options.body.get('operation') === 'module') {
+      const name=options.body.get('module'), active=Number(options.body.get('enabled'));company.modules=company.modules.filter(m=>m.name!==name);company.modules.push({name,active});data={company:JSON.parse(JSON.stringify(company)),message:'Atualizado'};
+    }
+    else if (route === 'impact_plan') data = {plan_id:'review-'+(++planNumber),confirmation_name:company.name,impact:{warnings:['Somente esta empresa'],companies:[],organization_resources:[],modules:[],configuration_fields:[]}};
+    else if (route === 'confirm_impact') return {ok:false,json:async()=>({ok:false,error:impactError,message:impactError==='confirmation'?'Confira a confirmação.':'A Cloudflare não concluiu a consulta DNS. HTTP 403.',csrf:boot.csrf})};
+    else if (route === 'test_cloudflare') data = {message:'Conexão e consulta DNS confirmadas. A permissão de escrita será verificada ao aplicar os endereços.'};
+    else if (route === 'company_action' && options.body.get('operation') === 'draft') data = {id:'draft-run', company_id:'draft-company', status:'draft', total:0, steps:[]};
+    else throw new Error('Unexpected DOM transport: ' + route);
+    return {ok:true, json:async () => ({ok:true, data, csrf:boot.csrf})};
+  };
+  w.eval(fs.readFileSync(path.join(reference, 'assets/plugins/jquery/jquery.min.js'), 'utf8'));
+  w.eval(fs.readFileSync(path.join(reference, 'assets/plugins/bootstrap/js/bootstrap.min.js'), 'utf8'));
+  await settle(); w.jQuery.support.transition = false;
+  w.eval(fs.readFileSync(path.join(base, 'assets/selector.js'), 'utf8'));
+  const appJS=fs.readFileSync(path.join(reference,'assets/js/app.js'),'utf8');
+  w.eval(appJS.slice(appJS.indexOf('function appProgressBar()'),appJS.indexOf('// Lightbox plugins')));
+  w.eval(fs.readFileSync(path.join(base, 'assets/companies.js'), 'utf8'));
+  w.eval(fs.readFileSync(path.join(base, 'assets/administration.js'), 'utf8'));
+  await settle();
+  const $ = selector => d.querySelector(selector), $$ = selector => Array.from(d.querySelectorAll(selector));
+  const input = (el, value) => { el.value = value; el.dispatchEvent(new w.Event('input', {bubbles:true})); };
+  const change = el => el.dispatchEvent(new w.Event('change', {bubbles:true}));
+  return {dom,w,d,$,$$,calls,errors,input,change,setCheck:fn=>{checkResponse=fn;},setLookup:fn=>{lookupResponse=fn;},setCompany:data=>{company=data;},setWorkflow:data=>{workflow=data;},setImpactError:code=>{impactError=code;}};
+}
+
+(async () => {
+  const c = await page('companies', {operation:'manual',isolation:'database'});
+  try {
+    c.$('#pme-new').click();await settle();const f=c.$('#pme-wizard-form');
+    f.elements.organization_id.value=fixture.installation.organization_id;c.change(f.elements.organization_id);f.elements.admin_mode.value='current';c.change(f.elements.admin_mode);c.input(f.elements.name,'Teste de conexão');
+    c.$('#pme-forward').click();const result=c.$('#pme-connection-result'),button=c.$('#pme-check-connection');
+    check(result.hidden,'connection result begins hidden');
+    button.click();await settle();check(!result.hidden&&result.classList.contains('alert-danger')&&result.textContent.includes('Teste não realizado'),'incomplete connection shows a visible validation failure');
+    for(const [name,value] of Object.entries({host:'127.0.0.1',port:'3306',database:'tenant_test',username:'tenant_user',db_password:'private-test-password'}))c.input(f.elements[name],value);
+    check(result.hidden,'editing connection clears outdated feedback');
+    button.click();await settle();check(!result.hidden&&result.classList.contains('alert-success')&&result.textContent.includes('sucesso')&&!result.textContent.includes('private-test-password'),'successful connection is visible and keeps credentials private');
+    c.setCheck(async()=>{throw new Error('Usuário ou senha inválidos.');});button.click();await settle();check(!result.hidden&&result.classList.contains('alert-danger')&&result.textContent.includes('Falha no teste'),'failed connection has a distinct visible error state');
+    let resolveCheck;c.setCheck(()=>new Promise(resolve=>{resolveCheck=resolve;}));button.click();await settle();check(!result.hidden&&result.getAttribute('aria-busy')==='true'&&button.disabled,'connection test shows loading and prevents duplicate requests');
+    c.input(f.elements.db_password,'another-private-password');resolveCheck({message:'old response'});await settle();check(result.hidden&&!result.textContent.includes('old response')&&!button.disabled,'response for changed credentials cannot display stale success');
+    check(f.elements.host.closest('.pme-db-credentials')===f.elements.port.closest('.pme-db-credentials')&&f.elements.host.closest('.pme-db-credentials')!==f.elements.mode.closest('.pme-form-grid'),'connection fields stay grouped independently from storage');
+    check(!f.elements.host.disabled&&f.elements.prefix.disabled&&f.elements.prefix.closest('label').hidden,'manual exclusive database exposes credentials and hides the unused prefix');
+  } finally {c.dom.window.close();}
+  const p = await page('companies'), {w,d,$,$$,calls,input} = p;
+  try {
+    check($$('#pme-companies .modal').length === 4 && !$('dialog') && !p.errors.length, 'native modal markup initializes without JavaScript errors');
+    $('#pme-new').click(); await settle();
+    const wizard = $('#pme-wizard'), form = $('#pme-wizard-form');
+    check(wizard.classList.contains('in') && d.body.classList.contains('modal-open'), 'wizard opens through native Bootstrap');
+    check(!wizard.querySelector('.modal-header .close') && $('#pme-cancel').textContent==='Cancelar' && $('#pme-back').disabled,'wizard has Cancel and Back controls without header X');
+    check($$('input[name="modules[]"]:checked',form).length===1&&!$('input[name="activate_modules[]"]:checked',form),'default modules are preselected for availability with activation off');
+    check(!$('#pme-wizard .modal-body').contains($('#pme-forward')) && $('#pme-wizard .modal-footer').contains($('#pme-step-counter')),'navigation and total remain outside the scrollable wizard body');
+    const selector=d.querySelector('#pme-company-selector'),profile=d.querySelector('#menu .sidebar-user-profile');
+    check(selector && selector.parentElement===profile && profile.firstElementChild===selector && selector.textContent.includes('Empresa atual'),'company card appears above native user profile');
+    check(selector.querySelector('.pme-company-icon svg path') && !selector.querySelector('img,.pme-company-icon i'),'company icon is always visible without logo, favicon or icon font');
+    w.appProgressBar();check($('#pme-progress-fill').textContent==='' && $('#pme-progress-fill').style.width==='0%','native Perfex progress initialization never writes undefined percent');
+    check(form.elements.admin_mode.value==='new'&&!form.elements.grant_creator.checked,'new company defaults to independent administrator without creator access');
+    const foreignOrg=Array.from(form.elements.organization_id.options).find(o=>o.value&&o.value!==fixture.installation.organization_id);
+    if(foreignOrg){form.elements.organization_id.value=foreignOrg.value;p.change(form.elements.organization_id);check(form.elements.admin_mode.value==='new'&&form.elements.admin_mode.querySelector('option[value="current"]').disabled&&form.elements.grant_creator.disabled&&!form.elements.grant_creator.checked&&!$('#pme-admin-scope-note').hidden,'foreign organization requires independent administrator and disables creator grant');}
+    form.elements.organization_id.value=fixture.installation.organization_id;p.change(form.elements.organization_id);
+    form.elements.admin_mode.value='current';p.change(form.elements.admin_mode);
+    input(form.elements.name, 'Empresa flexível');
+    if (!form.elements.organization_id.value) form.elements.organization_id.selectedIndex = 1;
+    check(form.elements.slug.value === 'empresa-flexivel', 'company identifier follows the entered name');
+    check($('#pme-save-draft').hidden === false, 'registration can be saved before providing infrastructure');
+    $('#pme-forward').click();
+    check(!$('#pme-wizard [data-step="1"]').hidden && form.elements.host.disabled, 'automatic mode inherits global connection and hides repeated credentials');
+    check($('#pme-global-summary').textContent.includes('Endereço atual'), 'wizard explains the address when DNS is disabled');
+    $('#pme-forward').click();
+    $('#pme-select-all').click();
+    const selected = $$('#pme-wizard input[name="modules[]"]:checked');
+    check(selected.length > 0 && selected.length === $$('#pme-wizard input[name="modules[]"]:not(:disabled)').length && !$('#pme-wizard input[value="multiempresa"]') && !$('#pme-wizard input[value="future_probe"]').checked, 'select all excludes central and incompatible modules');
+    $('#pme-activate-selected').click();check($$('input[name="activate_modules[]"]:checked',form).length===selected.length,'explicit bulk activation includes only selected compatible modules');
+    $('#pme-keep-inactive').click();check(!$('input[name="activate_modules[]"]:checked',form),'bulk keep inactive preserves availability selection');
+    $('#pme-unselect-all').click();
+    check(!$('#pme-wizard input[name="modules[]"]:checked')&&!$('#pme-wizard input[name="activate_modules[]"]:not(:disabled)'), 'deselect all clears the selection and activation choices');
+    $('#pme-wizard input[name="modules[]"]:not(:disabled)').checked = true;
+    form.elements.modules_reviewed.checked = true;
+    form.elements.db_password.value = 'do-not-show-secret';
+    $('#pme-forward').click();
+    check($('#pme-review').textContent.includes('Empresa flexível') && !$('#pme-review').textContent.includes('do-not-show-secret') && !$('#pme-wizard [data-step="3"]').hidden, 'review displays company and module choices without credentials');
+    $('#pme-back').click();check(!$('#pme-wizard [data-step="2"]').hidden && form.elements.name.value==='Empresa flexível','Back preserves previously entered data');
+    $('#pme-wizard [data-go-step="0"]').click();check(!$('#pme-wizard [data-step="0"]').hidden,'visited step label allows returning directly to registration');
+    $('#pme-wizard [data-go-step="3"]').click();check(!$('#pme-wizard [data-step="3"]').hidden,'review can be reopened without recreating the registration');
+    w.jQuery(wizard).trigger(w.jQuery.Event('keydown', {which:27})); await settle();
+    check(!wizard.classList.contains('in') && !d.body.classList.contains('modal-open') && !$('.modal-backdrop'), 'Escape closes modal and removes the native backdrop');
+    $('#pme-new').click();$('#pme-unselect-all').click(); input(form.elements.name, 'Somente cadastro');
+    if (!form.elements.organization_id.value) form.elements.organization_id.selectedIndex = 1;
+    $('#pme-save-draft').click(); await settle();
+    check($('#pme-selected-count').textContent === '0 módulos selecionados' && calls.some(c => c.route === 'company_action' && c.body.get('operation') === 'draft') && !calls.some(c => c.route === 'company_action' && ['begin','advance'].includes(c.body.get('operation'))), 'save registration submits only the draft operation');
+    check(!wizard.classList.contains('in') && $('#pme-message').textContent.includes('Cadastro salvo'), 'saved registration returns to the grid');
+    check(calls.find(c=>c.route==='company_action'&&c.body.get('operation')==='draft').body.get('selection_present')==='1','clearing all defaults sends an explicit empty selection');
+    $('#pme-new').click();
+    const lookup = $('#pme-wizard [data-lookup="cep"]'), city = $('#pme-wizard [data-profile="city"]'), street = $('#pme-wizard [data-profile="street"]'), lookupBox = $('#pme-wizard .pme-lookup-result');
+    let resolveLookup; p.setLookup(() => new Promise(resolve=>{resolveLookup=resolve;}));
+    input(city, 'Município digitado'); input(lookup, '01001000'); await pause(500);
+    check(lookup.value === '01001-000' && calls.filter(c=>c.route==='lookup').length===1, 'complete CEP triggers automatically without blur or activation');
+    check(lookupBox.getAttribute('aria-busy')==='true' && lookupBox.querySelector('.fa-spinner') && !$('#pme-forward').disabled, 'lookup uses a discreet loading indicator without blocking the form');
+    resolveLookup({fields:{street:'Praça da Sé',city:'São Paulo',state:'SP'},message:'Dados localizados.'}); await settle();
+    check(street.value==='Praça da Sé' && city.value==='Município digitado' && lookupBox.getAttribute('aria-busy')==='false', 'address fills automatically while manually entered fields are preserved');
+    lookupBox.querySelector('[data-suggest="city"]').checked=true;
+    input(city,'Correção posterior'); lookupBox.querySelector('button').click();
+    check(city.value==='Correção posterior','suggestions do not replace a field edited after the response');
+    lookup.dispatchEvent(new w.Event('blur')); await settle();
+    check(calls.filter(c=>c.route==='lookup').length===1,'blur after automatic completion does not duplicate a successful request');
+    form.reset();
+    const cnpj=$('#pme-wizard [data-lookup="cnpj"]'), legal=$('#pme-wizard [data-profile="legal_name"]');
+    input(cnpj,'11222333000180'); await pause(500);
+    check(calls.filter(c=>c.route==='lookup').length===1,'invalid CNPJ check digits prevent provider requests');
+    const pending={};p.setLookup(q=>new Promise(resolve=>{pending[q.get('value')]=resolve;}));
+    input(cnpj,'11222333000181');cnpj.dispatchEvent(new w.Event('blur'));await settle();
+    input(cnpj,'00000000000191');cnpj.dispatchEvent(new w.Event('blur'));await settle();
+    pending['00000000000191']({fields:{legal_name:'Empresa atual'},message:'Dados localizados.'});await settle();
+    pending['11222333000181']({fields:{legal_name:'Resposta antiga'},message:'Dados localizados.'});await settle();
+    check(legal.value==='Empresa atual','late response for the previous CNPJ cannot fill the current company');
+    form.reset();p.setLookup(()=>new Promise(resolve=>{resolveLookup=resolve;}));input(cnpj,'11222333000181');await pause(500);
+    input(legal,'Razão social manual');resolveLookup({fields:{legal_name:'Razão consultada',trade_name:'Fantasia automática'},message:'Dados localizados.'});await settle();
+    check(legal.value==='Razão social manual' && $('#pme-wizard [data-profile="trade_name"]').value==='Fantasia automática','manual edits made while loading are preserved and other company fields filled');
+    lookupBox.querySelector('[data-suggest="legal_name"]').checked=true;lookupBox.querySelector('button').click();
+    check(legal.value==='Razão consultada','user can explicitly accept a suggestion for an unchanged field');
+    form.reset();input(cnpj,'11222333000181');cnpj.dispatchEvent(new w.Event('blur'));await settle();
+    form.reset();resolveLookup({fields:{legal_name:'Outro cadastro'},message:'Dados localizados.'});await settle();
+    check(legal.value==='' && lookupBox.hidden,'form reset discards pending responses from the previous registration');
+    p.setLookup(async()=>{throw new Error('private provider diagnosis');});input(lookup,'01001000');lookup.dispatchEvent(new w.Event('blur'));await settle();
+    check(lookupBox.textContent.includes('manualmente') && !lookupBox.textContent.includes('private') && !$('#pme-save-draft').disabled,'outage shows a simple message and keeps manual registration available');
+    const editor = $('#pme-editor'); w.MultiempresaUI.show(editor); await settle();
+    check(!wizard.classList.contains('in') && editor.classList.contains('in') && $$('.modal-backdrop').length === 1 && d.body.classList.contains('modal-open'), 'opening another modal closes the previous one and keeps one backdrop');
+    w.MultiempresaUI.close(editor); await settle();
+    // Exercise asynchronous CSS transitions using Bootstrap's own transition completion timer.
+    w.jQuery.support.transition = {end:'bsTransitionEnd'};
+    w.MultiempresaUI.show(wizard); await pause(500);
+    w.MultiempresaUI.close(wizard); w.MultiempresaUI.show(editor); await pause(1000);
+    check(!wizard.classList.contains('in') && editor.classList.contains('in') && $$('.modal-backdrop').length === 1, 'modal handoff waits for native hidden event during transitions');
+    w.jQuery.support.transition=false;w.MultiempresaUI.close(editor);await settle();
+    const removable=$('#pme-grid-body [data-impact="delete_company"]');check(removable && removable.textContent.includes('Remover'),'individual company removal is visible in company grid');
+    removable.click();await settle();check(calls.some(c=>c.route==='impact_plan' && c.body.get('operation')==='delete_company'),'company removal opens its own impact plan without requesting organization deletion');
+    const impactForm=$('#pme-impact-form'), impactSubmit=$('#pme-impact-confirm');
+    impactForm.elements.accepted.checked=true;impactForm.elements.confirmation.value=fixture.company.name;impactSubmit.click();await settle();
+    check(impactSubmit.textContent==='Revisar novamente'&&!impactSubmit.disabled&&$('#pme-impact-error').textContent.includes('403'),'failed DNS deletion offers a fresh review without a stuck expired plan');
+    const confirms=calls.filter(c=>c.route==='confirm_impact').length, reviews=calls.filter(c=>c.route==='impact_plan').length;
+    impactSubmit.click();await settle();
+    check(calls.filter(c=>c.route==='impact_plan').length===reviews+1&&calls.filter(c=>c.route==='confirm_impact').length===confirms&&!impactForm.elements.accepted.checked&&impactForm.elements.confirmation.value===''&&impactSubmit.textContent==='Confirmar e executar','fresh review resets acceptance and never executes deletion automatically');
+    p.setImpactError('confirmation');impactForm.elements.accepted.checked=true;impactForm.elements.confirmation.value=fixture.company.name;impactSubmit.click();await settle();
+    check(impactSubmit.textContent==='Confirmar e executar'&&$('#pme-impact-error').textContent==='Confira a confirmação.','invalid confirmation can be corrected without discarding an unconsumed plan');
+    const planIds=calls.filter(c=>c.route==='confirm_impact').map(c=>c.body.get('plan_id'));check(planIds[0]!==planIds[1],'retry sends the new plan identifier');
+    w.MultiempresaUI.close($('#pme-impact'));await settle();
+    p.setCompany(Object.assign({},fixture.company,{modules:[{name:'isolation_probe',active:0}]}));
+    $('#pme-grid-body [data-edit]').click();await settle();$('#pme-edit-module-reviewed').checked=true;
+    check($('#pme-edit-modules').textContent.includes('Não disponibilizado')&&$('#pme-edit-modules').textContent.includes('Disponível · desativado'),'catalog availability is distinct from activation');
+    const publish=$('#pme-edit-modules [data-make-available]:not(:disabled)');publish.click();await settle();check(calls.some(c=>c.route==='company_action'&&c.body.get('operation')==='module_available')&&!$('#pme-edit-modules [data-enabled="0"]'),'publishing from editor leaves package inactive');
+    const eligible=$$('#pme-edit-modules [data-enabled="1"]:not(:disabled)').length;
+    $('#pme-edit-activate-all').click();await until(()=>$('#pme-edit-batch-status').textContent===eligible+' de '+eligible+' módulos concluídos');
+    const activations=calls.filter(c=>c.route==='company_action' && c.body.get('operation')==='module' && c.body.get('enabled')==='1');
+    check(activations.length===eligible && activations.every(c=>c.body.get('module')!=='multiempresa'),'activate all uses individual company operations and excludes Multiempresa');
+    const enabled=$$('#pme-edit-modules [data-enabled="0"]:not(:disabled)').length;$('#pme-edit-deactivate-all').click();await until(()=>$('#pme-edit-batch-status').textContent===enabled+' de '+enabled+' módulos concluídos');
+    check(calls.filter(c=>c.route==='company_action'&&c.body.get('operation')==='module'&&c.body.get('enabled')==='0').length===enabled && !$('#pme-edit-modules [data-enabled="0"]'),'deactivate all processes the same company and preserves individual controls');
+    w.MultiempresaUI.close(editor);await settle();
+    p.setWorkflow({id:'failed-run',company_id:fixture.company.id,status:'failed',completed:3,total:6,step_index:3,error_code:'tenant_failed',steps:[{type:'database',label:'Banco',status:'done'},{type:'core',label:'Estrutura',status:'done'},{type:'settings',label:'Cadastro',status:'done'},{type:'module',name:'ma',label:'Ativar ma',status:'failed'},{type:'dns',label:'Endereço',status:'pending'},{type:'verify',label:'Verificar',status:'pending'}]});
+    const open=d.createElement('button');open.dataset.resume='failed-run';d.querySelector('#pme-companies').appendChild(open);open.click();await settle();w.appProgressBar();
+    check($('#pme-progress-fill').style.width==='50%'&&$('#pme-progress-percent').textContent==='50%'&&$('#pme-progress-fill').textContent==='','failed progress stays at completed stages with readable native percentage');
+    $('#pme-revise').click();await settle();check(!$('#pme-wizard [data-step="0"]').hidden&&form.elements.name.value===fixture.company.name&&form.elements.organization_id.disabled,'failed workflow can return to registration while preserving immutable organization');
+    $('#pme-wizard [data-go-step="2"]').click();check(!$('#pme-wizard [data-step="2"]').hidden,'failed workflow module selection can be revised directly');
+    check(p.errors.length === 0, 'company interactions produced no DOM exceptions');
+  } finally { p.dom.window.close(); }
+  const s = await page('settings');
+  try {
+    const f = s.$('#pme-global-form');
+    check(s.$('#pme-global-form .pme-settings-group')&&s.$('.pme-navigation').querySelectorAll('a').length===10,'collapsible settings and all ten navigation destinations are present');
+    check(s.$$('input[name="module_defaults[]"]:checked').length===1,'global module defaults load from saved configuration');
+    s.$('#pme-default-select-all').click();check(s.$('#pme-settings-dirty').textContent==='Alterações não salvas.','bulk changes mark global settings unsaved');check(s.$$('input[name="module_defaults[]"]:checked').length===s.$$('input[name="module_defaults[]"]:not(:disabled)').length,'global default select all excludes incompatible packages');
+    s.$('#pme-default-unselect-all').click();
+    check(s.$('#pme-installation-settings .pme-form-actions button[type=submit]') && f.querySelector(':scope > .pme-form-actions button[type=submit]'),'installation and global save actions use consistent full-width form footers');
+    check(!Array.from(f.elements).some(el=>el.name.startsWith('lookups[')) && !f.textContent.includes('Consultas de CNPJ e CEP'),'global screen contains no provider settings or lookup activation');
+    f.elements['dns[enabled]'].checked = false; f.elements['dns[manual_confirmed]'].checked = false;
+    f.elements['database[operation]'].value = 'manual'; s.change(f);
+    check(s.$('#pme-dns-fields').hidden && f.elements['dns[token]'].disabled && f.elements['database[username]'].disabled, 'disabled DNS and manual database hide irrelevant global credentials');
+    f.elements['dns[manual_confirmed]'].checked = true; s.change(f);
+    check(!s.$('#pme-dns-fields').hidden && f.elements['dns[token]'].disabled && !f.elements['dns[base_domain]'].disabled, 'existing DNS enables address fields without requiring Cloudflare');
+    check(s.$('#pme-test-dns').parentElement.hidden&&f.elements['dns[managed_wildcard_dns]'].disabled&&f.elements['dns[custom_hostname_ca]'].disabled,'manual DNS does not display Cloudflare-only diagnostics or certificate controls');
+    f.elements['dns[enabled]'].checked = true; f.elements['database[operation]'].value = 'automatic'; f.elements['database[isolation]'].value = 'prefix'; s.change(f);
+    check(!f.elements['dns[token]'].disabled && !f.elements['database[username]'].disabled && !f.elements['database[shared_database]'].disabled && f.elements['database[database_pattern]'].disabled, 'automatic integrations show only the parameters for their selected mode');
+    f.elements['dns[zone_name]'].value='example.com';f.elements['dns[managed_wildcard_dns]'].checked=true;f.elements['dns[managed_wildcard_target]'].value='origin.example.com';f.elements['dns[dry_run]'].checked=true;f.elements['dns[custom_hostname_enabled]'].checked=true;f.elements['dns[custom_hostname_origin]'].value='origin.example.com';f.elements['dns[custom_hostname_ca]'].value='lets_encrypt';
+    f.elements['dns[token]'].value='temporary-test-token';f.elements['dns[zone_id]'].value='b'.repeat(32);
+    s.$('#pme-test-dns').click();await settle();const test=s.calls.find(c=>c.route==='test_cloudflare');check(test&&test.method==='POST'&&s.$('#pme-dns-test-result').textContent.includes('consulta DNS confirmadas'),'Cloudflare connection can be tested without creating a DNS record');
+    check(test.body.get('dns[token]')==='temporary-test-token'&&test.body.get('dns[zone_id]')==='b'.repeat(32)&&test.body.get('dns[zone_name]')==='example.com','connection test sends current form credentials rather than silently testing stale saved values');
+    check(!s.calls.some(c=>c.route==='save_global_settings'),'testing an edited credential does not save it automatically');
+    f.dispatchEvent(new s.w.Event('submit',{bubbles:true,cancelable:true}));await settle();
+    const saved=s.calls.find(c=>c.route==='save_global_settings');
+    check(saved && !Object.hasOwn(JSON.parse(saved.body.get('configuration')),'lookups'),'remaining global settings save successfully without a lookup object');
+    check(JSON.parse(saved.body.get('configuration')).modules.defaults.length===0,'empty global defaults are persisted instead of restoring the previous list');
+    const dns=JSON.parse(saved.body.get('configuration')).dns;check(dns.zone_name==='example.com'&&dns.managed_wildcard_dns&&dns.managed_wildcard_target==='origin.example.com'&&dns.dry_run&&dns.custom_hostname_enabled&&dns.custom_hostname_origin==='origin.example.com'&&dns.custom_hostname_ca==='lets_encrypt','wildcard, simulation and HTTPS options persist through module settings');
+    check(s.errors.length === 0, 'global configuration interactions produced no DOM exceptions');
+  } finally { s.dom.window.close(); }
+  console.log('RESULT ' + assertions + ' native DOM assertions passed');
+})().catch(e => {console.error(e.stack); process.exitCode = 1;});

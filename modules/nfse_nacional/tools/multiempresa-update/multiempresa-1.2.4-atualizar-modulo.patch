@@ -1,0 +1,134 @@
+--- a/assets/companies.js
++++ b/assets/companies.js
+@@ -283,13 +283,14 @@
+     $('#pme-edit-connection').innerHTML=values.map(function(row){return '<div><dt>'+h(row[0])+'</dt><dd>'+h(row[1])+'</dd></div>';}).join('')+'<div class="pme-span-2"><dt>Recursos administrados</dt><dd><pre>'+h(JSON.stringify(data.resources||[],null,2))+'</pre></dd></div>';
+     var moduleEditable=editable&&data.configuration_available&&(!data.onboarding||data.onboarding.status==='done');var active={};data.modules.forEach(function(m){active[m.name]=Number(m.active)===1;});
+     var modules=boot.modules.slice();data.modules.filter(function(m){return m.name.toLowerCase()!=='multiempresa';}).forEach(function(m){if(!modules.some(function(item){return item.name===m.name;}))modules.push({name:m.name,label:m.name,description:'Código não encontrado no núcleo publicado.',compatible:false});});
+-    $('#pme-edit-modules').innerHTML=modules.map(function(m){var available=Object.prototype.hasOwnProperty.call(active,m.name),enabled=!!active[m.name];return '<div class="pme-module-edit"><div><strong>'+h(m.label)+'</strong><small>'+h(m.description||'Módulo adicional')+'</small></div><span class="pme-chip pme-chip-'+(enabled?'success':'neutral')+'">'+(enabled?'Ativo':(available?'Disponível · desativado':'Não disponibilizado'))+'</span><button type="button" class="btn btn-default pme-btn pme-btn-small pme-btn-secondary" '+(available?'data-module="'+h(m.name)+'" data-enabled="'+(enabled?'0':'1')+'"':'data-make-available="'+h(m.name)+'"')+' '+(!moduleEditable||(!enabled&&!m.compatible)?'disabled':'')+'>'+(enabled?'Desativar':(available?'Ativar':'Disponibilizar'))+'</button></div>';}).join('')||'<p class="pme-module-empty">Nenhum módulo adicional disponível.</p>';
++    $('#pme-edit-modules').innerHTML=modules.map(function(m){var available=Object.prototype.hasOwnProperty.call(active,m.name),enabled=!!active[m.name];return '<div class="pme-module-edit"><div><strong>'+h(m.label)+'</strong>'+(m.version?'<small>Versão disponível: '+h(m.version)+'</small>':'')+'<small>'+h(m.description||'Módulo adicional')+'</small></div><span class="pme-chip pme-chip-'+(enabled?'success':'neutral')+'">'+(enabled?'Ativo':(available?'Disponível · desativado':'Não disponibilizado'))+'</span><button type="button" class="btn btn-default pme-btn pme-btn-small pme-btn-secondary" '+(available?'data-module="'+h(m.name)+'" data-enabled="'+(enabled?'0':'1')+'"':'data-make-available="'+h(m.name)+'"')+' '+(!moduleEditable||(!enabled&&!m.compatible)?'disabled':'')+'>'+(enabled?'Desativar':(available?'Ativar':'Disponibilizar'))+'</button>'+(enabled?'<button type="button" class="btn btn-default pme-btn pme-btn-small pme-btn-secondary" data-update-module="'+h(m.name)+'" '+(!moduleEditable||!m.compatible?'disabled':'')+'>Atualizar módulo</button>':'')+'</div>';}).join('')||'<p class="pme-module-empty">Nenhum módulo adicional disponível.</p>';
+     $('#pme-edit-module-reviewed').disabled=!moduleEditable;
+     $('#pme-edit-activate-all').disabled=moduleBatch||!moduleEditable||!$('#pme-edit-modules [data-enabled="1"]:not(:disabled)');
+     $('#pme-edit-deactivate-all').disabled=moduleBatch||!moduleEditable||!$('#pme-edit-modules [data-enabled="0"]:not(:disabled)');
+   }
+   async function edit(id) {
+     if(wizard.classList.contains('in'))close(wizard);show($('#pme-editor'));message($('#pme-editor-message'),'Carregando configurações…');currentEdit=null;$('#pme-edit-batch-status').textContent='';$('#pme-edit-form').dispatchEvent(new Event('pme:profile-reset'));$('#pme-save').disabled=true;editTab(boot.page==='modules'?'modules':'general');
++    $('#pme-edit-module-reviewed').checked=false;
+     try{var data=await request('company',{id:id});message($('#pme-editor-message'),'');fillEditor(data);}catch(e){message($('#pme-editor-message'),e.message,true);}
+   }
+   $('#pme-edit-form').onsubmit=async function(e){e.preventDefault();if(!currentEdit)return;var button=$('#pme-save');button.disabled=true;message($('#pme-editor-message'),'Salvando alterações…');try{var data=await post('save',Object.assign(fieldData(this),{company_id:currentEdit.id}));if(this.elements.certificate_file.files.length){await uploadCertificate(this,currentEdit.id);data.company=await request('company',{id:currentEdit.id});}fillEditor(data.company);message($('#pme-editor-message'),data.message);loadGrid();}catch(error){message($('#pme-editor-message'),error.message,true);}finally{button.disabled=false;}};
+@@ -306,6 +307,26 @@
+     if(button.dataset.edit)edit(button.dataset.edit);if(button.dataset.startDraft)startDraft(button.dataset.startDraft);
+     if(button.dataset.backup){button.disabled=true;try{var backup=await post('backup',{company_id:button.dataset.backup});message($('#pme-message'),backup.message);}catch(e){message($('#pme-message'),e.message,true);}finally{button.disabled=false;}}
+     if(button.dataset.editTab)editTab(button.dataset.editTab);
++
++    if(button.dataset.updateModule && currentEdit&&!moduleBatch&&!button.disabled){
++      if(!$('#pme-edit-module-reviewed').checked){message($('#pme-editor-message'),'Confirme a compatibilidade antes de atualizar este módulo.',true);return;}
++      var updateCompany=currentEdit.id,updateModule=button.dataset.updateModule;moduleBatch=true;
++      $$('#pme-edit-modules button,#pme-edit-activate-all,#pme-edit-deactivate-all,#pme-edit-module-reviewed').forEach(function(control){control.disabled=true;});
++      message($('#pme-editor-message'),'Atualizando o módulo nesta empresa…');
++      try{
++        var updateResult=await post('module',{company_id:updateCompany,module:updateModule,enabled:'1',reviewed:'1',update:'1'});
++        if(currentEdit&&currentEdit.id===updateCompany){currentEdit=updateResult.company;message($('#pme-editor-message'),updateResult.message);}
++      }catch(error){if(currentEdit&&currentEdit.id===updateCompany)message($('#pme-editor-message'),error.message,true);}
++      finally{
++        moduleBatch=false;
++        if(currentEdit&&currentEdit.id===updateCompany){
++          $('#pme-edit-module-reviewed').checked=false;
++          try{fillEditor(await request('company',{id:updateCompany}));}catch(error){message($('#pme-editor-message'),'Consulte novamente a empresa para conferir o resultado da atualização.',true);}
++        }
++        loadGrid();
++      }
++      return;
++    }
+ 
+     if(button.dataset.makeAvailable && currentEdit&&!moduleBatch){
+       if(!$('#pme-edit-module-reviewed').checked){message($('#pme-editor-message'),'Confirme a compatibilidade antes de disponibilizar este módulo.',true);return;}
+--- a/controllers/Multiempresa.php
++++ b/controllers/Multiempresa.php
+@@ -116,7 +116,11 @@
+             if($action==='module'){
+                 $company=$manager->managed($actor,$id);$manager->assertEditable($company);
+                 $modules=new \Multiempresa\Application\Modules($app);$name=(string)($p['module']??'');
+-                if(!empty($p['enabled'])){$modules->approve($id,$name,!empty($p['reviewed']));}
++                if (($p['update'] ?? '') === '1') {
++                    if (empty($p['enabled'])) { throw new \Multiempresa\Domain\Failure('module_state','A atualização mantém o módulo ativo.',409); }
++                    $modules->approve($id,$name,($p['reviewed']??'')==='1',null,true);
++                }
++                elseif(!empty($p['enabled'])){$modules->approve($id,$name,!empty($p['reviewed']));}
+                 else{$modules->disable($id,$name);}
+                 return ['message'=>'Módulo atualizado nesta empresa.','company'=>$manager->detail($actor,$id)];
+             }
+--- a/libraries/Application/Modules.php
++++ b/libraries/Application/Modules.php
+@@ -42,7 +42,7 @@
+         });
+         $this->app->audit->log('module.available',null,$companyId,['module'=>$name,'active'=>false]);
+     }
+-    public function approve(string $companyId, string $name, bool $reviewed, ?string $releaseId = null): array
++    public function approve(string $companyId, string $name, bool $reviewed, ?string $releaseId = null, bool $refreshCurrentReview = false): array
+     {
+         if(!$releaseId){(new CoreMaintenance($this->app))->ensure($companyId);}
+         $updateLock = new AdvisoryLock($this->app, 'updates');
+@@ -60,11 +60,12 @@
+             throw new Failure('module_review', 'Aprovação exige homologação prévia do módulo nos dois modos de armazenamento.');
+         }
+         $fingerprint = Files::treeHash($root);
++        $saveReview = function () use ($release, $companyId, $name, $fingerprint) {
++            $this->app->db->exec('DELETE FROM pme_module_reviews WHERE release_id=? AND company_id=? AND name=?', [$release['id'], $companyId, $name]);
++            $this->app->db->exec('INSERT INTO pme_module_reviews(release_id,company_id,name,fingerprint) VALUES(?,?,?,?)', [$release['id'], $companyId, $name, $fingerprint]);
++        };
+         if ($releaseId) {
+-            $this->app->db->transaction(function () use ($release, $companyId, $name, $fingerprint) {
+-                $this->app->db->exec('DELETE FROM pme_module_reviews WHERE release_id=? AND company_id=? AND name=?', [$release['id'], $companyId, $name]);
+-                $this->app->db->exec('INSERT INTO pme_module_reviews(release_id,company_id,name,fingerprint) VALUES(?,?,?,?)', [$release['id'], $companyId, $name, $fingerprint]);
+-            });
++            $this->app->db->transaction($saveReview);
+             $this->app->audit->log('module.release_reviewed', null, $companyId, ['module' => $name, 'release_id' => $release['id']]);
+             return ['fingerprint' => $fingerprint, 'review_only' => true];
+         }
+@@ -73,8 +74,9 @@
+             throw new Failure('module_busy', 'Resolva a manutenção vigente antes de instalar módulos.');
+         }
+         $installed=$this->app->db->one('SELECT fingerprint,active FROM pme_modules WHERE company_id=? AND name=?',[$companyId,$name]);
++        if ($refreshCurrentReview && empty($installed['active'])) { throw new Failure('module_state','Atualize somente um módulo ativo nesta empresa.',409); }
+         $stateOnly=false;
+-        if($installed && hash_equals($installed['fingerprint'],$fingerprint) && \Multiempresa\Perfex\ModuleRuntime::ready($this->app->state('companies/'.$companyId.'/modules/'.$name),$company['table_prefix'],$fingerprint)) {
++        if(!$refreshCurrentReview && $installed && hash_equals($installed['fingerprint'],$fingerprint) && \Multiempresa\Perfex\ModuleRuntime::ready($this->app->state('companies/'.$companyId.'/modules/'.$name),$company['table_prefix'],$fingerprint)) {
+             $pdo=$this->app->storage($company['mode'])->connect($this->app->vault->open($company['secrets'])['connection']);
+             $check=$pdo->prepare('SELECT active,installed_version FROM `'.$company['table_prefix'].'modules` WHERE module_name=?');$check->execute([$name]);$native=$check->fetch(\PDO::FETCH_ASSOC);
+             preg_match('/^\s*Version:\s*(.+)$/mi',file_get_contents($root.'/'.$name.'.php',false,null,0,8192),$header);
+@@ -88,9 +90,11 @@
+         try {
+             $backup = $stateOnly?null:(new Backups($this->app))->create($companyId);
+             if($backup){$backupHash=hash_file('sha256',$backup);}
+-            $this->app->db->transaction(function () use ($companyId, $name, $fingerprint) {
++            $this->app->db->transaction(function () use ($companyId, $name, $fingerprint, $refreshCurrentReview, $saveReview) {
+                 $this->app->db->exec('DELETE FROM pme_modules WHERE company_id=? AND name=?', [$companyId, $name]);
+                 $this->app->db->exec('INSERT INTO pme_modules(company_id,name,fingerprint,active,approved_by) VALUES(?,?,?,1,?)', [$companyId, $name, $fingerprint, 'operator']);
++                // Refresh the current release only under maintenance, after the backup, through this approval flow.
++                if ($refreshCurrentReview) { $saveReview(); }
+             });
+             $provisioning=new DatabaseProvisioning($this->app);
+             if(!$stateOnly){$provisioning->grantTables($companyId,$provisioning->moduleTables($root));}
+--- a/views/companies.php
++++ b/views/companies.php
+@@ -100,7 +100,7 @@
+   <div id="pme-editor" tabindex="-1" role="dialog" class="modal fade pme-dialog" aria-labelledby="pme-editor-title"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-close aria-label="Fechar edição"><span aria-hidden="true">×</span></button><h4 class="modal-title" id="pme-editor-title">Editar empresa</h4></div>
+     <div class="modal-body pme-editor-body"><div id="pme-editor-message" class="alert alert-info pme-alert" role="status" hidden></div><nav class="pme-editor-tabs" aria-label="Configurações da empresa"><button type="button" data-edit-tab="general" class="is-active">Dados gerais</button><button type="button" data-edit-tab="modules">Módulos</button><button type="button" data-edit-tab="connection">Destino dos dados</button></nav>
+       <form id="pme-edit-form" data-edit-panel="general"><div class="pme-form-grid"><label class="form-group pme-field pme-span-2">Nome da empresa <input class="form-control" name="name" required maxlength="190"></label><label class="form-group pme-field">Situação <select class="form-control" name="status"><option value="active">Ativa</option><option value="suspended">Suspensa</option></select></label><label class="form-group pme-field">Idioma <select class="form-control" name="language"><?php foreach($languages as $key=>$label): ?><option value="<?= $e($key) ?>"><?= $e($label) ?></option><?php endforeach; ?></select></label><label class="form-group pme-field pme-span-2">Fuso horário <select class="form-control" name="timezone"><?php foreach($timezones as $zone): ?><option><?= $e($zone) ?></option><?php endforeach; ?></select></label></div><?php include __DIR__.'/company_profile.php'; ?><p class="text-muted pme-help">Salvar dados cadastrais não reprovisiona a empresa. Selecione um novo certificado para substituir o atual.</p><footer class="modal-footer pme-form-footer"><button type="button" class="btn btn-default pme-btn pme-btn-secondary" data-close>Cancelar</button><button class="btn btn-primary pme-btn" id="pme-save">Salvar alterações</button></footer></form>
+-      <section data-edit-panel="modules" hidden><p class="text-muted pme-help">Ative ou desative recursos somente nesta empresa. A desativação mantém os dados do módulo.</p><div class="pme-bulk"><button type="button" class="btn btn-default" id="pme-edit-activate-all">Ativar todos</button><button type="button" class="btn btn-default" id="pme-edit-deactivate-all">Desativar todos</button><span id="pme-edit-batch-status" class="text-muted" role="status" aria-live="polite"></span></div><div id="pme-edit-modules" class="pme-module-list"></div><label class="pme-check"><input type="checkbox" id="pme-edit-module-reviewed"><span>Compatibilidade dos módulos a ativar conferida para este ambiente.</span></label><div class="modal-footer"><button type="button" class="btn btn-default" data-close>Fechar</button></div></section>
++      <section data-edit-panel="modules" hidden><p class="text-muted pme-help">Ative, atualize ou desative recursos somente nesta empresa. Atualizar reaplica o pacote enviado à instalação principal e mantém os dados do módulo.</p><div class="pme-bulk"><button type="button" class="btn btn-default" id="pme-edit-activate-all">Ativar todos</button><button type="button" class="btn btn-default" id="pme-edit-deactivate-all">Desativar todos</button><span id="pme-edit-batch-status" class="text-muted" role="status" aria-live="polite"></span></div><div id="pme-edit-modules" class="pme-module-list"></div><label class="pme-check"><input type="checkbox" id="pme-edit-module-reviewed"><span>Conferi a compatibilidade dos módulos a ativar ou atualizar neste ambiente.</span></label><div class="modal-footer"><button type="button" class="btn btn-default" data-close>Fechar</button></div></section>
+       <section data-edit-panel="connection" hidden><div class="alert alert-info pme-alert">Destino definido no provisionamento. Para migrar dados, utilize a restauração em destino vazio em Atualizações e backups.</div><dl id="pme-edit-connection" class="pme-review"></dl></section>
+     </div>
+   </div></div></div>
+--- a/views/manage.php
++++ b/views/manage.php
+@@ -6,7 +6,7 @@
+ </div></div></div></div></div></div>
+ <?php init_tail(); ?>
+ <script src="<?= module_dir_url('multiempresa','assets/multiempresa.js'); ?>?v=<?= \Multiempresa\Perfex\Version::current(); ?>"></script>
+-<script src="<?= module_dir_url('multiempresa','assets/companies.js'); ?>?v=<?= \Multiempresa\Perfex\Version::current(); ?>"></script>
++<script src="<?= module_dir_url('multiempresa','assets/companies.js'); ?>?v=<?= substr(hash_file('sha256', __DIR__.'/../assets/companies.js'), 0, 20); ?>"></script>
+ <script src="<?= module_dir_url('multiempresa','assets/administration.js'); ?>?v=<?= \Multiempresa\Perfex\Version::current(); ?>"></script>
+ <script src="<?= module_dir_url('multiempresa','assets/panel.js'); ?>?v=<?= \Multiempresa\Perfex\Version::current(); ?>" data-panel-api="<?= html_escape(admin_url('multiempresa/staff_choices')); ?>"></script>
+ </body></html>
